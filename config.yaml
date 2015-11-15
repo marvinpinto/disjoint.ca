@@ -1,0 +1,60 @@
+---
+baseurl: "http://disjoint.ca"
+title: "disjoint.ca"
+paginate: 10
+MetaDataFormat: "yaml"
+theme: "hugo-multi-bootswatch"
+languageCode: "en-us"
+
+author:
+  name: "Marvin Pinto"
+  email: "marvin@pinto.im"
+
+permalinks:
+  # Optional. Change the permalink format for the 'post' content type.
+  # The format shown here is the same one Jekyll/Octopress uses by default.
+  post: "/posts/:year/:month/:day/:title/"
+
+taxonomies:
+  category: "categories"
+  tag: "tags"
+
+#
+# All parameters below here are optional and can be mixed and matched.
+#
+params:
+  # language code for the website
+  languageCode: "en-us"
+
+  # name of the site author; used in header meta information
+  author: "Marvin Pinto"
+
+  # copyright text; used in footer
+  copyright: "2015 ~ Marvin Pinto"
+
+  # social links, used in footer, these must be full URLs.
+  github: "https://github.com/marvinpinto"
+  twitter: "https://twitter.com/marvinpinto"
+  # linkedin: ""
+
+  # show default summaries on the frontpage or not
+  use_summaries: false
+
+  theme:
+    inverse: false
+    name: "lumen"
+
+  # naming of the elements in your blog/site
+  strings:
+
+    # name of the link to the homepage
+    home_navbar_link: "Home"
+
+    # name of the link to the blog page
+    blog_navbar_link: "Posts"
+
+    # name of the header used in the post list page
+    posts_list_header: "Posts"
+
+    # used date format
+    date_format: "Mon, Jan 2, 2006"
