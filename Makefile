@@ -19,10 +19,7 @@ blog-post: themes
 	/tmp/go/bin/hugo new post/new-blog-post.md
 
 spellcheck:
-	find content -name "*.md" -exec cat {} \; | aspell \
-		--personal=./spellcheck_ignore_words \
-		--mode=html \
-		list | sort -u
+	scripts/spellcheck.sh
 
 server: clean themes
 	@echo ===========================================================
@@ -33,6 +30,10 @@ server: clean themes
 		--port=8080 \
 		--baseUrl="http://$(CONTAINER_IP)" \
 		--watch
+
+.PHONY: generate
+generate: clean themes
+	/tmp/go/bin/hugo
 
 .PHONY: clean
 clean:
