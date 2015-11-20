@@ -1,4 +1,4 @@
-CONTAINER_IP = $(shell docker inspect --format '{{ .NetworkSettings.IPAddress }}' blog)
+CONTAINER_IP = $(shell docker inspect --format '{{ .NetworkSettings.IPAddress }}' disjoint.ca)
 
 .PHONY: help
 help:
@@ -9,14 +9,20 @@ go:
 	mkdir -p /tmp/go
 	GOPATH=/tmp/go go get -v github.com/spf13/hugo
 
-themes:
+themes: go
 	mkdir -p themes
-	cd themes; git clone https://github.com/mpas/hugo-multi-bootswatch.git
+	cd themes; git clone https://github.com/mpas/hugo-multi-bootswatch.git || true
 	cd themes/hugo-multi-bootswatch; git reset --hard 247e43f9266784efecb42ede900e62cdcec50c3a
 
 .PHONY: blog-post
-blog-post: go themes
+blog-post: themes
 	/tmp/go/bin/hugo new post/new-blog-post.md
+
+spellcheck:
+	find content -name "*.md" -exec cat {} \; | aspell \
+		--personal=./spellcheck_ignore_words \
+		--mode=html \
+		list | sort -u
 
 server: clean themes
 	@echo ===========================================================
