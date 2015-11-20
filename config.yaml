@@ -1,5 +1,5 @@
 ---
-baseurl: "http://disjoint.ca"
+baseurl: "http://www.disjoint.ca"
 title: "disjoint.ca"
 paginate: 10
 MetaDataFormat: "yaml"
