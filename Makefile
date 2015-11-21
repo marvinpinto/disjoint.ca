@@ -21,6 +21,9 @@ blog-post: themes
 spellcheck:
 	scripts/spellcheck.sh
 
+travis-linkchecker:
+	linkchecker http://127.0.0.1:8080
+
 server: clean themes
 	@echo ===========================================================
 	@echo Head over to http://$(CONTAINER_IP):8080 for a live preview
@@ -30,6 +33,13 @@ server: clean themes
 		--port=8080 \
 		--baseUrl="http://$(CONTAINER_IP)" \
 		--watch
+
+travis-server: clean themes
+	/tmp/go/bin/hugo server \
+		--bind="127.0.0.1" \
+		--port=8080 \
+		--baseUrl="http://127.0.0.1" \
+		--watch=false
 
 .PHONY: generate
 generate: clean themes
