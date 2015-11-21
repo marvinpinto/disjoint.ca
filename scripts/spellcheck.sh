@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MISSPELT_WORDS=$(find content -name "*.md" -exec cat {} \; | aspell \
+MISSPELT_WORDS=$(find ./README.md content -name "*.md" -exec cat {} \; | aspell \
   --personal=./spellcheck_ignore_words \
   --mode=html \
   list | sort -u)
