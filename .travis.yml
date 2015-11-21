@@ -28,7 +28,7 @@ script:
 
 deploy:
   provider: 'script'
-  script: 's3cmd sync --verbose --delete-removed ./public/ s3://disjoint.ca/'
+  script: 'scripts/s3deploy.sh'
   skip_cleanup: true
   on:
     branch: 'master'
