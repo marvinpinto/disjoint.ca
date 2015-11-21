@@ -6,8 +6,7 @@ help:
 
 .PHONY: go
 go:
-	mkdir -p /tmp/go
-	GOPATH=/tmp/go go get -v github.com/spf13/hugo
+	go get -v github.com/spf13/hugo
 
 themes: go
 	mkdir -p themes
@@ -16,7 +15,7 @@ themes: go
 
 .PHONY: blog-post
 blog-post: themes
-	/tmp/go/bin/hugo new post/new-blog-post.md
+	hugo new post/new-blog-post.md
 
 spellcheck:
 	scripts/spellcheck.sh
@@ -28,14 +27,14 @@ server: clean themes
 	@echo ===========================================================
 	@echo Head over to http://$(CONTAINER_IP):8080 for a live preview
 	@echo ===========================================================
-	/tmp/go/bin/hugo server \
+	hugo server \
 		--bind="0.0.0.0" \
 		--port=8080 \
 		--baseUrl="http://$(CONTAINER_IP)" \
 		--watch
 
-travis-server: clean themes
-	/tmp/go/bin/hugo server \
+travis-server:
+	hugo server \
 		--bind="127.0.0.1" \
 		--port=8080 \
 		--baseUrl="http://127.0.0.1" \
@@ -43,7 +42,7 @@ travis-server: clean themes
 
 .PHONY: generate
 generate: clean themes
-	/tmp/go/bin/hugo
+	hugo
 
 .PHONY: clean
 clean:

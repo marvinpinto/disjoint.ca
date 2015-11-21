@@ -1,0 +1,24 @@
+language: go
+sudo: false
+go:
+  - "1.5"
+
+addons:
+  apt:
+    packages:
+      - 'aspell'
+      - 'aspell-en'
+
+install:
+  - 'pip install --user linkchecker'
+  - 'make clean'
+  - 'make themes'
+  - 'make travis-server &'
+  - 'sleep 10'
+
+script:
+  - 'make spellcheck'
+  - 'make travis-linkchecker'
+
+notifications:
+  email: false
