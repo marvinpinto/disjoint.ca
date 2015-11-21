@@ -3,6 +3,11 @@ sudo: false
 go:
   - "1.5"
 
+env:
+  global:
+    - 'AWS_ACCESS_KEY_ID=AKIAJOOPEXUKZIPG6FIA'
+    - secure: "YUWkaDojqjBwpQ/hpappchjqRxzOsJ/mxqIX5E3E+Xt7KiQFQApy6RKZn/Zf+me3ehtyfSJxipHrzkgOjhu8tyWD7Mvu4tBPcQ3xLPPWUj/qcI2xiixzk+mkZuQ8o6iwj/81tnfJtrNc+1/tUVEdlKx7xR2vr3L8j4hG3lYLd9HJ2U01Zs/EmZHFzAsM5Q1jSU1F8HSEGrq1vriN0rV9JO5ompm4lNnC43AXdehvpvkuU1vt7GCFTmgiGpBjZxw3qUcr6qZooKYNwv1vXd+Emok9GwTwrKSVsQjwlLyApDHFxvnRubHt3T1+Mp5PmDIWPZh277CH06gQGRHZ7X0noP6tgT79GGKLkgi1UARmfzSCDww5G39tkOA8us+zcjkueMY+xd+CPtrSBNbexzjN/XW7h1sAa/MNvxZvBfU73IfiX5DhirYjIKU1318UHq5SWh3qo6bevhO1NZpKNvFNmFCYECIZn8TPZOUU+JihnuRRlk5id8FR2wXmOwVKh8QcXA+02HTODaDOeYMpSGB8mRJcDgQa5BRjBzBrmD8AXBdbjO5p4mAzQqIfs/xUsIre2JEQrHVYjz0kTY40ssA/7Ke8GgZ4rIobCh+pheq6DFFbxXrXiPj0LA9p80WNV7aNY3jGCVHnf6Hc/x39dTdIgWBodOxGDPYRZNm/DT42UH8="
+
 addons:
   apt:
     packages:
@@ -10,7 +15,7 @@ addons:
       - 'aspell-en'
 
 install:
-  - 'pip install --user linkchecker'
+  - 'pip install --user linkchecker s3cmd'
   - 'make clean'
   - 'make themes'
   - 'make travis-server &'
@@ -19,6 +24,15 @@ install:
 script:
   - 'make spellcheck'
   - 'make travis-linkchecker'
+  - 'make generate'
+
+deploy:
+  provider: 'script'
+  script: 's3cmd sync --verbose --delete-removed ./public/ s3://disjoint.ca/'
+  skip_cleanup: true
+  on:
+    branch: 'master'
+    repo: 'marvinpinto/disjoint.ca'
 
 notifications:
   email: false
