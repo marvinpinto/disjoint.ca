@@ -1,5 +1,6 @@
-.TextWrapRight {
-  clear: right;
+img[src$='#floatleft']
+{
   float: left;
+  clear: right;
   margin-right: 10px;
 }

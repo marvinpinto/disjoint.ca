@@ -10,8 +10,7 @@ keywords:
 menu: "main"
 ---
 
-{{% figure src="https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=100" class="TextWrapRight" %}}
-
+![](https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=100#floatleft)
 Hi, I'm Marvin!
 
 I currently work as a developer at [FreshBooks](http://www.freshbooks.com), a
