@@ -21,11 +21,11 @@ means I get to play with all parts of the stack. It's very interesting!
 I tend to open-source a lot of my side/pet projects so do feel free to look
 around on my [GitHub](https://github.com/marvinpinto) profile.
 
-I also tend to [tweet](https://twitter.com/marvinpinto) fairly often and hang
-out on IRC a bit too much (`marvinpinto` on [Freenode](https://freenode.net)).
-Always up to chat anytime!
+I also tend to [tweet](https://twitter.com/marvinpinto) fairly often as well as
+hang out on IRC (`marvinpinto` on [Freenode](https://freenode.net)).  Always up
+to chat anytime!
 
 ### Contact
 
 If email is your thing, please do feel free to email me at `hello@pinto.im` but
-be warned that I am terrible with email but I do try my best :(
+be warned that I am terrible with email :( (I do try though!)
