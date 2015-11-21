@@ -47,6 +47,7 @@ generate: clean themes
 .PHONY: clean
 clean:
 	rm -rf public
+	rm -f Gemfile.lock
 
 .PHONY: clean-all
 clean-all: clean
