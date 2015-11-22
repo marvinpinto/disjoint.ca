@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/marvinpinto
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://www.disjoint.ca
+  * I am marvinpinto (https://keybase.io/marvinpinto) on keybase.
+  * I have a public key with fingerprint F19F F29A 34A2 DB3C D822  95F5 AF6F 391D 18CA 8A27
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101683685bccdebb9eebfc4de3e21ece3cfd462306c7d9cd1fe426e624a1739652e0a",
+            "fingerprint": "f19ff29a34a2db3cd82295f5af6f391d18ca8a27",
+            "host": "keybase.io",
+            "key_id": "af6f391d18ca8a27",
+            "kid": "0101683685bccdebb9eebfc4de3e21ece3cfd462306c7d9cd1fe426e624a1739652e0a",
+            "uid": "a39e7d190f7197566250c90b487ff819",
+            "username": "marvinpinto"
+        },
+        "service": {
+            "hostname": "www.disjoint.ca",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1448160006,
+    "expire_in": 157680000,
+    "prev": "aaff0387afca9792386d9aadc0a305fb30e4ea99b775f039c2d846b04ad5b2d9",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+Comment: GPGTools - https://gpgtools.org
+
+owGtkllIFWEUx+emZVlWhKVFG2NiltjsM5/tD2E3eskWNKPbt17HZeZ2Z7qWZhRB
+lBUJFYRoUUQoGhE+RBRWVBT10r7QIkGUJfgiRmVi35i99djTx3fO7/zP+R9OQ1qS
+kBq65IJZmQ/qc0IPvyBh07qFa2tF5JJdYkGtWEGHH1pJqOdHKmwiFoiSLMmGpRqW
+jjAmFCFAKWJYI1SlikwxVTEjmqGokoFNAjCRGdUUgxqKBmVTBYauUAmKeSKznSiN
+x+K243NZJgPGFABVDSoEqZhYigJ0pkNmMBXIRLYwtKBi8sIy1wsq+HAIejTfdnmM
+fyLD4/2D/89z7/jTRwXUJDKQmCkDUzcMRZcwkJBmmYxZMghAj8YdWEU5XQXjCduJ
+cauuWJcn8kTCxjTYbWBmBKqurs4ntlfuciwfB61icdd3sVvJk2W+HysIav1dsWGY
+osiITATZDuHL5AUJGvds1xELZE5i3w50ZU2zZEOSJCNPpDtjdpxG7IDQTcPiUSlo
+QxOBJbiVMUm1TMgwBCZQVMsgAEKCJahKOkOqRDUKAUCmqXMQYIVYmoEkDRIdKSTw
+7NHtjsvFZT4ojHJRz4460N8Rp2Jd6qHQzGQhlCqMGT0quDMhddzkv8fX0pkytOIW
+XZ99Rimefyp90qqM/UPN0U8td38tK5nXvKj/Sbr6sfEkuv/6ZG0ibd/Tkgu5M19a
+ftfXl1OWNXQ29lx+0L1yWttQ8ZL8d8KMYwOlfVljm/ryDlW9SR8Ufl4FR8Jzis59
+60pLKa1rCm/JrGmvHfxQeC/5xqPkrmZttj7gbz6YFK15UdzQ2r/ne2tJAj3pWXUz
+d3Xv0cKkDRfnZk/IGZryozo8/Wb96OsLJ6+peC8sbpxa9OpTUWFGR2/pnVHR49Q5
+8bbvWkrb4YzTb7K674fTPm9bLuhJj7MmHl5R3379kXf1wNNn4aor488uMMfV7LZa
+Ns7KPSh87JhRHuosvf082rN08fm9vwE=
+=W8qz
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/marvinpinto
+
+==================================================================
