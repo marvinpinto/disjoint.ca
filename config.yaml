@@ -32,6 +32,9 @@ params:
   # copyright text; used in footer
   copyright: "2015 ~ Marvin Pinto"
 
+  # Google analytics tracking ID
+  google_analytics_id: "UA-70410076-1"
+
   # social links, used in footer, these must be full URLs.
   github: "https://github.com/marvinpinto"
   twitter: "https://twitter.com/marvinpinto"
