@@ -4,7 +4,7 @@ https://keybase.io/marvinpinto
 
 I hereby claim:
 
-  * I am an admin of http://www.disjoint.ca
+  * I am an admin of https://www.disjoint.ca
   * I am marvinpinto (https://keybase.io/marvinpinto) on keybase.
   * I have a public key with fingerprint F19F F29A 34A2 DB3C D822  95F5 AF6F 391D 18CA 8A27
 
@@ -21,17 +21,22 @@ To do so, I am signing this object:
             "uid": "a39e7d190f7197566250c90b487ff819",
             "username": "marvinpinto"
         },
+        "revoke": {
+            "sig_ids": [
+                "f5911e48501a41094b04558dda385cd145bb1ed33fa0301ba4670816e789c7620f"
+            ]
+        },
         "service": {
             "hostname": "www.disjoint.ca",
-            "protocol": "http:"
+            "protocol": "https:"
         },
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1448160006,
+    "ctime": 1448164999,
     "expire_in": 157680000,
-    "prev": "aaff0387afca9792386d9aadc0a305fb30e4ea99b775f039c2d846b04ad5b2d9",
-    "seqno": 11,
+    "prev": "ab473b68c937c11acaa0d6bc7c22ab24405db7e90412e3e158bae4941026f231",
+    "seqno": 13,
     "tag": "signature"
 }
 
@@ -41,23 +46,25 @@ which yields the signature:
 Version: GnuPG v1
 Comment: GPGTools - https://gpgtools.org
 
-owGtkllIFWEUx+emZVlWhKVFG2NiltjsM5/tD2E3eskWNKPbt17HZeZ2Z7qWZhRB
-lBUJFYRoUUQoGhE+RBRWVBT10r7QIkGUJfgiRmVi35i99djTx3fO7/zP+R9OQ1qS
-kBq65IJZmQ/qc0IPvyBh07qFa2tF5JJdYkGtWEGHH1pJqOdHKmwiFoiSLMmGpRqW
-jjAmFCFAKWJYI1SlikwxVTEjmqGokoFNAjCRGdUUgxqKBmVTBYauUAmKeSKznSiN
-x+K243NZJgPGFABVDSoEqZhYigJ0pkNmMBXIRLYwtKBi8sIy1wsq+HAIejTfdnmM
-fyLD4/2D/89z7/jTRwXUJDKQmCkDUzcMRZcwkJBmmYxZMghAj8YdWEU5XQXjCduJ
-cauuWJcn8kTCxjTYbWBmBKqurs4ntlfuciwfB61icdd3sVvJk2W+HysIav1dsWGY
-osiITATZDuHL5AUJGvds1xELZE5i3w50ZU2zZEOSJCNPpDtjdpxG7IDQTcPiUSlo
-QxOBJbiVMUm1TMgwBCZQVMsgAEKCJahKOkOqRDUKAUCmqXMQYIVYmoEkDRIdKSTw
-7NHtjsvFZT4ojHJRz4460N8Rp2Jd6qHQzGQhlCqMGT0quDMhddzkv8fX0pkytOIW
-XZ99Rimefyp90qqM/UPN0U8td38tK5nXvKj/Sbr6sfEkuv/6ZG0ibd/Tkgu5M19a
-ftfXl1OWNXQ29lx+0L1yWttQ8ZL8d8KMYwOlfVljm/ryDlW9SR8Ufl4FR8Jzis59
-60pLKa1rCm/JrGmvHfxQeC/5xqPkrmZttj7gbz6YFK15UdzQ2r/ne2tJAj3pWXUz
-d3Xv0cKkDRfnZk/IGZryozo8/Wb96OsLJ6+peC8sbpxa9OpTUWFGR2/pnVHR49Q5
-8bbvWkrb4YzTb7K674fTPm9bLuhJj7MmHl5R3379kXf1wNNn4aor488uMMfV7LZa
-Ns7KPSh87JhRHuosvf082rN08fm9vwE=
-=W8qz
+owGtkm9oVlUcx59nabHhyEDEhRaekKKeHs+/e+49Dy0QG/RvpRiLNt3T+Tuvz3bv
+43Ovz5ym2AuFNRv2UASKTUMQk/RNULhy+QdfbBUahhmsQbDCJMhXYSTr3GXvetl5
+cznnfn/f3+f3PedA6z25lvzpmK9YNvnWo/mpGzLXtf7p0Z1AxnoIlHaCipn/mH5t
+krRcCTUoAYggYgFhgSeV0kZKboy0impDDEZGGaKspgwTyJSvudLIGoqZYZgK5BPO
+PGygAAVgw6jP1Kq1MEqdrUXcWswFoQJrSZQOMOae9YRllnCkUaBEILDvCjfHSVbh
+4KRITDGM3ZnblOfx/kP/P3Nv+6cP4cbXiEPrI+57jGEPKg4lDXxrA8QzYWJqkRgw
+Tj0gavUwqrpRY7CrAGqmHldMFm0S9jnuBJR6gPU4QoYGHkSCIsiphNTzAq0FCTyH
+Qz0pkdGEWAEJRFJQ5sMAMeMHXPkMQws2OW/XtB6qefMsqLsAg4ODRR0mW2KHUFTZ
+GNVanMYq7nc/N6dpNSk5sHGQDlXn5UaW7xqVZRhpd1WupG5qSRhHoIRcH5WGmTOi
+1DFQznkBmO3VsGbKYabwfBZAt7JGpp4FJqlPJAsUJ75CSCghoGZS+QpjITGl0NPS
+NxxShN2VIC+QwlDuksDMYoJANtrWKHbepABS0ec8XXqRSLfVDNjVMpxfviCXb8nd
+u7Ape8S5lubF/77sA8vvu9P2sGnU1x3cd+jytYtHbrdPdF/Z+tvG5urSPU/Qq9+P
+/rhvbNPzV459s+WXgy+sNytPVqY/vnqpsXrt8bnHh86MT0/3vHym5/r50uvnvQ2T
+r33auv3k7SOvLl40++GFyv0bSOVE/yeTP0T7O240Lbk82NUJSNsHs4cn6ks+Ghmb
+vSmfOfXUzR2fv9L+fqlp5qeH/miffW5q1Y7imhU9p/a37u379oufO6aaf2/7amTp
+m4UXu/c8+1nDXljX8eTXw2snbP16b2fj3e6Zs7s7b8091ntn1V+Hrz0YHF356+l3
+BoZHDq25dOvssu4HWhd+ueii/8jATK9+I2j77lij670/59j43tEx+jbe/dK5c8X8
+gqG/AQ==
+=YPZO
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
