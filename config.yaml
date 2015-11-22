@@ -16,7 +16,6 @@ permalinks:
   post: "/posts/:year/:month/:day/:title/"
 
 taxonomies:
-  category: "categories"
   tag: "tags"
 
 #
