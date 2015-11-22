@@ -3,7 +3,7 @@ s3_secret: "<%= ENV['AWS_SECRET_ACCESS_KEY'] %>"
 s3_bucket: "disjoint.ca"
 site: "public"
 
-max_age: 300
+max_age: 3600
 
 cloudfront_distribution_id: "<%= ENV['CLOUDFRONT_DISTRIBUTION_ID'] %>"
 cloudfront_invalidate_root: true
