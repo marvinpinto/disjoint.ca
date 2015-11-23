@@ -41,7 +41,7 @@
 
     <script type="text/javascript">
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '{{ .Site.Params.google_analytics_id }}']);
+      _gaq.push(['_setAccount', '{{ getenv "GOOGLE_ANALYTICS_ID" }}']);
       _gaq.push(['_trackPageview']);
 
       (function() {
