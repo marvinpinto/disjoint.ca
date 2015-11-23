@@ -3,6 +3,7 @@ auth
 aws
 AWS
 bugfixes
+CDNs
 charset
 cli
 cloudfront
@@ -33,6 +34,7 @@ TextWrapRight
 tl
 tldr
 utf
+vv
 whitelist
 whitelisted
 yay

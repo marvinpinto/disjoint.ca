@@ -40,11 +40,12 @@ thought it would be a great opportunity to kick the tires.
 
 ### Site Architecture
 
-A bit of context is in order to understand what is happening, and most
-importantly, the _why_. This site ([disjoint.ca][2]) is generated from Markdown
-and other bits using [Hugo][4] as the underlying static file generator. Since
-this site is essentially a _bag of files_, there was nothing stopping me from
-hosting it in an S3 bucket, and so I did.
+Okay, so let's take a step back and describe the big picture for a second.
+
+This site ([disjoint.ca][2]) is generated from Markdown and other bits using
+[Hugo][4] as the underlying static file generator. Since this site is
+essentially a _bag of files_, there was nothing stopping me from hosting it in
+an S3 bucket, and so I did.
 
 One of the caveats of an S3 bucket is that you cannot use your own domain name
 in combination with https, which is where [CloudFront][8] comes in.  CloudFront
@@ -79,27 +80,46 @@ Great, [ship it][5] I thought, let's get going with some SSL goodness!
 Self-verify of challenge failed.
 ```
 
-Troubleshooting even further led me to [this][6] commit in the `s3_website` gem,
-which essentially appends `; charset=utf-8` to the
-`Content-Type` string.
+At this point, I checked the raw `curl -vv` output and noticed:
+
+``` text
+Content-Type: text/plain; charset=utf-8
+```
+
+The `charset=utf-8` seemed odd here. I suspected that Let's Encrypt was a
+stickler for the content type and and that that extra `charset=utf-8` bit was
+making it super sad.
+
+If you're wondering where that came from, I tracked it to [this][6] commit in
+the `s3_website` gem (essentially appends `; charset=utf-8` to the
+`Content-Type` string for any types that start with `text/`)
 
 Okay, onwards we go. I edited the content type of that object directly in the
-S3 bucket, invalidated the path in CloudFront, and tried again. Still no luck
-:(
+S3 bucket (back to `text/plain`), invalidated the path in CloudFront, and tried
+again. Still no luck :(
 
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">letsencrypt was supposed to make things easier 😖</p>&mdash; Marvin Pinto (@marvinpinto) <a href="https://twitter.com/marvinpinto/status/668254958467219456">November 22, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 At this point it was getting late and I was getting impatient. So I cheated.
 
-I created a (temporary) `A` record for `www.disjoint.ca` and pointed it to one
-of my nodes. After the DNS records propagated, I ran the python script they
-provided (which spins up a temporary HTTP server) and I was on my way with my
-very first Let's Encrypt SSL certificate.
+For context, I had suspected that something in this combination of S3,
+CloudFront, s3_website, and Let's Encrypt was at fault here but I couldn't
+figure out _what_. It was very irritating and I decided to cut my losses at
+this point (with the intention of re-visiting later).
+
+My hypothesis was that a _traditional_ setup with an `A` record would work as
+intended since there weren't other pieces like CDNs and caching in play.
+
+So, it was late and time to go to bed so I created a (temporary) `A` record for
+`www.disjoint.ca` and pointed it to one of my nodes. After the DNS records
+propagated, I ran the python script they provided (which spins up a temporary
+HTTP server) and I was on my way with my very first Let's Encrypt SSL
+certificate.
 
 This was definitely not the correct or sustainable way of doing this, and that
 made me kind of sad. I made brief notes on what I did to replicate this with
-the intention of trying again the next day, to see if I made a mistake of some
+the intention of trying again the next day to see if I made a mistake of some
 sort along the way.
 
 When I sat down today to try this again and write up this blog post a funny
