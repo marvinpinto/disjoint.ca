@@ -244,9 +244,10 @@ Given all that, let's recap where we are at:
 
 1. **Using Ansible/something else to stand all this up** - Simplicity was the
    key here. It was much easier to get this done in Terraform and the added
-   benefit of Atlas for maintaining state and "deployment" was a no-brainer. It
-   is really nice that Terraform makes sure that all the CloudWatch alarms and
-   other things get assigned to whatever node it brings up.
+   benefit of Atlas for maintaining state and taking care of deployments was a
+   no-brainer. It is really nice that Terraform makes sure that all the
+   CloudWatch alarms and other things get assigned to whatever node it brings
+   up.
 
 
 ### How would this apply elsewhere
