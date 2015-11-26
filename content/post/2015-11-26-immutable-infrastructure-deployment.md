@@ -266,7 +266,7 @@ A high level plan would look something like this:
 
 One of the lovely upsides of using Packer in a system like this is that Atlas
 _also_ handles running Packer builds. Which means that it would not be hard to
-setup and end-to-end Pull Request based deployment solution for rolling out new
+setup an end-to-end Pull Request based deployment solution for rolling out new
 versions of your services. It's very exciting!
 
 
@@ -274,7 +274,7 @@ versions of your services. It's very exciting!
 
 This model has worked out pretty well for us so far with Github Enterprise.
 There was a time when we avoided upgrading versions just because it was so
-tedious to do in a VSphere/ESX environemnt.
+tedious to do in a VSphere/ESX environment.
 
 Being able to _easily_ test upgrades & downgrades becomes very important
 because it removes that _one more barrier_, which in the end leads to event
