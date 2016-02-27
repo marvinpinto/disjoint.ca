@@ -9,6 +9,7 @@ autoscaling
 Autoscaling
 aws
 AWS
+Backend
 brainer
 bugfixes
 CDNs
@@ -20,6 +21,7 @@ CloudWatch
 contraints
 CoreOS
 Datastore
+derpy
 dev
 DNS
 dr
@@ -29,11 +31,13 @@ EBS
 ESX
 failovers
 firewalled
+Freenode
 FreshBooks
 ghe
 GHE
 github
 Github
+GitHub
 https
 iam
 ip
@@ -65,6 +69,8 @@ Terraform
 TextWrapRight
 tl
 tldr
+toronto
+Toronto
 utf
 vpc
 VPC
