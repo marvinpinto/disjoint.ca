@@ -10,21 +10,61 @@ keywords:
 menu: "main"
 ---
 
-![](https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=100#floatleft)
-Hi, I'm Marvin!
+Hello, I'm Marvin!
 
-I currently work as a developer at [FreshBooks](http://www.freshbooks.com), a
-small SaaS company based out of Toronto. I work on the build-tools team which
-means I get to play with all parts of the stack. It's very interesting!
+I am a developer who currently lives and works in the beautiful city of [Toronto][2]!
 
-I tend to open-source a lot of my side/pet projects so do feel free to look
-around on my [GitHub](https://github.com/marvinpinto) profile.
+I used to work as a developer at [FreshBooks][7] (a SaaS accounting company)
+where I got to play with all parts of the stack -- it was very interesting
+work!
 
-I also tend to [tweet](https://twitter.com/marvinpinto) fairly often as well as
-hang out on IRC (`marvinpinto` on [Freenode](https://freenode.net)).  Always up
-to chat anytime!
+My [GitHub][3] page is a pretty good place to get a feel for what I am working
+on these days. I open-source a lot of the projects I am working on because I
+believe in giving back where I can.
 
-### Contact
+Having said that, here are some places you can find me:
 
-If email is your thing, please do feel free to email me at `hello@pinto.im` but
-be warned that I am terrible with email :( (I do try though!)
+- [GitHub][3]
+- [Twitter][4]
+- IRC (`marvinpinto` on [Freenode][5])
+
+
+
+### Hire Me &#9732;
+
+I am currently looking for either a Backend Developer or a Full Stack role so
+if any of this sounds like a good fit to you, I would love to hear from you!
+
+
+
+### Email &#9832;
+
+If email is your thing, my address is `hello@pinto.im`. Be warned though, I am
+terrible with email &#9785;
+
+
+
+### Errata &#9997;
+
+If you do notice any errors or omissions on this site, let me know. The source
+code is up on [GitHub][6] -- Issues or Pull Requests are always welcome!
+&#10055;
+
+
+
+### Lady &#9752;
+
+This right here is my derpy dog Lady. She is very adorable and I thought you
+should know.
+
+&nbsp;&nbsp;&nbsp;![][1]
+
+
+
+[1]: https://s3.amazonaws.com/media.disjoint.ca/derpy-lady.jpg
+[2]: https://www.google.com/search?tbm=isch&q=toronto+streets
+[3]: https://github.com/marvinpinto
+[4]: https://twitter.com/marvinpinto
+[5]: https://freenode.net
+[6]: https://github.com/marvinpinto/disjoint.ca
+[7]: https://www.freshbooks.com
