@@ -33,7 +33,7 @@ Having said that, here are some places you can find me:
 ### Hire Me &#9732;
 
 I am currently looking for either a Backend Developer or a Full Stack role so
-if any of this sounds like a good fit to you, I would love to hear from you!
+if this sounds like a good fit, I would love to hear from you!
 
 
 
