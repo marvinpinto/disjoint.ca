@@ -4,3 +4,10 @@ img[src$='#floatleft']
   clear: right;
   margin-right: 10px;
 }
+
+body {
+  font-family: Verdana,sans-serif;
+  line-height: 1.5;
+  font-size: 15px;
+  color: #595653;
+}
