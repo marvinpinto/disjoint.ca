@@ -1,8 +1,11 @@
 ---
+aliases:
+  - '/posts/2015/11/26/a-framework-for-deployment-of-immutable-infrastructure/'
+  - '/posts/2015/11/26/a-framework-for-deployment-of-immutable-infrastructure'
 date: 2015-11-26
 tags:
-- aws
-- terraform
+  - aws
+  - terraform
 title: A Framework for Deployment of Immutable Infrastructure
 ---
 
