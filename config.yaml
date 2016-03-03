@@ -11,9 +11,7 @@ author:
   email: "marvin@pinto.im"
 
 permalinks:
-  # Optional. Change the permalink format for the 'post' content type.
-  # The format shown here is the same one Jekyll/Octopress uses by default.
-  post: "/posts/:year/:month/:day/:title/"
+  writing: "/writing/:year/:month/:day/:title/"
 
 taxonomies:
   tag: "tags"
@@ -45,12 +43,6 @@ params:
 
   # naming of the elements in your blog/site
   strings:
-
-    # name of the link to the blog page
-    blog_navbar_link: "Posts"
-
-    # name of the header used in the post list page
-    posts_list_header: "Posts"
 
     # used date format
     date_format: "Mon, Jan 2, 2006"

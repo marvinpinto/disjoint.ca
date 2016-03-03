@@ -1,9 +1,12 @@
 ---
+aliases:
+  - '/posts/2015/11/22/lets-encrypt-was-supposed-to-make-things-easier/'
+  - '/posts/2015/11/22/lets-encrypt-was-supposed-to-make-things-easier'
 date: 2015-11-22T12:44:12-05:00
 tags:
-- letsencrypt
-- cloudfront
-- s3
+  - letsencrypt
+  - cloudfront
+  - s3
 title: Let's Encrypt was supposed to make things easier
 ---
 
