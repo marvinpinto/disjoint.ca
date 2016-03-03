@@ -1,18 +1,26 @@
-<div class="container">
-    <div class="row">
-        <div class="navbar navbar-default {{ if .Site.Params.theme.inverse }}navbar-inverse{{ end }}" role="navigation">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="{{.Site.BaseURL}}">{{ .Site.Title }}</a>
-            </div>
-            <div class="navbar-collapse collapse navbar-responsive-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ .Site.BaseURL }}">{{ if .Site.Params.strings.home_navbar_link }}{{ .Site.Params.strings.home_navbar_link }}{{ else }}Home{{ end }}</a></li>
-                    <li><a href="{{ .Site.BaseURL }}/post/">{{ if .Site.Params.strings.blog_navbar_link }}{{ .Site.Params.strings.blog_navbar_link }}{{ else }}Blog{{ end }}</a></li>
-                    {{ range .Site.Menus.main }}
-                      <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-                    {{end}}
-                </ul>
-            </div>
-        </div>
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#disjoint-ca-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{.Site.BaseURL}}">{{ .Site.Title }}</a>
     </div>
+
+    <div class="collapse navbar-collapse" id="disjoint-ca-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ .Site.BaseURL }}">{{ if .Site.Params.strings.home_navbar_link }}{{ .Site.Params.strings.home_navbar_link }}{{ else }}Home{{ end }}</a></li>
+        <li><a href="{{ .Site.BaseURL }}/post/">{{ if .Site.Params.strings.blog_navbar_link }}{{ .Site.Params.strings.blog_navbar_link }}{{ else }}Blog{{ end }}</a></li>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{.URL}}"> {{ .Name }} </a></li>
+        {{end}}
+      </ul>
+    </div>
+
+  </div>
+
 </div>
