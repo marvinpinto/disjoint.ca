@@ -1,8 +1,13 @@
-img[src$='#floatleft']
+.image-floatleft
 {
   float: left;
   clear: right;
-  margin-right: 10px;
+}
+
+.image-floatright
+{
+  float: right;
+  clear: left;
 }
 
 body {
