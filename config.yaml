@@ -46,9 +46,6 @@ params:
   # naming of the elements in your blog/site
   strings:
 
-    # name of the link to the homepage
-    home_navbar_link: "Home"
-
     # name of the link to the blog page
     blog_navbar_link: "Posts"
 
