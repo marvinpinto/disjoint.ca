@@ -63,6 +63,8 @@ not yet a thing).
 
 #### Amazon Announced API Gateway
 
+{{< figure class="image-floatright" src="https://s3.amazonaws.com/media.disjoint.ca/you-had-me-at-autoscaling.jpg" >}}
+
 Then in early July they announced another product called [API Gateway][3].
 Among other things, it was now possible to trigger Lambda functions through API
 Gateway HTTP calls.
@@ -75,9 +77,6 @@ to me!
 - Boilerplate for HTTP (verb) endpoints &#10004;
 
 I was smitten!
-
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;![][18]
 
 
 
@@ -123,7 +122,7 @@ somewhat obsolete.
 
 ### What is IRC Hooky
 
-![][7]
+{{< figure src="https://s3.amazonaws.com/media.disjoint.ca/irc-hooky-brief-overview.png" >}}
 
 IRC Hooky is a framework for Lambda-driven IRC notifications. It currently
 supports Webhook events from [Github][5] and [Hashicorp Atlas][6].
@@ -168,7 +167,7 @@ The economics of running IRC Hooky (or other Lambda functions) at scale is what
 is most appealing about this architecture. To give you an idea of what this
 means, here is a screenshot from the [Lambda pricing example][10] page.
 
-![][11]
+{{< figure src="https://s3.amazonaws.com/media.disjoint.ca/lambda-pricing-screenshot.png" >}}
 
 128MB Lambda functions are allowed to consume ~889 hours per month (37 days)
 without charge, along with the first million requests free. API Gateway, on
@@ -188,6 +187,7 @@ Pretty neat, huh!
 
 
 
+{{< figure class="image-floatright" src="https://s3.amazonaws.com/media.disjoint.ca/empire-wants-you.jpg" >}}
 ### Get Involved!
 
 So! If IRC Hooky sounds cool to you, I invite you to contribute in any way you
@@ -198,9 +198,6 @@ would like!
 - Bugs? [Send 'em over][14]
 - New backend? [Schweet!][15]
 - Code/Documentation patches? [Shipit][15]
-
-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;![][16]
 
 
 
@@ -220,15 +217,11 @@ innovation thus far by Amazon and other companies in this space (like
 [4]: https://irchooky.org
 [5]: https://irchooky.org/github.html
 [6]: https://irchooky.org/atlas.html
-[7]: https://s3.amazonaws.com/media.disjoint.ca/irc-hooky-brief-overview.png
 [8]: https://irchooky.org/overview.html
 [9]: https://aws.amazon.com/api-gateway/pricing
 [10]: https://aws.amazon.com/lambda/pricing
-[11]: https://s3.amazonaws.com/media.disjoint.ca/lambda-pricing-screenshot.png
 [13]: {{< relref "page/about.md" >}}
 [14]: https://github.com/marvinpinto/irc-hooky/issues
 [15]: https://github.com/marvinpinto/irc-hooky/pulls
-[16]: https://s3.amazonaws.com/media.disjoint.ca/empire-wants-you.jpg
 [17]: https://irchooky.org/demo.html
-[18]: https://s3.amazonaws.com/media.disjoint.ca/you-had-me-at-autoscaling.jpg
 [19]: https://cloud.google.com/functions
