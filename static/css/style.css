@@ -54,12 +54,10 @@ body {
   height: 28px;
   width: 152px;
   border: 0px;
-  background:transparent url('/disjoint-ca-logo.png') center top no-repeat;
   background-size: 100% auto;
 }
 
 .brand:hover > .logo,
 .brand:focus > .logo {
-  background-image: url('/disjoint-ca-logo-hover.png');
-  background-size: 100% auto;
+  opacity: 0.8;
 }
