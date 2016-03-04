@@ -21,6 +21,20 @@ body {
   color: #595653;
 }
 
+a {
+  color: #68829e;
+}
+
+a:hover,
+a:focus {
+  color: #598234;
+  text-decoration: none;
+}
+
+.label-primary {
+  background-color: #505160;
+}
+
 .navbar {
   font-family: 'Ubuntu', Verdana, sans-serif;
   border-width: inherit;
