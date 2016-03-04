@@ -205,19 +205,19 @@ allowing a human to _approve_ a change.
 
 1. After a Pull Request gets submitted, Atlas kicks off a `terraform plan` (dry
    run) and updates the Github build status.
-   {{< figure src="https://s3.amazonaws.com/media.disjoint.ca/atlas-gh-build-status.png" >}}
+   {{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/atlas-gh-build-status.png" >}}
 
 1. After the PR gets merged, Atlas kicks off another Terraform run which
    notifies us in Slack and prompts us to approve this change.
-   {{< figure src="https://s3.amazonaws.com/media.disjoint.ca/atlas-slack-confirm.png" >}}
+   {{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/atlas-slack-confirm.png" >}}
 
 1. In the Atlas interface, it's easy to see _exactly_ what will happen once a
    change gets approved.
-   {{< figure src="https://s3.amazonaws.com/media.disjoint.ca/atlas-approve-change.png" >}}
+   {{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/atlas-approve-change.png" >}}
 
 1. Hitting the **Confirm & Apply** button kicks off another Terraform run that
    goes and makes the required changes (and then notifies us in Slack)
-   {{< figure src="https://s3.amazonaws.com/media.disjoint.ca/atlas-slack-success.png" >}}
+   {{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/atlas-slack-success.png" >}}
 
 And that's it! There are enough checks and guards in this workflow and yet
 lightweight enough that this works.

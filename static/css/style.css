@@ -2,12 +2,14 @@
 {
   float: left;
   clear: right;
+  margin-right: 10px;
 }
 
 .image-floatright
 {
   float: right;
   clear: left;
+  margin-left: 10px;
 }
 
 body {
