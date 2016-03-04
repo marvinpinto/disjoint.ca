@@ -45,4 +45,4 @@ params:
   strings:
 
     # used date format
-    date_format: "Mon, Jan 2, 2006"
+    date_format: "Jan 2, 2006"
