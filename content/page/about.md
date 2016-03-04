@@ -11,7 +11,7 @@ menu: "main"
 ---
 
 <i class="fa fa-hand-peace-o"> Hello, I'm Marvin!</i>
-{{< figure class="image-floatright" src="https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=135" >}}
+{{< figure class="img-responsive image-floatright" src="https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=135" >}}
 
 I'm a developer who lives and works in the beautiful [City of Toronto][2]! I
 previously worked at a SaaS accounting company called [FreshBooks][7] where I
@@ -64,7 +64,7 @@ fa-thumbs-o-up"></i>
 
 ### <i class="fa fa-paw"></i> Lady
 
-{{< figure class="image-floatleft" src="https://s3.amazonaws.com/media.disjoint.ca/derpy-lady.jpg" >}}
+{{< figure class="img-responsive image-floatleft" src="https://s3.amazonaws.com/media.disjoint.ca/derpy-lady.jpg" >}}
 
 And last but not least this here is my derpy dog Lady! She is very awkward for
 her age and completely adorable. We rescued her as a puppy from a shelter in

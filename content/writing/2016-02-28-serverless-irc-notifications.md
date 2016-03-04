@@ -63,7 +63,7 @@ not yet a thing).
 
 #### Amazon Announced API Gateway
 
-{{< figure class="image-floatright" src="https://s3.amazonaws.com/media.disjoint.ca/you-had-me-at-autoscaling.jpg" >}}
+{{< figure class="img-responsive image-floatright" src="https://s3.amazonaws.com/media.disjoint.ca/you-had-me-at-autoscaling.jpg" >}}
 
 Then in early July they announced another product called [API Gateway][3].
 Among other things, it was now possible to trigger Lambda functions through API
@@ -122,7 +122,7 @@ somewhat obsolete.
 
 ### What is IRC Hooky
 
-{{< figure src="https://s3.amazonaws.com/media.disjoint.ca/irc-hooky-brief-overview.png" >}}
+{{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/irc-hooky-brief-overview.png" >}}
 
 IRC Hooky is a framework for Lambda-driven IRC notifications. It currently
 supports Webhook events from [Github][5] and [Hashicorp Atlas][6].
@@ -167,7 +167,7 @@ The economics of running IRC Hooky (or other Lambda functions) at scale is what
 is most appealing about this architecture. To give you an idea of what this
 means, here is a screenshot from the [Lambda pricing example][10] page.
 
-{{< figure src="https://s3.amazonaws.com/media.disjoint.ca/lambda-pricing-screenshot.png" >}}
+{{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/lambda-pricing-screenshot.png" >}}
 
 128MB Lambda functions are allowed to consume ~889 hours per month (37 days)
 without charge, along with the first million requests free. API Gateway, on
@@ -187,7 +187,7 @@ Pretty neat, huh!
 
 
 
-{{< figure class="image-floatright" src="https://s3.amazonaws.com/media.disjoint.ca/empire-wants-you.jpg" >}}
+{{< figure class="img-responsive image-floatright" src="https://s3.amazonaws.com/media.disjoint.ca/empire-wants-you.jpg" >}}
 ### Get Involved!
 
 So! If IRC Hooky sounds cool to you, I invite you to contribute in any way you
