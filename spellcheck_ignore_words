@@ -5,6 +5,7 @@ AMIs
 Ansible
 API
 APIs
+asyncio
 att
 auth
 autoscaling
@@ -16,6 +17,8 @@ Backend
 brainer
 bugfixes
 CDNs
+charlesbot
+Charlesbot
 charset
 cli
 cloudfront
@@ -32,7 +35,9 @@ dr
 Dropbox
 ebs
 EBS
+EmberJS
 ESX
+extendible
 failovers
 firewalled
 Freenode
@@ -64,6 +69,8 @@ mkdir
 nginx
 NONINFRINGEMENT
 onwards
+opensentinel
+plugin
 pre
 programmatically
 public's
@@ -75,12 +82,14 @@ screenshot
 serverless
 Serverless
 Shipit
+Slackbot
 SNI
 src
 SSL
 StartSSL
 sublicense
 subnet
+techy
 terraform
 Terraform
 TextWrapRight

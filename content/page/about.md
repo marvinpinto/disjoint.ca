@@ -10,61 +10,79 @@ keywords:
 menu: "main"
 ---
 
-Hello, I'm Marvin!
+<i class="fa fa-hand-peace-o"> Hello, I'm Marvin!</i>
+{{< figure class="image-floatright" src="https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=135" >}}
 
-I am a developer who currently lives and works in the beautiful city of [Toronto][2]!
+I'm a developer who lives and works in the beautiful [City of Toronto][2]! I
+previously worked at a SaaS accounting company called [FreshBooks][7] where I
+got to build cool systems and play with all parts of the stack -- it was very
+interesting work!
 
-I used to work as a developer at [FreshBooks][7] (a SaaS accounting company)
-where I got to play with all parts of the stack -- it was very interesting
-work!
+Here's where you can find me on the Internet:
 
-My [GitHub][3] page is a pretty good place to get a feel for what I am working
-on these days. I open-source a lot of the projects I am working on because I
-believe in giving back where I can.
-
-Having said that, here are some places you can find me:
-
-- [GitHub][3]
-- [Twitter][4]
-- IRC (`marvinpinto` on [Freenode][5])
+- <a href="https://twitter.com/marvinpinto"><i class="fa fa-twitter"> @marvinpinto</i></a>
+- <a href="https://github.com/marvinpinto"><i class="fa fa-github"> marvinpinto</i></a>
+- <i class="fa fa-comment-o"> marvinpinto</i> ([IRC Freenode][5])
+- <i class="fa fa-envelope-o"> hello@pinto.im</i>
 
 
 
-### Hire Me &#9732;
+### <i class="fa fa-graduation-cap"></i> Recent Projects
 
-I am currently looking for either a Backend Developer or a Full Stack role so
-if this sounds like a good fit, I would love to hear from you!
+- **Open Sentinel** is a distributed monitoring system I'm working on with a
+few other people. Its REST backend will be powered by AWS API Gateway and
+Lambda, fronted by an EmberJS single-page-app. This project is very much in its
+infancy. The really neat thing here is that we intend on open-sourcing all the
+components right from the beginning so you get to experience everything, warts
+and all! Follow along on the <a href="https://github.com/opensentinel"><i
+class="fa fa-github"> opensentinel</i></a> org on GitHub.
 
+- **Charlesbot** is a modular Slackbot written using Python 3's asyncio
+framework. It was designed to be self-deployed and easily extendible (via the
+plugin system). More information to come! For now, read up some more on
+[charlesbot.org][8] and follow along its development at <a
+href="https://github.com/marvinpinto/charlesbot"><i class="fa fa-github">
+marvinpinto/charlesbot</i></a>.
 
-
-### Email &#9832;
-
-If email is your thing, my address is `hello@pinto.im`. Be warned though, I am
-terrible with email &#9785;
-
-
-
-### Errata &#9997;
-
-If you do notice any errors or omissions on this site, let me know. The source
-code is up on [GitHub][6] -- Issues or Pull Requests are always welcome!
-&#10055;
-
-
-
-### Lady &#9752;
-
-This right here is my derpy dog Lady. She is very adorable and I thought you
-should know.
-
-&nbsp;&nbsp;&nbsp;![][1]
+- **IRC Hooky** makes it easy to send custom webhook-triggered notifications to
+IRC using an entirely serverless architecture. Read more about it at
+[irchooky.org][9] and the article I wrote titled [Using a Serverless
+Architecture to deliver IRC Webhook Notifications][10].
 
 
 
-[1]: https://s3.amazonaws.com/media.disjoint.ca/derpy-lady.jpg
+### <i class="fa fa-pencil-square-o"></i> Errata
+
+This website was developed using the [Hugo Static Site Generator][3] and all
+the source code and content lives in the <a
+href="https://github.com/marvinpinto/disjoint.ca"><i class="fa fa-github">
+marvinpinto/disjoint.ca</i></a> repository on GitHub. If you spot any mistakes
+or catch me in an outright lie I'd love to [hear from you][4] <i class="fa
+fa-thumbs-o-up"></i>
+
+
+
+### <i class="fa fa-paw"></i> Lady
+
+{{< figure class="image-floatleft" src="https://s3.amazonaws.com/media.disjoint.ca/derpy-lady.jpg" >}}
+
+And last but not least this here is my derpy dog Lady! She is very awkward for
+her age and completely adorable. We rescued her as a puppy from a shelter in
+Ontario called [Blue Collared Canines][6] and she's been a delightful addition
+to our family ever since.
+
+If you follow me on Twitter I promise to stop tweeting about techy stuff and
+stick to [doggy pictures only][1] <i class="fa fa-hand-spock-o"></i>
+
+
+
+[1]: https://twitter.com/search?q=Lady%20OR%20dog%20from%3Amarvinpinto
 [2]: https://www.google.com/search?tbm=isch&q=toronto+streets
-[3]: https://github.com/marvinpinto
-[4]: https://twitter.com/marvinpinto
-[5]: https://freenode.net
-[6]: https://github.com/marvinpinto/disjoint.ca
+[3]: http://gohugo.io
+[4]: https://github.com/marvinpinto/disjoint.ca/issues
+[5]: https://webchat.freenode.net
+[6]: https://www.facebook.com/BlueCollaredCanines
 [7]: https://www.freshbooks.com
+[8]: https://charlesbot.org
+[9]: https://irchooky.org
+[10]: {{< relref "writing/2016-02-28-serverless-irc-notifications.md" >}}
