@@ -26,9 +26,6 @@ params:
   # name of the site author; used in header meta information
   author: "Marvin Pinto"
 
-  # copyright text; used in footer
-  copyright: "2015 ~ Marvin Pinto"
-
   # social links, used in footer, these must be full URLs.
   github: "https://github.com/marvinpinto"
   twitter: "https://twitter.com/marvinpinto"
