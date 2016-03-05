@@ -1,4 +1,5 @@
 CONTAINER_IP = $(shell docker inspect --format '{{ .NetworkSettings.IPAddress }}' disjoint.ca)
+HUGO_DATE = $(shell date +'%Y-%m-%d')
 
 .PHONY: help
 help:
@@ -16,6 +17,10 @@ themes: go
 .PHONY: blog-post
 blog-post: themes
 	hugo new post/new-blog-post.md
+
+.PHONY: til
+til:
+	hugo new til/$(HUGO_DATE)-new-til.md
 
 spellcheck:
 	scripts/spellcheck.sh

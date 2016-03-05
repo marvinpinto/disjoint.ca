@@ -12,6 +12,7 @@ author:
 
 permalinks:
   writing: "/writing/:year/:month/:day/:title/"
+  til: "/til/:year/:month/:day/:title/"
 
 taxonomies:
   tag: "tags"
