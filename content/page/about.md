@@ -73,6 +73,14 @@ to our family ever since.
 
 If you follow me on Twitter I promise to stop tweeting about techy stuff and
 stick to [doggy pictures only][1] <i class="fa fa-hand-spock-o"></i>
+<br/><br/><br/><br/>
+
+
+### <i class="fa fa-bullhorn"></i> Credits
+
+- **TIL Section**: This idea was very much inspired by [des4maisons][11] and
+[jbranchaud][12]'s TIL repositories on GitHub. My hope is that indexers pick
+this up and it becomes helpful to other people as well.
 
 
 
@@ -86,3 +94,5 @@ stick to [doggy pictures only][1] <i class="fa fa-hand-spock-o"></i>
 [8]: https://charlesbot.org
 [9]: https://irchooky.org
 [10]: {{< relref "writing/2016-02-28-serverless-irc-notifications.md" >}}
+[11]: https://github.com/des4maisons/til
+[12]: https://github.com/jbranchaud/til

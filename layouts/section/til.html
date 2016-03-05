@@ -1,0 +1,54 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <p>This section contains a collection of things I've learned and
+      re-learned over the years. It's been structured to make it easy to Ctrl+F
+      &amp; search for tidbits. Subscribe to the <a href="{{ .RSSlink }}"
+      type="application/rss+xml" target="_blank">RSS feed</a> for updates!</p>
+    </div>
+  </div>
+
+  {{ range .Paginator.Pages }}
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h3><a href="{{.Permalink}}">{{ .Title }}</a></h3>
+      <small><span class="label label-primary">
+          {{ .Date.Format .Site.Params.strings.date_format }}
+        </span>&nbsp;using tags
+        {{ range $i, $e :=.Params.tags }}
+        {{if $i}} , {{end}}
+        <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+      </small>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <br>
+      {{ .Content }}
+      <br>
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="row">
+
+    <div class="col-md-offset-1 col-md-10 text-center">
+        {{ template "_internal/pagination.html" . }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <div class="row">
+        <hr>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{{ partial "footer.html" . }}
