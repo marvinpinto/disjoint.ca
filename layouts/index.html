@@ -1,23 +1,56 @@
 {{ partial "header.html" . }}
 
-    <div class="container">
-        {{ $paginator := .Paginate (where .Data.Pages "Section" "in" "writing link") }}
-        {{ range $paginator.Pages }}
-            {{ .Render "frontpage-post" }}
-        {{ end }}
-	</div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center">
-                    {{ template "_internal/pagination.html" . }}
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <hr>
-            </div>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <div class="image-banner mid">
+        <h2>Marvin Pinto</h2>
+        <p>words &middot; ideas &middot; dreams</p>
+      </div>
     </div>
+  </div>
+</div>
+
+<div class="container">
+{{ range first 10 (where .Data.Pages "Section" "writing") }}
+
+<div class="row">
+  <div class="col-md-offset-1 col-md-10">
+    <h3><a href="{{.Permalink}}">{{ .Title }}</a></h3>
+    <small><span class="label label-primary">
+        {{ if .Site.Params.strings.date_format }}
+          {{ .Date.Format .Site.Params.strings.date_format }}
+        {{ else }}
+          {{ .Date.Format "Mon, Jan 2, 2006" }}
+        {{ end }}</span>&nbsp;using tags
+      {{ range $i, $e :=.Params.tags }}
+      {{if $i}} , {{end}}
+      <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+    </small>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-offset-1 col-md-10">
+    <br>
+    {{ .Summary }}
+    <br>
+    {{ if .Truncated }}
+    <div class="read-more-link">
+      <a href="{{ .RelPermalink }}">Read More…</a>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}
+
+<div class="row">
+  <div class="col-md-12">
+    <hr>
+  </div>
+</div>
+
+</div>
+
 {{ partial "footer.html" . }}
