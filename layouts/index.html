@@ -11,45 +11,58 @@
   </div>
 </div>
 
-<div class="container">
-{{ range first 10 (where .Data.Pages "Section" "writing") }}
+<div class="container landing-page">
 
-<div class="row">
-  <div class="col-md-offset-1 col-md-10">
-    <h3><a href="{{.Permalink}}">{{ .Title }}</a></h3>
-    <small><span class="label label-primary">
-        {{ if .Site.Params.strings.date_format }}
-          {{ .Date.Format .Site.Params.strings.date_format }}
-        {{ else }}
-          {{ .Date.Format "Mon, Jan 2, 2006" }}
-        {{ end }}</span>&nbsp;using tags
-      {{ range $i, $e :=.Params.tags }}
-      {{if $i}} , {{end}}
-      <a href="/tags/{{ . | urlize }}">{{ . }}</a>
-      {{ end }}
-    </small>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-offset-1 col-md-10">
-    <br>
-    {{ .Summary }}
-    <br>
-    {{ if .Truncated }}
-    <div class="read-more-link">
-      <a href="{{ .RelPermalink }}">Read More…</a>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h2><i class="fa fa-hand-peace-o"> Hello and Welcome</i></h2>
     </div>
-    {{ end }}
   </div>
-</div>
 
-{{ end }}
-
-<div class="row">
-  <div class="col-md-12">
-    <hr>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h4><i class="fa fa-pencil-square-o"></i> Read some of my latest articles!</h4>
+      <ul class="fa-ul">
+        {{ range first 5 (where .Data.Pages "Section" "writing") }}
+        <li><i class="fa-li fa fa-angle-right"></i><a href="{{.Permalink}}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
   </div>
-</div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h4><i class="fa fa-lightbulb-o"></i> Check out a TIL or two</h4>
+      <ul class="fa-ul">
+        {{ range first 5 (where .Data.Pages "Section" "til") }}
+        <li><i class="fa-li fa fa-angle-right"></i><a href="{{.Permalink}}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h4><i class="fa fa-tags"></i> Perhaps browse by the most popular tags</h4>
+      <ul class="tags">
+        {{ range first 10 .Site.Taxonomies.tags.ByCount }}
+        <li class="tag"><a href="/tags/{{ .Name | urlize }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h4><i class="fa fa-cubes"></i> Or just read more <a href="{{ .Site.BaseURL }}/page/about">about me</a>.</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <hr>
+    </div>
+  </div>
 
 </div>
 
