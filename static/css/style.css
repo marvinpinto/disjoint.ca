@@ -92,7 +92,6 @@ a:focus {
   background-size: cover;
   width: 945px;
   height: 500px;
-  /* margin: 0 10px 0 10px; */
   position: relative;
   float: left;
 }
@@ -100,23 +99,22 @@ a:focus {
 .mid h2 {
   font-weight: 900;
   font-family: 'Gudea', Verdana, Helvetica, sans-serif;
-  font-size: 12rem;
+  font-size: 13vmin;
   font-variant: small-caps;
   color: white;
-  /* text-transform: uppercase; */
-  position: absolute;
+  position: relative;
   top: 30%;
   left: 15%;
 }
 
 .mid p {
-  font-size: 2em;
+  font-size: 4vmin;
   font-family: 'Rancho', Georgia, serif;
   color: white;
   text-transform: lowercase;
-  position: absolute;
+  position: relative;
   left: 62%;
-  top: 58%;
+  top: 28%;
 }
 
 .tags {
