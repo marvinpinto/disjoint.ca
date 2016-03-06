@@ -62,6 +62,14 @@ fa-thumbs-o-up"></i>
 
 
 
+### <i class="fa fa-bullhorn"></i> Credits
+
+- **TIL Section**: This idea was very much inspired by [des4maisons][11] and
+[jbranchaud][12]'s TIL repositories on GitHub. My hope is that indexers pick
+this up and it becomes helpful to other people as well.
+
+
+
 ### <i class="fa fa-paw"></i> Lady
 
 {{< figure class="img-responsive image-floatleft" src="https://s3.amazonaws.com/media.disjoint.ca/derpy-lady.jpg" >}}
@@ -73,14 +81,6 @@ to our family ever since.
 
 If you follow me on Twitter I promise to stop tweeting about techy stuff and
 stick to [doggy pictures only][1] <i class="fa fa-hand-spock-o"></i>
-<br/><br/><br/><br/>
-
-
-### <i class="fa fa-bullhorn"></i> Credits
-
-- **TIL Section**: This idea was very much inspired by [des4maisons][11] and
-[jbranchaud][12]'s TIL repositories on GitHub. My hope is that indexers pick
-this up and it becomes helpful to other people as well.
 
 
 
