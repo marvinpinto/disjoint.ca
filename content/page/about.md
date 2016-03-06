@@ -53,12 +53,30 @@ Architecture to deliver IRC Webhook Notifications][10].
 
 ### <i class="fa fa-pencil-square-o"></i> Errata
 
-This website was developed using the [Hugo Static Site Generator][3] and all
-the source code and content lives in the <a
+The source code and content for this website lives in the <a
 href="https://github.com/marvinpinto/disjoint.ca"><i class="fa fa-github">
 marvinpinto/disjoint.ca</i></a> repository on GitHub. If you spot any mistakes
 or catch me in an outright lie I'd love to [hear from you][4] <i class="fa
 fa-thumbs-o-up"></i>
+
+
+
+### <i class="fa fa-bullhorn"></i> Credits
+
+- **TIL Section**: This idea was very much inspired by [des4maisons][11] and
+[jbranchaud][12]'s TIL repositories on GitHub. My hope is that indexers pick
+this up and it becomes helpful to other people as well.
+
+- **Front page banner**: The original image for this lovely banner was borrowed
+from the gallery at [unsplash.com][14], which [des4maisons][13] then took over
+and made even more awesome!
+
+- **Logo**: The logo for the disjoint.ca website was borrowed and adapted from
+the wonderful folks at [Fairpixels][16] (via [logodust.com][15]). Look them up
+for your logo needs!
+
+- **Hugo Static Site Generator**: Can't forget to mention that this site itself
+was developed using [Hugo][3] - A Fast & Modern Static Website Engine.
 
 
 
@@ -73,14 +91,6 @@ to our family ever since.
 
 If you follow me on Twitter I promise to stop tweeting about techy stuff and
 stick to [doggy pictures only][1] <i class="fa fa-hand-spock-o"></i>
-<br/><br/><br/><br/>
-
-
-### <i class="fa fa-bullhorn"></i> Credits
-
-- **TIL Section**: This idea was very much inspired by [des4maisons][11] and
-[jbranchaud][12]'s TIL repositories on GitHub. My hope is that indexers pick
-this up and it becomes helpful to other people as well.
 
 
 
@@ -96,3 +106,7 @@ this up and it becomes helpful to other people as well.
 [10]: {{< relref "writing/2016-02-28-serverless-irc-notifications.md" >}}
 [11]: https://github.com/des4maisons/til
 [12]: https://github.com/jbranchaud/til
+[13]: https://twitter.com/des4maisons
+[14]: https://unsplash.com
+[15]: http://www.logodust.com
+[16]: http://fairpixels.co
