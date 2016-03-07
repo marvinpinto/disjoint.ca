@@ -1,0 +1,65 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <div class="text-center fourohfour">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.14284 215.69239">
+          <defs>
+          <filter y="-.15" height="1.3" x="-.15" width="1.3" id="a" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="5" result="result4"/>
+          <feDisplacementMap in="SourceGraphic" in2="result4" yChannelSelector="G" xChannelSelector="R" scale="10" result="result3"/>
+          <feDiffuseLighting lighting-color="#e9e6d7" surfaceScale="2" result="result1" in="result4">
+          <feDistantLight azimuth="235" elevation="40"/>
+          </feDiffuseLighting>
+          <feComposite operator="in" in="result3" in2="result1" result="result2"/>
+          <feComposite in2="result1" result="result5" operator="arithmetic" k1="1.7"/>
+          <feBlend in="result5" in2="result3"/>
+          </filter>
+          </defs>
+          <g transform="translate(107.524 62.477) scale(2.47283)" fill-rule="evenodd" filter="url(#a)">
+          <path d="M33.667 47.528l-6.363 6.35-14.81-14.808 6.364-6.35 14.81 14.808z" fill="#598234"/>
+          <path d="M39.093 12.483l14.82 14.81-17.666 17.655-14.82-14.786 17.666-17.68z" fill="#68829e"/>
+          <path d="M36.467 9.892L9.903 36.48 0 26.61 26.587 0l9.88 9.892z" fill="#aebd38"/>
+          </g>
+          <text y="542.972" x="413.355" style="line-height:125%;-inkscape-font-specification:'monospace, Normal';text-align:start" font-weight="400" font-size="139.388" font-family="monospace" letter-spacing="0" word-spacing="0" fill="#505160" fill-opacity=".867" transform="translate(-158.687 -363.14)">
+            <tspan y="542.972" x="413.355">404</tspan>
+          </text>
+          <g>
+          <text y="398.003" x="151.247" style="line-height:125%;-inkscape-font-specification:'monospace, Normal';text-align:start" font-weight="400" font-size="44.064" font-family="monospace" letter-spacing="0" word-spacing="0" fill="#505160" fill-opacity=".867" transform="translate(-154.238 -363.14)">
+            <tspan y="398.003" x="151.247">Something went wrong</tspan>
+          </text>
+          <circle r="30" cy="32" cx="32" fill="#ffdd67" transform="matrix(.762 0 0 .762 539.905 -1.524)"/>
+          <path d="M572.426 36.45a14.44 14.44 0 0 0-4.055-1.62 17.518 17.518 0 0 0-4.083-.467 17.74 17.74 0 0 0-4.085.47 14.53 14.53 0 0 0-4.055 1.616c.588-1.507 1.893-2.69 3.35-3.45 1.47-.763 3.138-1.13 4.79-1.13 1.65.002 3.317.37 4.787 1.135 1.454.757 2.76 1.94 3.352 3.444z" fill="#664e27"/>
+          <g transform="matrix(.762 0 0 .762 539.905 -1.524)">
+          <path d="M52.75 30a9 9 0 0 1-18 0c0-4.967 4.03-9 9-9s9 4.033 9 9z" fill="#fff"/>
+          <circle r="6" cy="30" cx="43.75" fill="#664e27"/>
+          <ellipse ry="3.25" rx="2.812" cy="34.469" cx="45.302" fill="#fff"/>
+          <ellipse ry="1.902" rx="1.645" cy="30" cx="41.529" fill="#fff"/>
+          </g>
+          <g transform="matrix(.762 0 0 .762 539.905 -1.524)">
+          <path d="M29.25 30a9 9 0 0 1-18 0c0-4.967 4.03-9 9-9s9 4.033 9 9z" fill="#fff"/>
+          <circle r="6" cy="30" cx="20.25" fill="#664e27"/>
+          <ellipse ry="3.25" rx="2.811" cy="34.469" cx="21.801" fill="#fff"/>
+          <ellipse ry="1.902" rx="1.644" cy="30" cx="18.028" fill="#fff"/>
+          </g>
+          <path d="M575.224 25.146c-3.822 5.225-6.016 10.032-6.016 13.984 0 3.358 2.693 6.08 6.018 6.08 3.322 0 6.017-2.722 6.017-6.08 0-3.952-2.26-8.84-6.02-13.984z" fill="#65b1ef"/>
+          <g fill="#917524">
+          <path d="M580.444 13.45a10.842 10.842 0 0 0-8.908-2.387c-.442.087-.83-1.54-.295-1.642a12.51 12.51 0 0 1 10.282 2.755c.412.358-.74 1.57-1.078 1.276zM557.04 10.95a10.84 10.84 0 0 0-8.91 2.387c-.337.296-1.49-.92-1.075-1.276a12.51 12.51 0 0 1 10.28-2.754c.536.103.146 1.73-.296 1.643z"/>
+          </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <hr>
+    </div>
+  </div>
+
+</div>
+
+{{ partial "footer.html" . }}
