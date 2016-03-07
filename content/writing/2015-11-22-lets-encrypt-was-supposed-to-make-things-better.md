@@ -32,8 +32,7 @@ think more of that.
 
 Then this happened:
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">We are trusted! <a href="https://t.co/8hSWk3Y6Hi">https://t.co/8hSWk3Y6Hi</a></p>&mdash; Let&#39;s Encrypt (@letsencrypt) <a href="https://twitter.com/letsencrypt/status/656307019897421824">October 20, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< tweet 656307019897421824 >}}
 
 Being [trusted][1] meant that their issued certificates would be trusted by
 _all_ major browsers, exciting!
@@ -101,8 +100,7 @@ Okay, onwards we go. I edited the content type of that object directly in the
 S3 bucket (back to `text/plain`), invalidated the path in CloudFront, and tried
 again. Still no luck :(
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">letsencrypt was supposed to make things easier 😖</p>&mdash; Marvin Pinto (@marvinpinto) <a href="https://twitter.com/marvinpinto/status/668254958467219456">November 22, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< tweet 668254958467219456 >}}
 
 At this point it was getting late and I was getting impatient. So I cheated.
 
@@ -133,8 +131,7 @@ differently and.. well.. that's kind of suspicious. Poking around in a few
 places to see _if_ anything had changed since yesterday, I came across
 this.
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">We&#39;re starting to update Boulder with a series of DNS resolution improvements, as well as some other bugfixes.... <a href="https://t.co/jWLjqvZ7V4">https://t.co/jWLjqvZ7V4</a></p>&mdash; Let&#39;s Encrypt Ops (@letsencrypt_ops) <a href="https://twitter.com/letsencrypt_ops/status/668482850316881921">November 22, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{{< tweet 668482850316881921 >}}
 
 So basically I'm going to chalk all this up to _they fixed it, yay!_ and move
 on :D
