@@ -5,8 +5,9 @@ HUGO_DATE = $(shell date +'%Y-%m-%d')
 help:
 	@echo Start with "make hugo" and go from there
 
-.PHONY: go
-go:
+.PHONY: install
+install: clean
+	pip install --user linkchecker
 	go get -v github.com/spf13/hugo
 
 .PHONY: post
@@ -23,7 +24,7 @@ spellcheck:
 travis-linkchecker:
 	linkchecker http://127.0.0.1:8080
 
-server: go clean
+server: install clean
 	@echo ===========================================================
 	@echo Head over to http://$(CONTAINER_IP):8080 for a live preview
 	@echo ===========================================================
@@ -33,7 +34,7 @@ server: go clean
 		--baseUrl="http://$(CONTAINER_IP)" \
 		--watch
 
-travis-server: go
+travis-server: install
 	hugo server \
 		--bind="127.0.0.1" \
 		--port=8080 \
@@ -41,7 +42,7 @@ travis-server: go
 		--watch=false
 
 .PHONY: generate
-generate: go clean
+generate: install clean
 	hugo
 
 images:
@@ -50,4 +51,3 @@ images:
 .PHONY: clean
 clean:
 	rm -rf public
-	rm -f Gemfile.lock

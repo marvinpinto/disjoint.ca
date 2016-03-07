@@ -17,10 +17,7 @@ addons:
       - 'aspell-en'
 
 install:
-  - 'bundle install'
-  - 'pip install --user linkchecker'
-  - 'make clean'
-  - 'make go'
+  - 'make install'
   - 'make travis-server &'
   - 'sleep 10'
 
@@ -29,9 +26,12 @@ script:
   - 'make travis-linkchecker'
   - 'make generate'
 
+before_deploy:
+  - 'gem install s3_website'
+
 deploy:
   provider: 'script'
-  script: 'bundle exec s3_website push --verbose'
+  script: 's3_website push'
   skip_cleanup: true
   on:
     branch: 'master'
