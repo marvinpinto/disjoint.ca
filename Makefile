@@ -6,8 +6,8 @@ help:
 	@echo Start with "make hugo" and go from there
 
 .PHONY: install
-install: clean
-	pip install --user linkchecker
+install:
+	bundle install
 	go get -v github.com/spf13/hugo
 
 .PHONY: post
@@ -22,9 +22,19 @@ til:
 spellcheck:
 	scripts/spellcheck.sh
 
-.PHONY: travis-linkchecker
-travis-linkchecker:
-	linkchecker http://127.0.0.1:8080
+.PHONY: html-proofer
+html-proofer:
+	bundle exec htmlproofer \
+		--allow-hash-href \
+		--report-script-embeds \
+		--check-html \
+		--only-4xx \
+		--url-swap "https...disjoint.ca:" \
+		./public
+
+.PHONY: test
+test: spellcheck html-proofer
+	@echo "Everything looks good!"
 
 .PHONY: server
 server: install clean
@@ -36,14 +46,6 @@ server: install clean
 		--port=8080 \
 		--baseUrl="http://$(CONTAINER_IP)" \
 		--watch
-
-.PHONY: travis-server
-travis-server: install
-	hugo server \
-		--bind="127.0.0.1" \
-		--port=8080 \
-		--baseUrl="http://127.0.0.1" \
-		--watch=false
 
 .PHONY: generate
 generate: install clean
