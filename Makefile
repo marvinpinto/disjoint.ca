@@ -13,6 +13,7 @@ hugo_0.15_linux_amd64/hugo:
 .PHONY: install
 install: hugo_0.15_linux_amd64/hugo
 	bundle install
+	pip install --user html5validator
 
 .PHONY: post
 post:
@@ -26,6 +27,10 @@ til:
 spellcheck:
 	scripts/spellcheck.sh
 
+.PHONY: html5validator
+html5validator:
+	html5validator --root public/
+
 .PHONY: html-proofer
 html-proofer:
 	bundle exec htmlproofer \
@@ -37,7 +42,7 @@ html-proofer:
 		./public
 
 .PHONY: test
-test: spellcheck html-proofer
+test: spellcheck html-proofer html5validator
 	@echo "Everything looks good!"
 
 .PHONY: server
