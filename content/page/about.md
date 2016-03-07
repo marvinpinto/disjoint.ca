@@ -11,6 +11,7 @@ menu: "main"
 ---
 
 <i class="fa fa-hand-peace-o"> Hello, I'm Marvin!</i>
+
 {{< figure class="img-responsive image-floatright" src="https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=135" alt="Marvin Pinto" >}}
 
 I'm a developer who lives and works in the beautiful [City of Toronto][2]! I
