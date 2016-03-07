@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="{{ if .Site.Params.languageCode }}{{ .Site.Params.languageCode }}{{ else }}en-us{{end}}" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html class="no-js" lang="{{ .Site.Params.languageCode }}" xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ .Site.Params.languageCode }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,6 +47,6 @@
     {{ end }}
 
 </head>
-<body lang="{{ if .Site.Params.languageCode }}{{ .Site.Params.languageCode }}{{ else }}en{{ end }}">
+<body lang="{{ .Site.Params.languageCode }}">
     <!-- navbar -->
     {{ partial "navbar" . }}
