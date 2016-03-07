@@ -20,7 +20,7 @@
    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/style.css">
 
     <!-- javascript -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Google Analytics -->
@@ -31,6 +31,14 @@
     </script>
     <script async src='//www.google-analytics.com/analytics.js'></script>
     <!-- End Google Analytics -->
+
+    <!-- client-side javascript hackernews button -->
+    <script src="/js/hnbutton.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.hn-linkbutton').hnButton();
+        });
+    </script>
 
     <!-- rss -->
     {{ if .RSSlink }}
