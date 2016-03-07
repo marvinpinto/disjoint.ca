@@ -236,12 +236,12 @@ Happy Encrypting All The Things o/
 [1]: https://letsencrypt.org/2015/10/19/lets-encrypt-is-trusted.html
 [2]: https://www.disjoint.ca
 [3]: https://docs.google.com/forms/d/15Ucm4A20y2rf9gySCTXD6yoLG6Tba7AwYgglV7CKHmM/viewform
-[4]: http://gohugo.io
+[4]: https://gohugo.io
 [5]: https://travis-ci.org/marvinpinto/disjoint.ca
 [6]: https://github.com/laurilehmijoki/s3_website/commit/42114bab83ebeb2a9007af7c4c3960c61eb5e40d
 [7]: https://letsencrypt.org
 [8]: https://aws.amazon.com/cloudfront
-[9]: http://aws.amazon.com/about-aws/whats-new/2014/03/05/amazon-cloudront-announces-sni-custom-ssl
+[9]: https://aws.amazon.com/about-aws/whats-new/2014/03/05/amazon-cloudront-announces-sni-custom-ssl
 [10]: https://en.wikipedia.org/wiki/Domain-validated_certificate
-[11]: http://www.startssl.com
+[11]: https://www.startssl.com
 [12]: https://letsencrypt.org/2015/11/12/public-beta-timing.html

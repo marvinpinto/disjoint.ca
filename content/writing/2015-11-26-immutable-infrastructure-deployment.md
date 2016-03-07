@@ -283,7 +283,7 @@ Being able to _easily_ test upgrades & downgrades becomes very important
 because it removes that _one more barrier_, which in the end leads to event
 free deploys!
 
-[1]: http://www.freshbooks.com
+[1]: https://www.freshbooks.com
 [2]: https://terraform.io
 [3]: https://atlas.hashicorp.com
 [4]: #workflow
