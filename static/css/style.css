@@ -177,3 +177,9 @@ a:focus {
 .landing-page > .row {
   margin-top: 10px;
 }
+
+.fourohfour > svg {
+  max-height: 250px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
