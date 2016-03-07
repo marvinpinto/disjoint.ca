@@ -20,7 +20,7 @@ install:
   - 'bundle install'
   - 'pip install --user linkchecker'
   - 'make clean'
-  - 'make themes'
+  - 'make go'
   - 'make travis-server &'
   - 'sleep 10'
 

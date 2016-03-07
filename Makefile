@@ -9,13 +9,8 @@ help:
 go:
 	go get -v github.com/spf13/hugo
 
-themes: go
-	mkdir -p themes
-	cd themes; git clone https://github.com/mpas/hugo-multi-bootswatch.git || true
-	cd themes/hugo-multi-bootswatch; git reset --hard 247e43f9266784efecb42ede900e62cdcec50c3a
-
 .PHONY: post
-post: themes
+post:
 	hugo new writing/$(HUGO_DATE)-new-post.md
 
 .PHONY: til
@@ -28,7 +23,7 @@ spellcheck:
 travis-linkchecker:
 	linkchecker http://127.0.0.1:8080
 
-server: clean themes
+server: go clean
 	@echo ===========================================================
 	@echo Head over to http://$(CONTAINER_IP):8080 for a live preview
 	@echo ===========================================================
@@ -38,7 +33,7 @@ server: clean themes
 		--baseUrl="http://$(CONTAINER_IP)" \
 		--watch
 
-travis-server:
+travis-server: go
 	hugo server \
 		--bind="127.0.0.1" \
 		--port=8080 \
@@ -46,7 +41,7 @@ travis-server:
 		--watch=false
 
 .PHONY: generate
-generate: clean themes
+generate: go clean
 	hugo
 
 images:
@@ -56,8 +51,3 @@ images:
 clean:
 	rm -rf public
 	rm -f Gemfile.lock
-
-.PHONY: clean-all
-clean-all: clean
-	rm -rf themes
-	rm -rf /tmp/go

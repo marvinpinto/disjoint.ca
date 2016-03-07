@@ -3,7 +3,6 @@ baseurl: "https://disjoint.ca"
 title: "disjoint.ca"
 paginate: 10
 MetaDataFormat: "yaml"
-theme: "hugo-multi-bootswatch"
 languageCode: "en-us"
 
 author:
@@ -30,14 +29,6 @@ params:
   # social links, used in footer, these must be full URLs.
   github: "https://github.com/marvinpinto"
   twitter: "https://twitter.com/marvinpinto"
-  # linkedin: ""
-
-  # show default summaries on the frontpage or not
-  use_summaries: false
-
-  theme:
-    inverse: false
-    name: "lumen"
 
   # naming of the elements in your blog/site
   strings:
