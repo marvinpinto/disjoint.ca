@@ -18,12 +18,15 @@ post:
 til:
 	hugo new til/$(HUGO_DATE)-new-til.md
 
+.PHONY: spellcheck
 spellcheck:
 	scripts/spellcheck.sh
 
+.PHONY: travis-linkchecker
 travis-linkchecker:
 	linkchecker http://127.0.0.1:8080
 
+.PHONY: server
 server: install clean
 	@echo ===========================================================
 	@echo Head over to http://$(CONTAINER_IP):8080 for a live preview
@@ -34,6 +37,7 @@ server: install clean
 		--baseUrl="http://$(CONTAINER_IP)" \
 		--watch
 
+.PHONY: travis-server
 travis-server: install
 	hugo server \
 		--bind="127.0.0.1" \
@@ -45,6 +49,7 @@ travis-server: install
 generate: install clean
 	hugo
 
+.PHONY: images
 images:
 	aws s3 sync --acl public-read --delete media/ s3://media.disjoint.ca
 
