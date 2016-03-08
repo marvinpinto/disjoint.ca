@@ -13,11 +13,18 @@
     <title>{{ if eq .URL "/" }}Marvin Pinto - {{ else if eq .URL "/writing/" }}Writing - {{ else if in .URL "/tags/" }}Tags - {{ else if eq .URL "/til/" }}Today I Learned - {{ else }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/github.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 
    <!-- include custom css -->
    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/style.css" />
+
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/languages/go.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/languages/yaml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
     <!-- javascript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
