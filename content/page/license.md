@@ -4,7 +4,7 @@ title: "Content License"
 description: "License for the contents of this website"
 ---
 All non-code content is licensed under [Creative Commons
-BY-NC-SA](http://creativecommons.org/licenses/by-nc-sa/3.0/).
+BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 
 ### Code license
 

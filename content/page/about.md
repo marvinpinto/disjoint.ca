@@ -11,7 +11,8 @@ menu: "main"
 ---
 
 <i class="fa fa-hand-peace-o"> Hello, I'm Marvin!</i>
-{{< figure class="img-responsive image-floatright" src="https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=135" >}}
+
+{{< figure class="img-responsive image-floatright" src="https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=135" alt="Marvin Pinto" >}}
 
 I'm a developer who lives and works in the beautiful [City of Toronto][2]! I
 previously worked at a SaaS accounting company called [FreshBooks][7] where I
@@ -82,7 +83,7 @@ was developed using [Hugo][3] - A Fast & Modern Static Website Engine.
 
 ### <i class="fa fa-paw"></i> Lady
 
-{{< figure class="img-responsive image-floatleft" src="https://s3.amazonaws.com/media.disjoint.ca/derpy-lady.jpg" >}}
+{{< figure class="img-responsive image-floatleft" src="https://s3.amazonaws.com/media.disjoint.ca/derpy-lady.jpg" alt="Lady the Dog" >}}
 
 And last but not least this here is my derpy dog Lady! She is very awkward for
 her age and completely adorable. We rescued her as a puppy from a shelter in
@@ -96,7 +97,7 @@ stick to [doggy pictures only][1] <i class="fa fa-hand-spock-o"></i>
 
 [1]: https://twitter.com/search?q=Lady%20OR%20dog%20from%3Amarvinpinto
 [2]: https://www.google.com/search?tbm=isch&q=toronto+streets
-[3]: http://gohugo.io
+[3]: https://gohugo.io
 [4]: https://github.com/marvinpinto/disjoint.ca/issues
 [5]: https://webchat.freenode.net
 [6]: https://www.facebook.com/BlueCollaredCanines

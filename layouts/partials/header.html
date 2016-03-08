@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="{{ if .Site.Params.languageCode }}{{ .Site.Params.languageCode }}{{ else }}en-us{{end}}" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html class="no-js" lang="{{ .Site.Params.languageCode }}" xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ .Site.Params.languageCode }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +12,16 @@
 
     <title>{{ if eq .URL "/" }}Marvin Pinto &middot; {{ else if eq .URL "/writing/" }}Writing &middot; {{ else if in .URL "/tags/" }}Tags &middot; {{ else if eq .URL "/til/" }}Today I Learned &middot; {{ else }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}</title>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
    <!-- include custom css -->
    <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/style.css">
 
     <!-- javascript -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Google Analytics -->
     <script>
@@ -29,7 +29,7 @@
     ga('create', '{{ getenv "GOOGLE_ANALYTICS_ID" }}', 'auto');
     ga('send', 'pageview');
     </script>
-    <script async src='//www.google-analytics.com/analytics.js'></script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
     <!-- End Google Analytics -->
 
     <!-- client-side javascript hackernews button -->
@@ -43,10 +43,9 @@
     <!-- rss -->
     {{ if .RSSlink }}
       <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-      <link href="{{ .RSSlink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end }}
 
 </head>
-<body lang="{{ if .Site.Params.languageCode }}{{ .Site.Params.languageCode }}{{ else }}en{{ end }}">
+<body lang="{{ .Site.Params.languageCode }}">
     <!-- navbar -->
     {{ partial "navbar" . }}

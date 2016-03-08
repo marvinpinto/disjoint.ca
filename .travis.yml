@@ -1,7 +1,17 @@
-language: go
+language: 'ruby'
 sudo: false
-go:
-  - "1.5"
+rvm:
+  - '2.3.0'
+
+jdk:
+  - 'oraclejdk8'
+
+cache:
+  bundler: true
+  pip: true
+  directories:
+    - 'hugo_0.15_linux_amd64'
+    - '$HOME/.local'
 
 env:
   global:
@@ -9,6 +19,7 @@ env:
     - secure: "YUWkaDojqjBwpQ/hpappchjqRxzOsJ/mxqIX5E3E+Xt7KiQFQApy6RKZn/Zf+me3ehtyfSJxipHrzkgOjhu8tyWD7Mvu4tBPcQ3xLPPWUj/qcI2xiixzk+mkZuQ8o6iwj/81tnfJtrNc+1/tUVEdlKx7xR2vr3L8j4hG3lYLd9HJ2U01Zs/EmZHFzAsM5Q1jSU1F8HSEGrq1vriN0rV9JO5ompm4lNnC43AXdehvpvkuU1vt7GCFTmgiGpBjZxw3qUcr6qZooKYNwv1vXd+Emok9GwTwrKSVsQjwlLyApDHFxvnRubHt3T1+Mp5PmDIWPZh277CH06gQGRHZ7X0noP6tgT79GGKLkgi1UARmfzSCDww5G39tkOA8us+zcjkueMY+xd+CPtrSBNbexzjN/XW7h1sAa/MNvxZvBfU73IfiX5DhirYjIKU1318UHq5SWh3qo6bevhO1NZpKNvFNmFCYECIZn8TPZOUU+JihnuRRlk5id8FR2wXmOwVKh8QcXA+02HTODaDOeYMpSGB8mRJcDgQa5BRjBzBrmD8AXBdbjO5p4mAzQqIfs/xUsIre2JEQrHVYjz0kTY40ssA/7Ke8GgZ4rIobCh+pheq6DFFbxXrXiPj0LA9p80WNV7aNY3jGCVHnf6Hc/x39dTdIgWBodOxGDPYRZNm/DT42UH8="
     - secure: "JXTbnFRxUSXxr6woV6xSJbTVF/c99Bjf1THYTLRY92q04wCgkeyX5g6QnhSGc7BgrZyM29EEeQ5eqPaP6+ZFvU+XBj7pJQanWTtc+AKEVPboxYCqRmbwOZjwpwIUh/6lMGgSkOiKUV7lA+GqZQaSNlPqRDtLyGZwmg8im3Z6Pw2tI1CeOkbhRRA+DsV0JDOsOTZhXztxQVByE0aMcUwSUzgcQK4QX2pplDsB7Lhm3Vz/G0QHgyQyICEeIhcgiVGXZwkXP0ViliaFRNK0J3v7mfopbIQAqYOPYR+2xRPI5Yy7wxGVqH8wbInuwRnxfZWgE/VEn7v9H89RcqkuMfVDp7tHIZk01OH3WqJKnhUzzs1aYXmjgW7i+hfXPBGCdJ5bxfyaiAeJT/rW1WHO5xRZmtCq7YOc79it6SkLxFbvP7m9+3eGT3/56CHLbfHGRkgSyt2MXtRSBBHtn6FmDT0g7RNG6qwI0ACSufw9ECJp9JtevBt0UQVscRnzm3D60GKjgx3BksGZLb/V0vQFae2EVDfvi9TVqLSe9b7eoxKVADXbaWs5Zw8G+PSZWzhEouES+7Y/wB7i+EiH4IzN49iRGSpfGCANC4OmHrHwkE0KkDqZ8gV6dDFiFS7ezmgjPUy+vRjexZR1oqodPm2G1fNz1MHlOec6HiGLVzcuSmgnApQ="
     - secure: "Ru68dA7Q+xnH0/b0RtD/g7yg8vZ8av8VGeZxJjrPPZMKaUHl7xLab55BWe/AbelTZ/Ib8PLn/ch5dzMVoIakMhbdgVF4zYdXo5G+LXzG3gLab/qNLnXCYcnaEzNpDw7vNyIYt5vw3rf2M0z0Mu+Dst25Obhy6BXq3UqjI2vW2eklsP4c2BLEoOpXeHjD9FzljFiwx151r+Tt8qPOF76TdI4Ez4f5TeaU9NtqT+rUvZcIZT94WybSbRR8be/+XF+JRYQYKm35CxaUMR/kQtxdZVg3ugoYRFyUyuCq962doBboCSx9EaYTKKvIRxBMAAaQ9nEmBJABxQmQyCOCgLUFo4Ki8h6h72YEpJGDM0YVhFZ/29+4l+pZmZ62xI+27/hNAIguVCCrIuiRc6DDsTNHb5WAMmL4YBBZfKN8tnOmsyed3yHuivpeXWoOofaMtoW2sLENTsQj6aSOd56puH92u33bdDejmdbKHTHzLFriy4wQxYrPvLcJ6ocKVachh7AKqmebPGk7YZ0MLf0dRB2DGXz3V6OEzx1YYZwBB3FY9xJ70KRx9alB3ZdtBm24WM/iMr/FAegpuraYY0qvk8tobvnHZaK9DvCPAS/iuYwvBKyLPpb4WoyHMq9aC4ai/n/1DKGdBZviRirZZnPdsRfx8lDA5nS/32DxSTM9pH8RzbU="
+    - 'NOKOGIRI_USE_SYSTEM_LIBRARIES=true'
 
 addons:
   apt:
@@ -17,21 +28,17 @@ addons:
       - 'aspell-en'
 
 install:
-  - 'bundle install'
-  - 'pip install --user linkchecker'
-  - 'make clean'
-  - 'make go'
-  - 'make travis-server &'
-  - 'sleep 10'
+  - 'make hugo'
+  - 'make install'
+  - 'npm install -g bootlint'
 
 script:
-  - 'make spellcheck'
-  - 'make travis-linkchecker'
   - 'make generate'
+  - 'make test'
 
 deploy:
   provider: 'script'
-  script: 'bundle exec s3_website push --verbose'
+  script: 'bundle exec s3_website push'
   skip_cleanup: true
   on:
     branch: 'master'
