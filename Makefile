@@ -36,6 +36,10 @@ til:
 spellcheck:
 	scripts/spellcheck.sh
 
+.PHONY: bootlint
+bootlint:
+	find public/ -type f -name "*.html" -exec bootlint {} +
+
 .PHONY: html5validator
 html5validator:
 	html5validator --root public/
@@ -51,7 +55,7 @@ html-proofer:
 		./public
 
 .PHONY: test
-test: spellcheck html-proofer html5validator
+test: spellcheck html-proofer html5validator bootlint
 	@echo "Everything looks good!"
 
 .PHONY: server

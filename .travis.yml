@@ -30,6 +30,7 @@ addons:
 install:
   - 'make hugo'
   - 'make install'
+  - 'npm install -g bootlint'
 
 script:
   - 'make generate'
