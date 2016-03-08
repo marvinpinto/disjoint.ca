@@ -16,7 +16,7 @@
       <h3><a href="{{.Permalink}}">{{ .Title }}</a></h3>
       <small><span class="label label-primary">
           {{ .Date.Format .Site.Params.strings.date_format }}
-        </span>&nbsp;using tags
+        </span>&#160;using tags
         {{ range $i, $e :=.Params.tags }}
         {{if $i}} , {{end}}
         <a href="/tags/{{ . | urlize }}">{{ . }}</a>
@@ -43,7 +43,7 @@
 
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
-      <hr>
+      <hr />
     </div>
   </div>
 

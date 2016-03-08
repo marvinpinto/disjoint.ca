@@ -12,7 +12,7 @@
     <div class="col-md-offset-1 col-md-10">
       <ul class="fa-ul">
         {{ range .Data.Pages }}
-        <li><i class="fa-li fa fa-angle-right"></i><a href="{{.Permalink}}">{{ .Title }}</a>&nbsp;&nbsp;({{ .Date.Format .Site.Params.strings.date_format }})</li>
+        <li><i class="fa-li fa fa-angle-right"></i><a href="{{.Permalink}}">{{ .Title }}</a>&#160;&#160;({{ .Date.Format .Site.Params.strings.date_format }})</li>
         {{ end }}
       </ul>
     </div>
@@ -20,7 +20,7 @@
 
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
-      <hr>
+      <hr />
     </div>
   </div>
 
