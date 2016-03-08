@@ -32,6 +32,7 @@ derpy
 des
 dev
 DNS
+DOCTYPE
 dr
 Dropbox
 ebs
@@ -64,9 +65,11 @@ IRC
 irchooky
 ISRG
 jbranchaud
+jdk
 JIRA
 js
 letsencrypt
+linux
 logodust
 maisons
 marvin
@@ -79,12 +82,14 @@ NONINFRINGEMENT
 npm
 onwards
 opensentinel
+oraclejdk
 plugin
 pre
 programmatically
 public's
 Rackspace
 reproducibility
+rvm
 SaaS
 Schweet
 screenshot
@@ -98,6 +103,7 @@ SSL
 StartSSL
 sublicense
 subnet
+sudo
 svg
 SVG
 svgo
@@ -109,8 +115,11 @@ tl
 tldr
 toronto
 Toronto
+travisci
 unsplash
 utf
+validator
+vnu
 vpc
 VPC
 VPN
@@ -123,7 +132,10 @@ whitelist
 whitelisted
 workflow
 Workflow
+xhtml
 xlarge
 xml
 xvdf
+yaml
 yay
+yml
