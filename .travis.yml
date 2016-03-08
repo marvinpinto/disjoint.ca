@@ -28,7 +28,7 @@ addons:
       - 'aspell-en'
 
 install:
-  - 'export PATH=$PATH:$PWD/hugo_0.15_linux_amd64/'
+  - 'make hugo'
   - 'make install'
 
 script:

@@ -1,5 +1,7 @@
 CONTAINER_IP = $(shell docker inspect --format '{{ .NetworkSettings.IPAddress }}' disjoint.ca)
 HUGO_DATE = $(shell date +'%Y-%m-%d')
+HUGO = tmp/workspace/mygo/bin/hugo
+CWD = $(shell pwd)
 
 .PHONY: help
 help:
@@ -10,6 +12,13 @@ hugo_0.15_linux_amd64/hugo:
 	tar -xvf /tmp/hugo.tar.gz
 	mv hugo_0.15_linux_amd64/hugo_0.15_linux_amd64 hugo_0.15_linux_amd64/hugo
 
+.PHONY: hugo
+hugo:
+	mkdir -p tmp/workspace/mygo/src/github.com/spf13
+	cd tmp/workspace/mygo/src/github.com/spf13 && git clone https://github.com/marvinpinto/hugo.git || true
+	cd tmp/workspace/mygo/src/github.com/spf13/hugo && git checkout -f origin/fix-meta-refresh
+	cd tmp/workspace/mygo/src/github.com/spf13/hugo && GOPATH=$(CWD)/tmp/workspace/mygo go get -v ./...
+
 .PHONY: install
 install: hugo_0.15_linux_amd64/hugo
 	bundle install
@@ -17,11 +26,11 @@ install: hugo_0.15_linux_amd64/hugo
 
 .PHONY: post
 post:
-	hugo new writing/$(HUGO_DATE)-new-post.md
+	$(HUGO) new writing/$(HUGO_DATE)-new-post.md
 
 .PHONY: til
 til:
-	hugo new til/$(HUGO_DATE)-new-til.md
+	$(HUGO) new til/$(HUGO_DATE)-new-til.md
 
 .PHONY: spellcheck
 spellcheck:
@@ -50,7 +59,7 @@ server: install clean
 	@echo ===========================================================
 	@echo Head over to http://$(CONTAINER_IP):8080 for a live preview
 	@echo ===========================================================
-	hugo server \
+	$(HUGO) server \
 		--bind="0.0.0.0" \
 		--port=8080 \
 		--baseUrl="http://$(CONTAINER_IP)" \
@@ -58,7 +67,7 @@ server: install clean
 
 .PHONY: generate
 generate: install clean
-	hugo
+	$(HUGO)
 
 .PHONY: images
 images:
@@ -67,3 +76,8 @@ images:
 .PHONY: clean
 clean:
 	rm -rf public
+
+.PHONY: clean-all
+clean-all:
+	rm -rf hugo_0.15_linux_amd64
+	rm -rf tmp
