@@ -38,7 +38,9 @@ spellcheck:
 
 .PHONY: bootlint
 bootlint:
-	find public/ -type f -name "*.html" -exec bootlint {} +
+	find public/ -type f -name "*.html" -exec \
+		bootlint --disable "E045,W001,W002,W003,W005" \
+		{} +
 
 .PHONY: html5validator
 html5validator:
