@@ -65,6 +65,7 @@ IRC
 irchooky
 ISRG
 jbranchaud
+jdk
 JIRA
 js
 letsencrypt
@@ -81,6 +82,7 @@ NONINFRINGEMENT
 npm
 onwards
 opensentinel
+oraclejdk
 plugin
 pre
 programmatically
@@ -116,6 +118,8 @@ Toronto
 travisci
 unsplash
 utf
+validator
+vnu
 vpc
 VPC
 VPN
