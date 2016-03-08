@@ -67,6 +67,7 @@ jbranchaud
 JIRA
 js
 letsencrypt
+linux
 logodust
 maisons
 marvin
@@ -85,6 +86,7 @@ programmatically
 public's
 Rackspace
 reproducibility
+rvm
 SaaS
 Schweet
 screenshot
@@ -98,6 +100,7 @@ SSL
 StartSSL
 sublicense
 subnet
+sudo
 svg
 SVG
 svgo
@@ -109,6 +112,7 @@ tl
 tldr
 toronto
 Toronto
+travisci
 unsplash
 utf
 vpc
@@ -126,4 +130,6 @@ Workflow
 xlarge
 xml
 xvdf
+yaml
 yay
+yml
