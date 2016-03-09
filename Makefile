@@ -23,6 +23,7 @@ hugo:
 install: hugo_0.15_linux_amd64/hugo
 	bundle install
 	pip install --user html5validator
+	pip install --user Pygments
 
 .PHONY: post
 post:

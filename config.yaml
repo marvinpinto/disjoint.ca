@@ -5,6 +5,9 @@ paginate: 10
 MetaDataFormat: "yaml"
 languageCode: "en-us"
 theme: 'custom'
+pygmentsstyle: 'lovelace'
+pygmentsuseclasses: false
+pygmentscodefences: true
 
 author:
   name: "Marvin Pinto"

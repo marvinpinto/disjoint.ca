@@ -13,7 +13,7 @@ for deployment.
 
 Your `.travis.yml` file will start out looking something like this.
 
-``` yml
+``` yaml
 language: 'ruby'
 sudo: false
 rvm:
@@ -69,7 +69,7 @@ install` will need to be [invoked explicitly][3].
 
 Here's an example of what that looks like:
 
-```yml
+``` yaml
 deploy:
   provider: 'script'
   script: 'PATH="${TRAVIS_BUILD_DIR}/bin:$PATH" rvm "$TRAVIS_RUBY_VERSION" do bundle exec s3_website push'

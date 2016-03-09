@@ -16,7 +16,7 @@ a wrapper around [vnu.jar][4].
 
 This is roughly what your `.travis.yml` file will look like:
 
-``` yml
+``` yaml
 language: 'ruby'
 sudo: false
 rvm:
