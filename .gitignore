@@ -3,3 +3,4 @@ public/
 /hugo_0.15_linux_amd64
 env_vars
 /tmp
+/static/*

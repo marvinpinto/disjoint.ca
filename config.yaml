@@ -4,6 +4,7 @@ title: "disjoint.ca"
 paginate: 10
 MetaDataFormat: "yaml"
 languageCode: "en-us"
+theme: 'custom'
 
 author:
   name: "Marvin Pinto"
