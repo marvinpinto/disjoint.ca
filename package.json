@@ -1,0 +1,27 @@
+{
+  "name": "disjoint.ca",
+  "version": "0.0.1",
+  "description": "disjoint.ca",
+  "main": "index.js",
+  "dependencies": {
+    "bootlint": "^0.14.2",
+    "bootstrap-sass": "^3.3.6",
+    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.1",
+    "uglify-js": "^2.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marvinpinto/disjoint.ca.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marvinpinto/disjoint.ca/issues"
+  },
+  "homepage": "https://github.com/marvinpinto/disjoint.ca#readme"
+}

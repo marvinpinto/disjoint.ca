@@ -41,3 +41,11 @@ $.fn.hnButton = function() {
   }
   return linkbutton;
 };
+
+// client-side javascript hackernews button
+$(document).ready(function(){
+  $('.hn-linkbutton').hnButton();
+});
+
+// Google Analytics
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
