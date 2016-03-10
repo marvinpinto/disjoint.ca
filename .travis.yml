@@ -12,6 +12,7 @@ cache:
   directories:
     - 'hugo_0.15_linux_amd64'
     - '$HOME/.local'
+    - 'tmp/workspace'
 
 env:
   global:
