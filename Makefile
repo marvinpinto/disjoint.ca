@@ -103,12 +103,34 @@ build-js:
 
 .PHONY: build-fonts
 build-fonts:
+	mkdir -p build/css
+	`npm bin`/webfont-dl \
+		"https://fonts.googleapis.com/css?family=Ubuntu:bold" \
+		--out=build/css/_ubuntu.scss \
+		--font-out=static/fonts/ \
+		--css-rel=../fonts \
+		--woff1=link \
+		--woff2=link
+	`npm bin`/webfont-dl \
+		"https://fonts.googleapis.com/css?family=Rancho" \
+		--out=build/css/_rancho.scss \
+		--font-out=static/fonts/ \
+		--css-rel=../fonts \
+		--woff1=link \
+		--woff2=link
+	`npm bin`/webfont-dl \
+		"https://fonts.googleapis.com/css?family=Gudea" \
+		--out=build/css/_gudea.scss \
+		--font-out=static/fonts/ \
+		--css-rel=../fonts \
+		--woff1=link \
+		--woff2=link
 	mkdir -p static/fonts
 	cp node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2 static/fonts/
 	cp node_modules/font-awesome/fonts/fontawesome-webfont.woff2 static/fonts/
 
 .PHONY: assets
-assets: build-js build-css build-fonts
+assets: build-js build-fonts build-css
 	@echo "Assets rebuilt!"
 
 .PHONY: generate
