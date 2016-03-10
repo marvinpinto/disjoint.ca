@@ -21,6 +21,7 @@ hugo:
 
 .PHONY: install
 install: hugo_0.15_linux_amd64/hugo
+	npm install
 	bundle install
 	pip install --user html5validator
 	pip install --user Pygments
@@ -40,7 +41,7 @@ spellcheck:
 .PHONY: bootlint
 bootlint:
 	find public/ -type f -name "*.html" -exec \
-		bootlint --disable "E045,W001,W002,W003,W005" \
+		`npm bin`/bootlint --disable "E045,W001,W002,W003,W005" \
 		{} +
 
 .PHONY: html5validator
@@ -62,7 +63,7 @@ test: spellcheck html-proofer html5validator bootlint
 	@echo "Everything looks good!"
 
 .PHONY: server
-server: install clean
+server: install clean assets
 	@echo ===========================================================
 	@echo Head over to http://$(CONTAINER_IP):8080 for a live preview
 	@echo ===========================================================
@@ -72,8 +73,46 @@ server: install clean
 		--baseUrl="http://$(CONTAINER_IP)" \
 		--watch
 
+.PHONY: build-css
+build-css:
+	mkdir -p static/css
+	bundle exec sass \
+		--style compressed \
+		--sourcemap=inline \
+		assets/css/main.scss \
+		static/css/disjoint-ca.min.css
+
+.PHONY: build-js
+build-js:
+	mkdir -p build/js
+	wget -O build/js/analytics.js https://www.google-analytics.com/analytics.js
+	mkdir -p static/js
+	`npm bin`/uglifyjs \
+		node_modules/jquery/dist/jquery.js \
+		node_modules/bootstrap-sass/assets/javascripts/bootstrap.js \
+		build/js/analytics.js \
+		assets/js/main.js \
+		--compress \
+		--screw-ie8 \
+		--output static/js/disjoint-ca.min.js \
+		--source-map static/js/disjoint-ca.min.js.map \
+		--source-map-root "/js" \
+		--source-map-url "/js/disjoint-ca.min.js.map" \
+		--source-map-include-sources \
+		-p relative
+
+.PHONY: build-fonts
+build-fonts:
+	mkdir -p static/fonts
+	cp node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2 static/fonts/
+	cp node_modules/font-awesome/fonts/fontawesome-webfont.woff2 static/fonts/
+
+.PHONY: assets
+assets: build-js build-css build-fonts
+	@echo "Assets rebuilt!"
+
 .PHONY: generate
-generate: install clean
+generate: install clean assets
 	$(HUGO)
 
 .PHONY: images
@@ -83,8 +122,10 @@ images:
 .PHONY: clean
 clean:
 	rm -rf public
+	rm -rf static
+	rm -rf build
 
 .PHONY: clean-all
-clean-all:
+clean-all: clean
 	rm -rf hugo_0.15_linux_amd64
 	rm -rf tmp

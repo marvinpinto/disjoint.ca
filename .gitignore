@@ -4,3 +4,6 @@ public/
 env_vars
 /tmp
 /static/*
+/build
+/node_modules
+/.sass-cache

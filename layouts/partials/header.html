@@ -12,32 +12,18 @@
 
     <title>{{ if eq .URL "/" }}Marvin Pinto - {{ else if eq .URL "/writing/" }}Writing - {{ else if in .URL "/tags/" }}Tags - {{ else if eq .URL "/til/" }}Today I Learned - {{ else }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <!-- custom css -->
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/disjoint-ca.min.css" />
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/style.css" />
 
-   <!-- include custom css -->
-   <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/style.css" />
+  <!-- custom javascript -->
+  <script src="{{ .Site.BaseURL }}/js/disjoint-ca.min.js"></script>
 
-    <!-- javascript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    <!-- Google Analytics -->
-    <script>
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', '{{ getenv "GOOGLE_ANALYTICS_ID" }}', 'auto');
-    ga('send', 'pageview');
-    </script>
-    <script async="async" src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-
-    <!-- client-side javascript hackernews button -->
-    <script src="/js/hnbutton.js"></script>
-    <script>
-    $(document).ready(function(){
-        $('.hn-linkbutton').hnButton();
-        });
-    </script>
+  <!-- Google Analytics -->
+  <script>
+  ga('create', '{{ getenv "GOOGLE_ANALYTICS_ID" }}', 'auto');
+  ga('send', 'pageview');
+  </script>
 
     <!-- rss -->
     {{ if .RSSlink }}
