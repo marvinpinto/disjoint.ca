@@ -1,0 +1,29 @@
+.image-banner {
+  background: url(https://s3.amazonaws.com/media.disjoint.ca/disjoint-ca-banner.jpg);
+  background-size: cover;
+  width: 945px;
+  height: 500px;
+  position: relative;
+  float: left;
+}
+
+.mid h2 {
+  font-weight: 900;
+  font-family: 'Gudea', Verdana, Helvetica, sans-serif;
+  font-size: 13vmin;
+  font-variant: small-caps;
+  color: white;
+  position: relative;
+  top: 30%;
+  left: 15%;
+}
+
+.mid p {
+  font-size: 4vmin;
+  font-family: 'Rancho', Georgia, serif;
+  color: white;
+  text-transform: lowercase;
+  position: relative;
+  left: 62%;
+  top: 28%;
+}

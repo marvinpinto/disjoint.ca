@@ -30,3 +30,12 @@ $navbar-default-link-hover-color: $link-hover-color;
 
 // Bootstrap customizations
 @import 'bootstrap_customizations';
+
+// Front page banner
+@import 'fontpage_banner';
+
+// Tags
+@import 'tags';
+
+// 404 page
+@import 'fourohfour';

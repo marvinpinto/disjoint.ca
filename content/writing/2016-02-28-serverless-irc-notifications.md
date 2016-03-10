@@ -63,7 +63,7 @@ not yet a thing).
 
 #### Amazon Announced API Gateway
 
-{{< figure class="img-responsive image-floatright" src="https://s3.amazonaws.com/media.disjoint.ca/you-had-me-at-autoscaling.jpg" alt="You had me at autoscaling meme" >}}
+{{< figure class="img-responsive pull-right" src="https://s3.amazonaws.com/media.disjoint.ca/you-had-me-at-autoscaling.jpg" alt="You had me at autoscaling meme" >}}
 
 Then in early July they announced another product called [API Gateway][3].
 Among other things, it was now possible to trigger Lambda functions through API
@@ -187,7 +187,7 @@ Pretty neat, huh!
 
 
 
-{{< figure class="img-responsive image-floatright" src="https://s3.amazonaws.com/media.disjoint.ca/empire-wants-you.jpg" alt="The empire wants you meme" >}}
+{{< figure class="img-responsive pull-right" src="https://s3.amazonaws.com/media.disjoint.ca/empire-wants-you.jpg" alt="The empire wants you meme" >}}
 ### Get Involved!
 
 So! If IRC Hooky sounds cool to you, I invite you to contribute in any way you
