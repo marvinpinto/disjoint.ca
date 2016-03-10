@@ -126,8 +126,8 @@ build-fonts:
 		--woff1=link \
 		--woff2=link
 	mkdir -p static/fonts
-	cp node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2 static/fonts/
-	cp node_modules/font-awesome/fonts/fontawesome-webfont.woff2 static/fonts/
+	cp node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.* static/fonts/
+	cp node_modules/font-awesome/fonts/fontawesome-webfont.* static/fonts/
 
 .PHONY: assets
 assets: build-js build-fonts build-css
