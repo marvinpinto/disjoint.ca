@@ -1,0 +1,27 @@
+.jumbotron {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('https://s3.amazonaws.com/media.disjoint.ca/disjoint-ca-banner.jpg');
+  background-size: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.jumbotron h1 {
+  font-weight: 900;
+  font-family: 'Gudea', Verdana, Helvetica, sans-serif;
+  text-align: center;
+  font-variant: small-caps;
+  color: white;
+}
+
+.jumbotron p {
+  font-family: 'Rancho', Georgia, serif;
+  text-transform: lowercase;
+  color: white;
+  text-align: center;
+}

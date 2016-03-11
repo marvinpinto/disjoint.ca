@@ -1,0 +1,30 @@
+pre {
+  font-size: 13px;
+}
+
+.navbar {
+  font-family: 'Ubuntu', Verdana, sans-serif;
+  border-width: inherit;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.brand > .logo {
+  border: none;
+  outline: none;
+  float: left;
+  height: ceil($navbar-height * 0.6);
+  border: 0px;
+}
+
+.brand:hover > .logo,
+.brand:focus > .logo {
+  opacity: 0.8;
+}
+
+.pull-left {
+  margin-right: 10px;
+}
+
+.pull-right {
+  margin-left: 10px;
+}
