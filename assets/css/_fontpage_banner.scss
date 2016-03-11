@@ -1,29 +1,27 @@
-.image-banner {
-  background: url(https://s3.amazonaws.com/media.disjoint.ca/disjoint-ca-banner.jpg);
+.jumbotron {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('https://s3.amazonaws.com/media.disjoint.ca/disjoint-ca-banner.jpg');
   background-size: cover;
-  width: 945px;
-  height: 500px;
   position: relative;
-  float: left;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
-.mid h2 {
+.jumbotron h1 {
   font-weight: 900;
   font-family: 'Gudea', Verdana, Helvetica, sans-serif;
-  font-size: 13vmin;
+  text-align: center;
   font-variant: small-caps;
   color: white;
-  position: relative;
-  top: 30%;
-  left: 15%;
 }
 
-.mid p {
-  font-size: 4vmin;
+.jumbotron p {
   font-family: 'Rancho', Georgia, serif;
-  color: white;
   text-transform: lowercase;
-  position: relative;
-  left: 62%;
-  top: 28%;
+  color: white;
+  text-align: center;
 }
