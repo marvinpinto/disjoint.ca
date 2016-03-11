@@ -1,4 +1,5 @@
 personal_ws-1.1 en 1
+amd
 ami
 AMI
 AMIs
@@ -16,6 +17,7 @@ backend
 Backend
 brainer
 bugfixes
+cd
 CDNs
 charlesbot
 Charlesbot
@@ -42,6 +44,7 @@ ESX
 extendible
 failovers
 Fairpixels
+filesystem
 firewalled
 Freenode
 FreshBooks
@@ -50,11 +53,15 @@ GHE
 github
 Github
 GitHub
+golang
+Golang
 Google
+GOPATH
 Hashicorp
 Heroku
 html
 https
+hugo
 iam
 incentivized
 inkscape
@@ -77,6 +84,8 @@ marvinpinto
 MERCHANTABILITY
 minified
 mkdir
+mtime
+namespace
 nginx
 NONINFRINGEMENT
 npm
@@ -89,6 +98,7 @@ programmatically
 public's
 Rackspace
 reproducibility
+runtime
 rvm
 SaaS
 Schweet
@@ -98,6 +108,7 @@ Serverless
 Shipit
 Slackbot
 SNI
+spf
 src
 SSL
 StartSSL
@@ -107,6 +118,8 @@ sudo
 svg
 SVG
 svgo
+Symlink
+symlinking
 techy
 terraform
 Terraform
@@ -117,6 +130,7 @@ toronto
 Toronto
 travisci
 unsplash
+usr
 utf
 validator
 vnu
