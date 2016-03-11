@@ -54,7 +54,7 @@ Architecture to deliver IRC Webhook Notifications][10].
 
 ### <i class="fa fa-pencil-square-o"></i> Errata
 
-The source code and content for this website lives in the <a
+The source code and content for this website both live in the <a
 href="https://github.com/marvinpinto/disjoint.ca"><i class="fa fa-github">
 marvinpinto/disjoint.ca</i></a> repository on GitHub. If you spot any mistakes
 or catch me in an outright lie I'd love to [hear from you][4] <i class="fa
