@@ -12,23 +12,26 @@ Let's assume you would like to contribute back to [spf13/hugo][1].
 
 1. Fork the `spf13/hugo` repository into your own namespace.
 
-1. Create the directory structure needed by Golang.
+1. Update all the dependencies and build `spf13/hugo` locally.
 
     ``` bash
-    mkdir -p $GOPATH/{src,bin,pkg}
-    mkdir -p $GOPATH/src/github.com/spf13
-    cd $GOPATH/src/github.com/spf13
-    git clone git@github.com:<YOUR_NAMESPACE>/hugo.git
+    go get -u -v github.com/spf13/hugo
     ```
 
 1. Start working on your patch!
 
     ``` bash
-    cd hugo
+    cd $GOPATH/src/github.com/spf13/hugo
     git checkout -b new-amazing-patch
     # your work ..
     git commit
-    git push -u origin new-amazing-patch:new-amazing-patch
+    ```
+
+1. Add your fork as a remote and push your branch up to it.
+
+    ``` bash
+    git remote add fork git@github.com:<YOUR_NAMESPACE>/hugo.git
+    git push -u fork new-amazing-patch:new-amazing-patch
     ```
 
 1. Test and build it locally.
@@ -41,6 +44,10 @@ Let's assume you would like to contribute back to [spf13/hugo][1].
 1. Assuming all that worked as planned, the compiled `hugo` binary should be
    available at `$GOPATH/bin` and you should be ready to PR your changes back
    upstream.
+
+(_hat tip to <a href="https://github.com/moorereason"><i class="fa fa-github">
+ moorereason</i></a> for reminding me that git remotes are indeed the better
+ way of working with forked Golang projects_)
 
 
 **Now for all the things that did not work**
