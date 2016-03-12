@@ -49,3 +49,9 @@ $(document).ready(function(){
 
 // Google Analytics
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+
+// Set the embedded iframe height
+function resizeIframe(obj) {
+  obj.style.height = 0;
+  obj.style.height = (obj.contentWindow.document.body.scrollHeight + 180) + 'px';
+}

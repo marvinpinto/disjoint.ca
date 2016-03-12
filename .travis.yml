@@ -27,6 +27,7 @@ addons:
     packages:
       - 'aspell'
       - 'aspell-en'
+      - 'wkhtmltopdf'
 
 install:
   - 'make hugo'

@@ -63,7 +63,7 @@ test: spellcheck html-proofer html5validator bootlint
 	@echo "Everything looks good!"
 
 .PHONY: server
-server: install clean assets
+server: install clean assets resume
 	@echo ===========================================================
 	@echo Head over to http://$(CONTAINER_IP):8080 for a live preview
 	@echo ===========================================================
@@ -133,8 +133,24 @@ build-fonts:
 assets: build-js build-fonts build-css
 	@echo "Assets rebuilt!"
 
+.PHONY: resume
+resume:
+	rm -rf static/resume
+	mkdir -p static/resume
+	mkdir -p build/resume
+	python -c 'import sys, yaml, json; json.dump(yaml.load(sys.stdin), sys.stdout, indent=4)' < resume.yaml > build/resume/resume.json
+	`npm bin`/hackmyresume BUILD build/resume/resume.json \
+		TO \
+			static/resume/marvin-pinto-resume.pdf \
+			static/resume/marvin-pinto-resume.html \
+			static/resume/marvin-pinto-resume.txt \
+			static/resume/marvin-pinto-resume.doc \
+		-t positive \
+		--pdf wkhtmltopdf
+	rm -f static/resume/*.pdf.html static/resume/*.css
+
 .PHONY: generate
-generate: install clean assets
+generate: install clean assets resume
 	$(HUGO)
 
 .PHONY: images
@@ -151,3 +167,4 @@ clean:
 clean-all: clean
 	rm -rf hugo_0.15_linux_amd64
 	rm -rf tmp
+	rm -rf node_modules
