@@ -91,6 +91,8 @@ build-js:
 		node_modules/jquery/dist/jquery.js \
 		node_modules/bootstrap-sass/assets/javascripts/bootstrap.js \
 		build/js/analytics.js \
+		node_modules/iframe-resizer/js/iframeResizer.js \
+		node_modules/iframe-resizer/js/iframeResizer.contentWindow.js \
 		assets/js/main.js \
 		--compress \
 		--screw-ie8 \
