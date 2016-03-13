@@ -1,0 +1,150 @@
+---
+  name: "Marvin Pinto"
+
+  meta:
+    format: "FRESH@0.6.0"
+    version: "0.4.0"
+
+  info:
+    label: "Software Developer"
+
+  contact:
+    website: "https://disjoint.ca"
+    phone: "1-416-890-3495"
+    email: "resume@pinto.im"
+
+  location:
+    city: "Toronto"
+    region: "ON"
+    country: "CA"
+
+  projects:
+
+    -
+      title: "IRC Hooky"
+      category: "FOSS"
+      role: "creator"
+      url: "https://irchooky.org"
+      repo: "https://github.com/marvinpinto/irc-hooky"
+      start: "2016-01"
+      summary: "IRC Hooky makes it easy to send custom webhook-triggered notifications to IRC using an entirely serverless architecture. Read more about it in my blog post <a href='https://disjoint.ca/writing/2016/02/28/using-a-serverless-architecture-to-deliver-irc-webhook-notifications'>Using a Serverless Architecture to deliver IRC Webhook Notifications</a>."
+      keywords:
+        - "python"
+        - "aws"
+        - "lambda"
+
+    -
+      title: "CharlesBOT"
+      category: "FOSS"
+      role: "creator"
+      url: "https://charlesbot.org"
+      repo: "https://github.com/marvinpinto/charlesbot"
+      start: "2015-07"
+      summary: "Charlesbot is a modular Slackbot written using Python 3’s asyncio framework. It was designed to be self-deployed and easily extendible (via the plugin system)."
+      keywords:
+        - "python"
+        - "asyncio"
+        - "slackbot"
+
+    -
+      title: "Open Sentinel"
+      category: "FOSS"
+      role: "co-creator"
+      url: "https://github.com/opensentinel"
+      repo: "https://github.com/opensentinel"
+      start: "2015-12"
+      summary: "Open Sentinel is a distributed monitoring system I’m working on with a few other people. Its REST backend will be powered by AWS API Gateway and Lambda, fronted by an EmberJS single-page-app. This project is very much in its infancy but you can follow along!"
+      keywords:
+        - "golang"
+        - "aws"
+        - "lambda"
+        - "emberjs"
+
+  social:
+    -
+      label: "GitHub"
+      network: "GitHub"
+      user: "marvinpinto"
+      url: "https://github.com/marvinpinto"
+    -
+      label: "Twitter"
+      network: "Twitter"
+      user: "marvinpinto"
+      url: "https://twitter.com/marvinpinto"
+
+  employment:
+    history:
+
+      -
+        employer: "FreshBooks"
+        position: "Software Developer"
+        url: "https://www.freshbooks.com"
+        start: "2015-01"
+        end: "2016-02"
+        highlights:
+          - |
+            **Chatops at FreshBooks**
+            - Introduced <a href="https://github.com/marvinpinto/charlesbot">Charlesbot</a>, a Python slackbot framework.
+            - We started using chatbots to get real work done, and not just for fun!
+          - |
+            **Proof-of-concept (internal) service deployment using Atlas and Terraform**
+            - I wrote a <a href="https://disjoint.ca/writing/2015/11/26/a-framework-for-deployment-of-immutable-infrastructure/">blog post</a> about it!
+          - |
+            **Developer driven production deployments (using Rundeck)**
+            - Designed a system that allowed developers to safely deploy their apps directly to production.
+            - The bulk of the tech here involved writing up an ansible-based backend and using Rundeck for the frontend bits (authentication, logs, slack integration, etc)
+            - Before this Ops folks were the only ones who could deploy, which resulted in a huge bottleneck and nothing ever went out because deploying was expensive (context switching!)
+            - Moved from a large swath of the company caring about deploys to only a handful whose code changes were actually going out.
+            - We deployed so often that it became that much safer!
+          - |
+            **Scaled out our Jenkins build workers horizontally**
+            - Prior to this, we had a few lovely hand-crafted machines on ESX/Rackspace.
+            - We held on to these lovelies with all our might because it was expensive to re-build them!
+            tldr: Fixed all the puppet to make the output reproducible, started churning out packer-generated AMIs, automated the process of updated the build-worker AMI in Jenkins (also <a href="https://github.com/jenkinsci/ec2-plugin/pull/154">patched upstream</a>!), pointed Jenkins at our AWS account, and now we have all the build workers we need!
+
+      -
+        employer: "FreshBooks"
+        position: "Linux System Administrator"
+        url: "https://www.freshbooks.com"
+        start: "2012-10"
+        end: "2015-01"
+        highlights:
+          - |
+            **Production-like Staging Environment**
+            - The goal of this project was to build a staging environment almost identical to production.
+            - Refactored legacy puppet code to make it work in a non­production environment.
+            - Automated the provisioning of "staging clusters" for each type of environment (testing, RC, QA, etc).
+            - Configured deploy jobs to mimic the manual steps required to deploy in production (using Jenkins).
+          - |
+            **Operations Process Improvements**
+            - Introduced Hiera as a datastore for Puppet configuration & secrets.
+            - Introduced the concept of public and private puppet repositories (to enable dev collaboration).
+            - Moved the candidate public repositories into Github:E and introduced a Pull Request based workflow.
+            - Wrote a <a href="https://github.com/marvinpinto-archive/github_rt_hooks">python application</a> that linked Github:E PR lifecycle to the OPS ticketing tool (Request Tracker).
+
+      -
+        employer: "Schulich School of Business, York University"
+        position: "Research Technology Support Specialist"
+        url: "http://schulich.yorku.ca"
+        start: "2010-01"
+        end: "2012-09"
+        highlights:
+          - |
+            **Course Management System ­ Moodle**
+            - Created a custom Moodle plugin to cross­authenticate users with a separate course content system (New Mindsets).
+            - Developed another custom Moodle plugin to automatically enrol and de-enrol students based on current course registrations.
+          - |
+            **Admissions and CRM System (Hobsons)**
+            - Wrote a custom Java application that bridged Hobsons’ applicant data (using XML webservices) into the University’s legacy application system.
+
+      -
+        employer: "Signal Processing and Communications Lab, York University"
+        position: "Research Assistant"
+        summary: "_Supervisor: Dr. Uyen Trang Nguyen_"
+        url: "http://www.cse.yorku.ca/~utn"
+        start: "2007-01"
+        end: "2009-12"
+        highlights:
+          - "Contributed towards the design of cutting-edge networking protocols."
+          - "Implemented custom networking protocols using C (within the confines of QualNet)."
+          - "Extensively researched academic papers to determine worthy research candidates."
