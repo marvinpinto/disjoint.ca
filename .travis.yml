@@ -13,6 +13,7 @@ cache:
     - 'hugo_0.15_linux_amd64'
     - '$HOME/.local'
     - 'tmp/workspace'
+    - 'bin'
 
 env:
   global:
@@ -27,8 +28,13 @@ addons:
     packages:
       - 'aspell'
       - 'aspell-en'
-      - 'wkhtmltopdf'
       - 'python-yaml'
+
+before_install:
+  - 'mkdir -p bin'
+  - '[ -f bin/wkhtmltopdf ] || wget -O bin/wkhtmltopdf https://github.com/h4cc/wkhtmltopdf-amd64/raw/master/bin/wkhtmltopdf-amd64'
+  - 'chmod +x bin/wkhtmltopdf'
+  - 'export PATH=$PATH:$PWD/bin/'
 
 install:
   - 'make hugo'
