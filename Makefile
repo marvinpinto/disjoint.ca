@@ -41,12 +41,14 @@ spellcheck:
 .PHONY: bootlint
 bootlint:
 	find public/ -type f -name "*.html" -exec \
-		`npm bin`/bootlint --disable "E045,W001,W002,W003,W005" \
+		`npm bin`/bootlint --disable "E045,W001,W002,W003,W005,E013" \
 		{} +
 
 .PHONY: html5validator
 html5validator:
-	html5validator --root public/
+	html5validator \
+		--blacklist resume \
+		--root public/
 
 .PHONY: html-proofer
 html-proofer:
@@ -56,6 +58,7 @@ html-proofer:
 		--check-html \
 		--only-4xx \
 		--url-swap "https...disjoint.ca:" \
+		--file-ignore ./public/resume/marvin-pinto-resume.html \
 		./public
 
 .PHONY: test
