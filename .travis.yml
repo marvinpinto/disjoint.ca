@@ -28,6 +28,7 @@ addons:
       - 'aspell'
       - 'aspell-en'
       - 'wkhtmltopdf'
+      - 'python-yaml'
 
 install:
   - 'make hugo'
