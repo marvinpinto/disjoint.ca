@@ -25,6 +25,7 @@ Here's where you can find me on the Internet:
 - <a href="https://github.com/marvinpinto"><i class="fa fa-github"> marvinpinto</i></a>
 - <i class="fa fa-comment-o"> marvinpinto</i> ([IRC Freenode][5])
 - <i class="fa fa-envelope-o"> hello@pinto.im</i>
+- <a href="{{< relref "page/resume.md" >}}"><i class="fa fa-user-plus"> resume</i></a>
 
 
 
