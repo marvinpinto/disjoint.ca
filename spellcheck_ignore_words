@@ -30,6 +30,7 @@ contraints
 CoreOS
 cron
 Datastore
+dateutil
 derpy
 des
 dev
@@ -56,6 +57,7 @@ GitHub
 golang
 Golang
 Google
+Googled
 GOPATH
 Hashicorp
 Heroku
@@ -98,6 +100,7 @@ plugin
 pre
 programmatically
 public's
+py
 Rackspace
 reproducibility
 runtime
@@ -131,6 +134,7 @@ tldr
 toronto
 Toronto
 travisci
+txt
 unsplash
 usr
 utf
