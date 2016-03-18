@@ -30,6 +30,7 @@ contraints
 CoreOS
 cron
 Datastore
+dateutil
 derpy
 des
 dev
@@ -98,6 +99,7 @@ plugin
 pre
 programmatically
 public's
+py
 Rackspace
 reproducibility
 runtime
@@ -131,6 +133,7 @@ tldr
 toronto
 Toronto
 travisci
+txt
 unsplash
 usr
 utf
