@@ -50,10 +50,15 @@ EBS
 emberjs
 EmberJS
 ENV
+eslint
+ESLint
+eslintrc
+estraverse
 ESX
 extendible
 failovers
 Fairpixels
+fb
 filesystem
 firewalled
 Freenode
@@ -66,6 +71,7 @@ GitHub
 GithubOauth
 golang
 Golang
+google
 Google
 Googled
 GOPATH
@@ -90,6 +96,8 @@ jbranchaud
 jdk
 JIRA
 js
+jsdoc
+json
 letsencrypt
 linux
 localStorage
