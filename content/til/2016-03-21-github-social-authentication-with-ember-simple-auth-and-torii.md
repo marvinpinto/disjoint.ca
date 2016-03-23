@@ -2,6 +2,7 @@
 date: 2016-03-21T16:29:11-05:00
 tags:
   - emberjs
+  - "ember-simple-auth"
 title: GitHub Social Authentication with Ember Simple Auth and Torii
 ---
 
