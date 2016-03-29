@@ -5,6 +5,7 @@ ami
 AMI
 AMIs
 Ansible
+apache
 api
 API
 apiKey
@@ -16,6 +17,7 @@ async
 asyncio
 att
 auth
+authenticatedRoute
 authenticator
 authenticators
 authorizationCode
@@ -23,6 +25,7 @@ authorizationHeader
 authorizationHeaderName
 authorizationPrefix
 authorizer
+autolocation
 autoscaling
 Autoscaling
 aws
@@ -161,6 +164,7 @@ refreshLeeway
 reproducibility
 req
 rmachielse
+routeAfterAuthentication
 runtime
 rvm
 SaaS
@@ -170,6 +174,7 @@ serverless
 Serverless
 serverTokenEndpoint
 serverTokenRefreshEndpoint
+sessionAuthenticated
 sessionDataUpdated
 sessionServiceName
 Shipit
@@ -202,6 +207,7 @@ Torii
 ToriiAuthenticator
 toronto
 Toronto
+transitionTo
 travisci
 txt
 unsplash

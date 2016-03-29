@@ -61,15 +61,28 @@ the following:
 
 ``` js
 login() {
-  var _this = this;
-  this.get('session').authenticate('authenticator:torii', 'github').then(function() {
-    var authorizationCode = _this.get('session.data.authenticated.authorizationCode');
-    var payload = {
-      'password': authorizationCode
-    };
-    _this.get('session').authenticate('authenticator:jwt', payload);
-  });
+  this.get('session').authenticate('authenticator:torii', 'github');
 }
+```
+
+Update `app/routes/application.js`:
+
+``` js
+export default Ember.Route.extend(ApplicationRouteMixin, {
+
+  sessionAuthenticated: function() {
+    var authorizationCode = this.get('session.data.authenticated.authorizationCode');
+    var _this = this;
+    var authenticatedRoute = config['ember-simple-auth'].routeAfterAuthentication;
+    var payload = {
+      password: authorizationCode
+    };
+    this.get('session').authenticate('authenticator:jwt', payload).then(function() {
+      _this.transitionTo(authenticatedRoute);
+    });
+  }
+
+});
 ```
 
 Add the following two environment variables to `config/environment.js`. Keep in
@@ -99,6 +112,11 @@ ENV['ember-simple-auth-token'] = {
 
 And that's it! Assuming your backend is in good shape, you should have a
 functional Ember app authenticated against GitHub and your custom JWT backend!
+
+The above works because Ember Simple Auth triggers the `sessionAuthenticated`
+method after the successful (primary) authentication. Without this in place,
+you potentially end up in a race condition where a view may attempt to
+use the (JWT) session before it is fully in place.
 
 **Testing**
 
