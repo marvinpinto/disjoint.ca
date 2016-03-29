@@ -5,6 +5,7 @@ ami
 AMI
 AMIs
 Ansible
+apache
 api
 API
 apiKey
@@ -23,6 +24,7 @@ authorizationHeader
 authorizationHeaderName
 authorizationPrefix
 authorizer
+autolocation
 autoscaling
 Autoscaling
 aws
