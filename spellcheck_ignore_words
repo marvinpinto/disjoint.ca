@@ -13,6 +13,7 @@ APIs
 apiTokenAuthRouter
 apiTokenRefreshRouter
 ApplicationRouteMixin
+assertTrue
 async
 asyncio
 att
@@ -140,6 +141,9 @@ mtime
 namespace
 nginx
 NONINFRINGEMENT
+nosetest
+nosetests
+Nosetests
 npm
 oauth
 OAuth
@@ -147,6 +151,7 @@ onwards
 opensentinel
 oraclejdk
 passwordField
+pdb
 PDF
 pem
 plugin
@@ -156,6 +161,7 @@ programmatically
 public's
 pwd
 py
+pyc
 Rackspace
 readme
 redirectUri
@@ -184,6 +190,8 @@ spf
 src
 SSL
 StartSSL
+stdout
+strace
 sublicense
 subnet
 sudo
@@ -195,6 +203,8 @@ symlinking
 techy
 terraform
 Terraform
+TestCase
+TestUpdateUser
 TextWrapRight
 timeFactor
 tl
@@ -210,6 +220,7 @@ Toronto
 transitionTo
 travisci
 txt
+unittest
 unsplash
 username
 usersRouter
