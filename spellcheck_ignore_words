@@ -18,6 +18,7 @@ async
 asyncio
 att
 auth
+Auth
 authenticatedRoute
 authenticator
 authenticators
@@ -32,10 +33,8 @@ Autoscaling
 aws
 AWS
 backend
-Backend
 bodyParser
 brainer
-bugfixes
 cd
 CDNs
 charlesbot
@@ -43,6 +42,7 @@ Charlesbot
 charset
 cli
 cloudfront
+Cloudfront
 CloudFront
 CloudWatch
 config
@@ -88,7 +88,6 @@ GithubOauth
 golang
 Golang
 google
-Google
 Googled
 GOPATH
 Hashicorp
@@ -98,7 +97,6 @@ html
 http
 https
 hugo
-human's
 iam
 identificationField
 incentivized
@@ -118,6 +116,7 @@ JIRA
 js
 jsdoc
 json
+JSON
 jsonwebtoken
 jwt
 JWT
@@ -126,6 +125,7 @@ letsencrypt
 linux
 localStorage
 login
+Login
 logodust
 logout
 maisons
@@ -154,11 +154,9 @@ passwordField
 pdb
 PDF
 pem
-plugin
 popup
 pre
 programmatically
-public's
 pwd
 py
 pyc
@@ -187,7 +185,6 @@ Shipit
 Slackbot
 SNI
 spf
-src
 SSL
 StartSSL
 stdout
@@ -205,7 +202,6 @@ terraform
 Terraform
 TestCase
 TestUpdateUser
-TextWrapRight
 timeFactor
 tl
 tldr
@@ -216,7 +212,6 @@ torii
 Torii
 ToriiAuthenticator
 toronto
-Toronto
 transitionTo
 travisci
 txt
@@ -236,7 +231,6 @@ VSphere
 vv
 webhook
 Webhook
-webserver
 whitelist
 whitelisted
 workflow
@@ -248,4 +242,3 @@ xml
 xvdf
 yaml
 yay
-yml

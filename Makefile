@@ -36,7 +36,11 @@ til:
 
 .PHONY: spellcheck
 spellcheck:
-	scripts/spellcheck.sh
+	@echo "personal_ws-1.1 en 1" > spellcheck_ignore_words
+	@find ./README.md content -name "*.md" -exec cat {} \; | aspell \
+		--mode=html \
+		list | sort -u >> spellcheck_ignore_words
+	@echo "File spellcheck_ignore_words updated! Make sure it looks good"
 
 .PHONY: bootlint
 bootlint:
