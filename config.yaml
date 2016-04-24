@@ -30,10 +30,15 @@ params:
 
   # name of the site author; used in header meta information
   author: "Marvin Pinto"
+  description: "words, ideas, dreams"
 
   # social links, used in footer, these must be full URLs.
   github: "https://github.com/marvinpinto"
   twitter: "https://twitter.com/marvinpinto"
+
+  # used for html meta elements
+  author_twitter_username: "@marvinpinto"
+  meta_image: "https://s3.amazonaws.com/media.disjoint.ca/meta-banner-image.png"
 
   # naming of the elements in your blog/site
   strings:

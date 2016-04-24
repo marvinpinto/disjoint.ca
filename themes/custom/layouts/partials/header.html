@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html class="no-js" lang="{{ .Site.Params.languageCode }}">
 <head>
+
+  {{ if eq .URL "/" }}
+    {{ $.Scratch.Add "local_title" "Marvin Pinto" }}
+  {{ else if eq .URL "/writing/" }}
+    {{ $.Scratch.Add "local_title" "Writing" }}
+  {{ else if in .URL "/tags/" }}
+    {{ $.Scratch.Add "local_title" "Tags" }}
+  {{ else if eq .URL "/til/" }}
+    {{ $.Scratch.Add "local_title" "Today I Learned" }}
+  {{ else }}
+    {{ $.Scratch.Add "local_title" .Title }}
+  {{ end }}
+
+  {{ if .Description }}
+    {{ $.Scratch.Add "local_description" .Description }}
+  {{ else if .IsPage }}
+    {{ $.Scratch.Add "local_description" .Summary }}
+  {{ else }}
+    {{ $.Scratch.Add "local_description" .Site.Params.description }}
+  {{ end }}
+
+  {{ if .IsPage }}
+    {{ if eq .Type "til" }}
+      {{ $.Scratch.Add "local_card_type" "summary" }}
+    {{ else }}
+      {{ $.Scratch.Add "local_card_type" "summary_large_image" }}
+    {{ end }}
+  {{ else }}
+    {{ $.Scratch.Add "local_card_type" "summary_large_image" }}
+  {{ end }}
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="description" content="{{ .Title }}" />
+  <meta name="description" content='{{ $.Scratch.Get "local_description" }}' />
     <meta name="author" content="{{ .Site.Params.author }}" />
 
     <meta name="keyword" content="" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title>{{ if eq .URL "/" }}Marvin Pinto - {{ else if eq .URL "/writing/" }}Writing - {{ else if in .URL "/tags/" }}Tags - {{ else if eq .URL "/til/" }}Today I Learned - {{ else }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content='{{ $.Scratch.Get "local_card_type" }}' />
+  <meta name="twitter:site" content="@marvinpinto" />
+  <meta name="twitter:creator" content='{{ .Param "author_twitter_username" }}' />
+  <meta name="twitter:title" content='{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}' />
+  <meta name="twitter:description" content='{{ $.Scratch.Get "local_description" }}' />
+  <meta name="twitter:image" content='{{ .Param "meta_image" }}' />
+
+  <title>{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}</title>
 
   <!-- custom css -->
   <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/disjoint-ca.min.css" />
