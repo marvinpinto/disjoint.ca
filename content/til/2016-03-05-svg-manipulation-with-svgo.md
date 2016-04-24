@@ -3,6 +3,7 @@ date: 2016-03-05T15:29:11-05:00
 tags:
   - svg
 title: SVG manipulation with 'svgo'
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
 ---
 
 ```bash

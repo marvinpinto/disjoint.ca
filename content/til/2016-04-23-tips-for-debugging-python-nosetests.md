@@ -4,6 +4,7 @@ tags:
 - python
 - nosetest
 title: Tips for Debugging Python Nosetests
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
 ---
 
 **Running a single unit test**

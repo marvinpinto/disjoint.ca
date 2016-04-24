@@ -5,6 +5,7 @@ tags:
   - pip
   - setup.py
 title: pip and transitive dependencies
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
 ---
 
 Suppose you have python project `project-a` with a `requirements.txt` that
