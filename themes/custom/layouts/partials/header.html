@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="{{ .Site.Params.languageCode }}">
+<html class="no-js" lang="{{ .Site.Params.languageCode }}" prefix="og: http://ogp.me/ns#">
 <head>
 
   {{ if eq .URL "/" }}
@@ -45,6 +45,12 @@
   <meta name="twitter:title" content='{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}' />
   <meta name="twitter:description" content='{{ $.Scratch.Get "local_description" }}' />
   <meta name="twitter:image" content='{{ .Param "meta_image" }}' />
+
+  <!-- Open Graph Protocol -->
+  <meta name="og:title" content='{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}' />
+  <meta name="og:type" content="website" />
+  <meta name="og:url" content="{{ .Permalink }}" />
+  <meta name="og:image" content='{{ .Param "meta_image" }}' />
 
   <title>{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}</title>
 
