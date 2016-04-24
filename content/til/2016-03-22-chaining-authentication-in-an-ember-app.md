@@ -5,6 +5,7 @@ tags:
   - "ember-simple-auth"
   - jwt
 title: Chaining Authentication in an Ember App
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
 ---
 
 This is something that comes in very handy when you need to use multiple

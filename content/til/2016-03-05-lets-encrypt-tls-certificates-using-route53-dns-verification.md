@@ -5,6 +5,7 @@ tags:
   - dns
   - route53
 title: Let's Encrypt TLS Certificates using Route53 DNS verification
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
 ---
 
 In January of this year, Let's Encrypt enabled the dns-01 challenge in

@@ -4,6 +4,7 @@ tags:
   - emberjs
   - s3
 title: Hosting an Ember app in S3 and Cloudfront
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
 ---
 
 Hosting an Ember app on S3 can be slightly challenging since routes (paths)
