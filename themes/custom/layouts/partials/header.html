@@ -32,13 +32,11 @@
     {{ $.Scratch.Add "local_card_type" "summary_large_image" }}
   {{ end }}
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content='{{ $.Scratch.Get "local_description" }}' />
-    <meta name="author" content="{{ .Site.Params.author }}" />
-
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <meta name="author" content="{{ .Site.Params.author }}" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content='{{ $.Scratch.Get "local_card_type" }}' />
@@ -62,12 +60,12 @@
   ga('send', 'pageview');
   </script>
 
-    <!-- rss -->
-    {{ if .RSSlink }}
-      <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-    {{ end }}
+  <!-- rss -->
+  {{ if .RSSlink }}
+  <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ end }}
 
 </head>
 <body lang="{{ .Site.Params.languageCode }}">
-    <!-- navbar -->
-    {{ partial "navbar" . }}
+  <!-- navbar -->
+  {{ partial "navbar" . }}
