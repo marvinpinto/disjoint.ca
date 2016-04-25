@@ -8,6 +8,7 @@ tags:
   - cloudfront
   - s3
 title: Let's Encrypt was supposed to make things easier
+meta_image: "https://s3.amazonaws.com/media.disjoint.ca/2015-11-22-lets-encrypt-was-supposed-to-make-things-better.jpg"
 ---
 
 _If you're looking for the tl;dr on how I got this done, save yourself the time
