@@ -38,7 +38,7 @@ params:
 
   # used for html meta elements
   author_twitter_username: "@marvinpinto"
-  meta_image: "https://s3.amazonaws.com/media.disjoint.ca/meta-banner-image.png"
+  meta_image: "https://s3.amazonaws.com/media.disjoint.ca/meta-social-media-image.png"
 
   # naming of the elements in your blog/site
   strings:
