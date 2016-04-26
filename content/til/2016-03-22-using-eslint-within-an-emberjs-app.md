@@ -4,7 +4,9 @@ tags:
   - emberjs
   - eslint
 title: Using ESLint within an EmberJS app
-meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"
+meta_image_width: 700
+meta_image_height: 700
 ---
 
 Here's what you'll need in your Ember app:

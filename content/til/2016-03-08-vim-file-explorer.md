@@ -3,7 +3,9 @@ date: 2016-03-08T13:33:42-05:00
 tags:
   - vim
 title: Vim File Explorer
-meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"
+meta_image_width: 700
+meta_image_height: 700
 ---
 
 Inside a vim session, you may already know that triggering `:Explore` brings up

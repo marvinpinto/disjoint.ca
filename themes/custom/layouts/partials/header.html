@@ -90,8 +90,14 @@
   {
     "@context": "http://schema.org",
     "@type": "Organization",
+    "name": "disjoint.ca",
     "url" : "https://disjoint.ca",
-    "logo": "https://s3.amazonaws.com/media.disjoint.ca/disjoint-ca-logo.svg"
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://s3.amazonaws.com/media.disjoint.ca/disjoint-ca-logo.png",
+      "width": 327,
+      "height": 60
+    }
   }
   </script>
 
@@ -101,7 +107,7 @@
     "@context" : "http://schema.org",
     "@type" : "WebSite",
     "name" : "disjoint.ca",
-    "alternateName" : "words, ideas, dreams",
+    "alternateName" : {{ .Site.Params.description }},
     "url" : "https://disjoint.ca"
   }
   </script>

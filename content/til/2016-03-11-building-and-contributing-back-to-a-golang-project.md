@@ -3,7 +3,9 @@ date: 2016-03-11T08:56:38-05:00
 tags:
 - golang
 title: Building and contributing back to a Golang project (aka short-lived forks)
-meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"
+meta_image_width: 700
+meta_image_height: 700
 ---
 
 Let's assume you would like to contribute back to [spf13/hugo][1].

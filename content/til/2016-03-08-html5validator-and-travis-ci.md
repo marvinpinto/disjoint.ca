@@ -5,7 +5,9 @@ tags:
   - html5validator
   - java
 title: html5validator and Travis CI
-meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"
+meta_image_width: 700
+meta_image_height: 700
 ---
 
 Here's the situation. You would like to build a [Jekyll][2] (or other) static

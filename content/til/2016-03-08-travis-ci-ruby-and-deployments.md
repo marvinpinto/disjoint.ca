@@ -4,7 +4,9 @@ tags:
   - travisci
   - ruby
 title: Travis CI, Ruby, and Deployments
-meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"
+meta_image_width: 700
+meta_image_height: 700
 ---
 
 The situation is roughly this. You have a Ruby project you would like to build

@@ -8,6 +8,8 @@ tags:
   - terraform
 title: A Framework for Deployment of Immutable Infrastructure
 meta_image: "https://s3.amazonaws.com/media.disjoint.ca/2015-11-26-immutable-infrastructure-deployment.jpg"
+meta_image_width: 700
+meta_image_height: 467
 ---
 
 It's been a little over eight months now since we (at [FreshBooks][1]) first
