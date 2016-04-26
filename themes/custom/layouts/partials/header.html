@@ -71,6 +71,20 @@
   <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   {{ end }}
 
+  <!-- structured data social profile links -->
+  <script type="application/ld+json">
+  {
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "name" : "Marvin Pinto",
+    "url" : "https://disjoint.ca",
+    "sameAs" : [
+      "https://twitter.com/marvinpinto",
+      "https://github.com/marvinpinto"
+    ]
+  }
+  </script>
+
 </head>
 <body lang="{{ .Site.Params.languageCode }}">
   <!-- navbar -->
