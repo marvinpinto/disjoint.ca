@@ -2,7 +2,7 @@
 aliases:
   - '/posts/2016/02/28/using-a-serverless-architecture-to-deliver-irc-webhook-notifications/'
   - '/posts/2016/02/28/using-a-serverless-architecture-to-deliver-irc-webhook-notifications'
-date: 2016-02-28
+date: 2016-02-28T00:00:00-05:00
 tags:
   - aws
   - lambda

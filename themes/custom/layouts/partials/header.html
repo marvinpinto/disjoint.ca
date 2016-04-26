@@ -71,6 +71,41 @@
   <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   {{ end }}
 
+  <!-- structured data social profile links -->
+  <script type="application/ld+json">
+  {
+    "@context" : "http://schema.org",
+    "@type" : "Person",
+    "name" : "Marvin Pinto",
+    "url" : "https://disjoint.ca",
+    "sameAs" : [
+      "https://twitter.com/marvinpinto",
+      "https://github.com/marvinpinto"
+    ]
+  }
+  </script>
+
+  <!-- structured data logo -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "url" : "https://disjoint.ca",
+    "logo": "https://s3.amazonaws.com/media.disjoint.ca/disjoint-ca-logo.svg"
+  }
+  </script>
+
+  <!-- structured data website name -->
+  <script type="application/ld+json">
+  {
+    "@context" : "http://schema.org",
+    "@type" : "WebSite",
+    "name" : "disjoint.ca",
+    "alternateName" : "words, ideas, dreams",
+    "url" : "https://disjoint.ca"
+  }
+  </script>
+
 </head>
 <body lang="{{ .Site.Params.languageCode }}">
   <!-- navbar -->

@@ -2,7 +2,7 @@
 aliases:
   - '/posts/2015/11/26/a-framework-for-deployment-of-immutable-infrastructure/'
   - '/posts/2015/11/26/a-framework-for-deployment-of-immutable-infrastructure'
-date: 2015-11-26
+date: 2015-11-26T00:00:00-05:00
 tags:
   - aws
   - terraform
