@@ -4,7 +4,9 @@ tags:
   - "s3_website"
   - s3
 title: Content Type Headers with s3_website Deployments
-meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"
+meta_image_width: 700
+meta_image_height: 700
 ---
 
 If you unexpectedly find the content type for your `s3_website`-deployed html

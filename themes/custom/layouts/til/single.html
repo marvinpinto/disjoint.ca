@@ -25,7 +25,12 @@
       "@id": {{ .Permalink }}
     },
     "description": {{ $.Scratch.Get "local_description" }},
-    "image": {{ .Param "meta_image" }},
+    "image": {
+      "@type": "ImageObject",
+      "url": {{ .Param "meta_image" }},
+      "height": {{ .Param "meta_image_height" }},
+      "width": {{ .Param "meta_image_width" }}
+    },
     "publisher": {
       "@type": "Organization",
       "url" : "https://disjoint.ca",

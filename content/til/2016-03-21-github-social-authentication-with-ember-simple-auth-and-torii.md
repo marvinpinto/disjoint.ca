@@ -4,7 +4,9 @@ tags:
   - emberjs
   - "ember-simple-auth"
 title: GitHub Social Authentication with Ember Simple Auth and Torii
-meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400"
+meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"
+meta_image_width: 700
+meta_image_height: 700
 ---
 
 I ran into a bunch of issues yesterday trying to get an Ember app to
