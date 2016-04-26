@@ -46,6 +46,7 @@ CDNs
 charlesbot
 Charlesbot
 charset
+cheatsheet
 cli
 cloudfront
 Cloudfront
@@ -119,6 +120,7 @@ IP
 irc
 IRC
 irchooky
+irssi
 isAuthenticated
 ISRG
 javascript
@@ -150,6 +152,7 @@ mixin
 mixins
 mkdir
 moorereason
+msg
 mtime
 namespace
 nginx
@@ -251,10 +254,12 @@ VSphere
 vv
 webhook
 Webhook
+wevs
 whitelist
 whitelisted
 workflow
 Workflow
+wtf
 WWWyZjHdUPA
 xenolf
 xhtml
@@ -265,3 +270,4 @@ yaml
 yay
 yml
 znc
+ZNC
