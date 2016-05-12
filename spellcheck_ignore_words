@@ -61,6 +61,8 @@ const
 contraints
 CoreOS
 cron
+css
+CSS
 da
 Datastore
 dateutil
@@ -98,6 +100,9 @@ fb
 fi
 filesystem
 firewalled
+fontawesome
+FontAwesome
+fontAwesomePlaceHolder
 Freenode
 FreshBooks
 ghe
@@ -140,6 +145,7 @@ jbranchaud
 jdk
 JIRA
 js
+JS
 jsdoc
 json
 JSON
@@ -259,6 +265,8 @@ travisci
 txt
 ubuntu
 UDRW
+uf
+unicode
 unittest
 Unmount
 unmountDisk
@@ -285,6 +293,7 @@ Workflow
 wtf
 WWWyZjHdUPA
 xenolf
+xf
 xhtml
 xlarge
 xml
