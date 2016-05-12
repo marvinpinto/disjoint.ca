@@ -51,6 +51,7 @@ Charlesbot
 charset
 cheatsheet
 cli
+CLI
 cloudfront
 Cloudfront
 CloudFront
@@ -60,6 +61,8 @@ const
 contraints
 CoreOS
 cron
+css
+CSS
 da
 Datastore
 dateutil
@@ -78,6 +81,7 @@ Dropbox
 ebs
 EBS
 eK
+EmberApp
 emberjs
 EmberJS
 env
@@ -96,6 +100,9 @@ fb
 fi
 filesystem
 firewalled
+fontawesome
+FontAwesome
+fontAwesomePlaceHolder
 Freenode
 FreshBooks
 ghe
@@ -138,6 +145,7 @@ jbranchaud
 jdk
 JIRA
 js
+JS
 jsdoc
 json
 JSON
@@ -209,6 +217,7 @@ RSA
 runtime
 rvm
 SaaS
+sassOptions
 Schweet
 screenshot
 serverless
@@ -250,11 +259,14 @@ torii
 Torii
 ToriiAuthenticator
 toronto
+toTree
 transitionTo
 travisci
 txt
 ubuntu
 UDRW
+uf
+unicode
 unittest
 Unmount
 unmountDisk
@@ -281,6 +293,7 @@ Workflow
 wtf
 WWWyZjHdUPA
 xenolf
+xf
 xhtml
 xlarge
 xml
