@@ -45,11 +45,23 @@
   }
   </script>
 
+  {{ $.Scratch.Set "local_twitter_str" (print .Title " via " (.Param "author_twitter_username") " " .Permalink) }}
+
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
       <h3>{{ .Title }}</h3>
       <span class="label label-primary">{{ .Date.Format .Site.Params.strings.date_format }}</span> using tags
       {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
+
+      <div class="pull-right">
+        <a href='http://twitter.com/share?text={{ $.Scratch.Get "local_twitter_str" }}'
+          class="btn btn-secondary btn-sm"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fa fa-twitter"></i> Tweet
+        </a>
+      </div>
+
     </div>
   </div>
 
