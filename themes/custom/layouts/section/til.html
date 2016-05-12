@@ -14,13 +14,9 @@
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
       <h3><a href="{{.Permalink}}">{{ .Title }}</a></h3>
-      <small><span class="label label-primary">
-          {{ .Date.Format .Site.Params.strings.date_format }}
-        </span>&#160;using tags
-        {{ range $i, $e :=.Params.tags }}
-        {{if $i}} , {{end}}
-        <a href="/tags/{{ . | urlize }}">{{ . }}</a>
-        {{ end }}
+      <small>
+        <span class="label label-primary">{{ .Date.Format .Site.Params.strings.date_format }}</span> using tags
+        {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
       </small>
     </div>
   </div>

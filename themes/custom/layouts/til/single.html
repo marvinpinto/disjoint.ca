@@ -49,10 +49,7 @@
     <div class="col-md-offset-1 col-md-10">
       <h3>{{ .Title }}</h3>
       <span class="label label-primary">{{ .Date.Format .Site.Params.strings.date_format }}</span> using tags
-      {{ range $i, $e :=.Params.tags }}
-      {{if $i}} , {{end}}
-      <a href="/tags/{{ . | urlize }}">{{ . }}</a>
-      {{ end }}
+      {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
     </div>
   </div>
 
