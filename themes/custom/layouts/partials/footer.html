@@ -11,24 +11,24 @@
         <!-- social icons -->
         <div class="pull-right">
           {{ if isset .Site.Params "twitter" }}
-          <a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener noreferrer">
+          <a href="{{ .Site.Params.twitter }}" target="_blank" rel="noreferrer">
             <i class="fa fa-twitter-square fa-2x"></i></a>
           {{ end }}
           {{ if isset .Site.Params "github" }}
-          <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">
+          <a href="{{ .Site.Params.github }}" target="_blank" rel="noreferrer">
             <i class="fa fa-github-square fa-2x"></i></a>
           {{ end }}
           {{ if isset .Site.Params "delicious" }}
-          <a href="{{ .Site.Params.delicious }}" target="_blank" rel="noopener noreferrer">
+          <a href="{{ .Site.Params.delicious }}" target="_blank" rel="noreferrer">
             <i class="fa fa-delicious fa-2x"></i></a>
           {{ end }}
           {{ if isset .Site.Params "flickr" }}
-          <a href="{{ .Site.Params.flickr }}" target="_blank" rel="noopener noreferrer">
+          <a href="{{ .Site.Params.flickr }}" target="_blank" rel="noreferrer">
             <i class="fa fa-flickr fa-2x"></i></a>
           {{ end }}
 
           {{ if .RSSlink }}
-          <a href="{{ .RSSlink }}" type="application/rss+xml" target="_blank" rel="noopener noreferrer">
+          <a href="{{ .RSSlink }}" type="application/rss+xml" target="_blank" rel="noreferrer">
             <i class="fa fa-rss-square fa-2x"></i></a>
           {{ end }}
         </div>
