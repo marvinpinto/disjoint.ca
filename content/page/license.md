@@ -1,6 +1,6 @@
 ---
 date: "2015-11-15"
-title: "Content License"
+title: "\uf0e3 Content License"
 description: "License for the contents of this website"
 ---
 All non-code content is licensed under [Creative Commons

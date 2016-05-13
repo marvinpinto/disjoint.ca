@@ -1,6 +1,6 @@
 ---
 date: "2015-11-15"
-title: "About Me"
+title: "\uf1b3 About Me"
 keywords:
   - "marvinpinto"
   - "about"
