@@ -45,7 +45,7 @@
   }
   </script>
 
-  {{ $.Scratch.Set "local_twitter_str" (print .Title " via " (.Param "author_twitter_username") " " .Permalink) }}
+  {{ $.Scratch.Set "local_twitter_str" (print .Title " by " (.Param "author_twitter_username") " " .Permalink) }}
 
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
