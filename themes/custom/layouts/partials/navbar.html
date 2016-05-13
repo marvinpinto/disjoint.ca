@@ -24,6 +24,16 @@
 
     <div class="collapse navbar-collapse" id="disjoint-ca-navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
+
+        <li>
+        <form class="form-online" role="form" method="get" action="https://www.google.com/search">
+          <div class="form-group-sm">
+            <input name="q" type="text" class="form-control search-form" placeholder="&#xf002; Search disjoint.ca">
+            <input type="hidden" name="sitesearch" value="disjoint.ca">
+          </div>
+        </form>
+        </li>
+
         <li><a href="{{ .Site.BaseURL }}/writing/"><i class="fa fa-pencil-square-o"></i>&#160;&#160;Writing</a></li>
         <li><a href="{{ .Site.BaseURL }}/til/"><i class="fa fa-lightbulb-o"></i>&#160;&#160;TIL</a></li>
         <li><a href="{{ .Site.BaseURL }}/page/about/"><i class="fa fa-info-circle"></i>&#160;&#160;About</a></li>
