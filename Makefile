@@ -45,7 +45,7 @@ spellcheck:
 .PHONY: bootlint
 bootlint:
 	find public/ -type f -name "*.html" -exec \
-		`npm bin`/bootlint --disable "E045,W001,W002,W003,W005,E013" \
+		`npm bin`/bootlint --disable "E045,W001,W002,W003,W005,E013,E028" \
 		{} +
 
 .PHONY: html5validator
