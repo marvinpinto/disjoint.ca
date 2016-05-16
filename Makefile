@@ -8,7 +8,7 @@ help:
 	@echo Start with "make hugo" and go from there
 
 hugo_0.15_linux_amd64/hugo:
-	wget https://github.com/spf13/hugo/releases/download/v0.15/hugo_0.15_linux_amd64.tar.gz -O /tmp/hugo.tar.gz
+	wget --no-verbose https://github.com/spf13/hugo/releases/download/v0.15/hugo_0.15_linux_amd64.tar.gz -O /tmp/hugo.tar.gz
 	tar -xvf /tmp/hugo.tar.gz
 	mv hugo_0.15_linux_amd64/hugo_0.15_linux_amd64 hugo_0.15_linux_amd64/hugo
 
@@ -82,6 +82,8 @@ server: install clean assets resume
 
 .PHONY: build-css
 build-css:
+	mkdir -p build/css
+	wget --no-verbose -O build/css/_selection_sharer.scss https://raw.githubusercontent.com/xdamman/selection-sharer/b32d15f1828c7e553774271f6d07599e96573975/dist/selection-sharer.css
 	mkdir -p static/css
 	bundle exec sass \
 		--style compressed \
@@ -92,7 +94,8 @@ build-css:
 .PHONY: build-js
 build-js:
 	mkdir -p build/js
-	wget -O build/js/analytics.js https://www.google-analytics.com/analytics.js
+	wget --no-verbose -O build/js/selection-sharer.js https://raw.githubusercontent.com/xdamman/selection-sharer/18cc7806c685bc01ed0b4b920a27ef7f88eee9c1/dist/selection-sharer.js
+	wget --no-verbose -O build/js/analytics.js https://www.google-analytics.com/analytics.js
 	mkdir -p static/js
 	`npm bin`/uglifyjs \
 		node_modules/jquery/dist/jquery.js \
@@ -100,6 +103,7 @@ build-js:
 		build/js/analytics.js \
 		node_modules/iframe-resizer/js/iframeResizer.js \
 		node_modules/iframe-resizer/js/iframeResizer.contentWindow.js \
+		build/js/selection-sharer.js \
 		assets/js/main.js \
 		--compress \
 		--screw-ie8 \
