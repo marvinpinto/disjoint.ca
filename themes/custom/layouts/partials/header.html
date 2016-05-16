@@ -10,6 +10,10 @@
     {{ $.Scratch.Add "local_title" "Tags" }}
   {{ else if eq .URL "/til/" }}
     {{ $.Scratch.Add "local_title" "Today I Learned" }}
+  {{ else if in .Title "About Me" }}
+    {{ $.Scratch.Add "local_title" "About Marvin Pinto" }}
+  {{ else if in .Title "Content License" }}
+    {{ $.Scratch.Add "local_title" "License information for disjoint.ca" }}
   {{ else }}
     {{ $.Scratch.Add "local_title" .Title }}
   {{ end }}
