@@ -134,6 +134,13 @@ build-fonts:
 		--css-rel=../fonts \
 		--woff1=link \
 		--woff2=link
+	`npm bin`/webfont-dl \
+		"https://fonts.googleapis.com/css?family=Oswald" \
+		--out=build/css/_oswald.scss \
+		--font-out=static/fonts/ \
+		--css-rel=../fonts \
+		--woff1=link \
+		--woff2=link
 	mkdir -p static/fonts
 	cp node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.* static/fonts/
 	cp node_modules/font-awesome/fonts/fontawesome-webfont.* static/fonts/

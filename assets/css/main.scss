@@ -4,6 +4,7 @@ $fa-font-path: "../fonts";
 // Bootstrap overrides
 $icon-font-path: "../fonts/";
 $font-family-sans-serif: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-family: 'Oswald', sans-serif;
 $line-height-base: 1.5;
 $font-size-base: 15px;
 $pre-color: #333;
@@ -30,6 +31,7 @@ $jumbotron-heading-font-size: 130px;
 @import '../../build/css/ubuntu';
 @import '../../build/css/rancho';
 @import '../../build/css/gudea';
+@import '../../build/css/oswald';
 
 // Bootstrap customizations
 @import 'bootstrap_customizations';
