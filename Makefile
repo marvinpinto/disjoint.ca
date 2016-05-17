@@ -164,7 +164,6 @@ resume:
 			static/resume/marvin-pinto-resume.pdf \
 			static/resume/marvin-pinto-resume.html \
 			static/resume/marvin-pinto-resume.txt \
-			static/resume/marvin-pinto-resume.doc \
 		-t positive \
 		--pdf wkhtmltopdf
 	rm -f static/resume/*.pdf.html static/resume/*.css
