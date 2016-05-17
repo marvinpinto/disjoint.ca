@@ -144,6 +144,7 @@ javascript
 jbranchaud
 jdk
 JIRA
+jpg
 js
 JS
 jsdoc
@@ -181,6 +182,7 @@ nosetest
 nosetests
 Nosetests
 npm
+numfmt
 oauth
 OAuth
 onwards
@@ -211,6 +213,7 @@ refreshAccessTokens
 refreshLeeway
 reproducibility
 req
+rfs
 rmachielse
 routeAfterAuthentication
 RSA
@@ -220,6 +223,7 @@ SaaS
 sassOptions
 Schweet
 screenshot
+sed
 serverless
 Serverless
 serverTokenEndpoint
@@ -228,6 +232,9 @@ sessionAuthenticated
 sessionDataUpdated
 sessionServiceName
 Shipit
+si
+sI
+sIL
 Slackbot
 SNI
 spf
@@ -271,6 +278,7 @@ unittest
 Unmount
 unmountDisk
 unsplash
+url
 username
 usersRouter
 usr
