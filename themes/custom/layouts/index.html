@@ -16,13 +16,13 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-md-offset-1 col-md-10">
+    <div class="col-md-offset-1 col-md-10 text-center">
       <h2><i class="fa fa-hand-peace-o"> Hello and Welcome</i></h2>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-offset-1 col-md-10">
+    <div class="col-md-offset-1 col-md-5">
       <h4><i class="fa fa-pencil-square-o"></i> Read some of my latest articles!</h4>
       <ul class="fa-ul">
         {{ range first 5 (where .Data.Pages "Section" "writing") }}
@@ -30,10 +30,8 @@
         {{ end }}
       </ul>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-offset-1 col-md-10">
+    <div class="col-md-5">
       <h4><i class="fa fa-lightbulb-o"></i> Check out a TIL or two</h4>
       <ul class="fa-ul">
         {{ range first 5 (where .Data.Pages "Section" "til") }}

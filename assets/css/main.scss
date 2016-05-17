@@ -4,6 +4,7 @@ $fa-font-path: "../fonts";
 // Bootstrap overrides
 $icon-font-path: "../fonts/";
 $font-family-sans-serif: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-family: 'Oswald', sans-serif;
 $line-height-base: 1.5;
 $font-size-base: 15px;
 $pre-color: #333;
@@ -13,9 +14,7 @@ $brand-primary: #68829e;
 $link-hover-decoration: none;
 $link-hover-color: #505160;
 $label-primary-bg: $link-hover-color;
-$navbar-default-bg: #f5f5f5;
 $navbar-height: 40px;
-$navbar-default-color: #8C8986;
 $navbar-default-link-hover-color: $link-hover-color;
 $jumbotron-font-size: 35px;
 $jumbotron-heading-font-size: 130px;
@@ -30,6 +29,7 @@ $jumbotron-heading-font-size: 130px;
 @import '../../build/css/ubuntu';
 @import '../../build/css/rancho';
 @import '../../build/css/gudea';
+@import '../../build/css/oswald';
 
 // Bootstrap customizations
 @import 'bootstrap_customizations';
@@ -54,3 +54,6 @@ $jumbotron-heading-font-size: 130px;
 
 // Hugo theme customizations
 @import 'gohugo_theme';
+
+// Selection Sharer
+@import '../../build/css/selection_sharer';
