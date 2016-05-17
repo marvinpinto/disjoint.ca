@@ -45,7 +45,7 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content='{{ $.Scratch.Get "local_card_type" }}' />
   <meta name="twitter:site" content="@marvinpinto" />
-  <meta name="twitter:creator" content='{{ .Param "author_twitter_username" }}' />
+  <meta name="twitter:creator" content='@{{ .Param "author_twitter_username" }}' />
   <meta name="twitter:title" content='{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}' />
   <meta name="twitter:description" content='{{ $.Scratch.Get "local_description" }}' />
   <meta name="twitter:image" content='{{ .Param "meta_image" }}' />

@@ -1,5 +1,5 @@
 ---
-author_twitter_username: '@marvinpinto'
+author_twitter_username: 'marvinpinto'
 date: 2016-04-25T22:03:51-04:00
 description: A cheatsheet, if you will
 meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"

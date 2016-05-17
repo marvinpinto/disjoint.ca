@@ -96,6 +96,7 @@ build-js:
 	mkdir -p build/js
 	wget --no-verbose -O build/js/selection-sharer.js https://raw.githubusercontent.com/xdamman/selection-sharer/18cc7806c685bc01ed0b4b920a27ef7f88eee9c1/dist/selection-sharer.js
 	wget --no-verbose -O build/js/analytics.js https://www.google-analytics.com/analytics.js
+	wget --no-verbose -O build/js/widgets.js https://platform.twitter.com/widgets.js
 	mkdir -p static/js
 	`npm bin`/uglifyjs \
 		node_modules/jquery/dist/jquery.js \
@@ -104,6 +105,7 @@ build-js:
 		node_modules/iframe-resizer/js/iframeResizer.js \
 		node_modules/iframe-resizer/js/iframeResizer.contentWindow.js \
 		build/js/selection-sharer.js \
+		build/js/widgets.js \
 		assets/js/main.js \
 		--compress \
 		--screw-ie8 \

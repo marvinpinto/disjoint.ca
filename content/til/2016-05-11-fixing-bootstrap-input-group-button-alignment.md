@@ -1,5 +1,5 @@
 ---
-author_twitter_username: '@marvinpinto'
+author_twitter_username: 'marvinpinto'
 date: 2016-05-11T16:48:42-04:00
 description: How to set bootstrap number precision in Ember CLI
 lastmod: 2016-05-11T16:48:42-04:00
