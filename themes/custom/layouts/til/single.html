@@ -45,8 +45,6 @@
   }
   </script>
 
-  {{ $.Scratch.Set "local_twitter_str" (print .Title " by " (.Param "author_twitter_username") " " .Permalink) }}
-
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
       <h3>{{ .Title }}</h3>
@@ -54,7 +52,7 @@
       {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
 
       <div class="pull-right">
-        <a href='http://twitter.com/share?text={{ $.Scratch.Get "local_twitter_str" }}'
+        <a href='https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}&via={{ .Param "author_twitter_username" }}'
           class="btn btn-secondary btn-sm"
           target="_blank"
           rel="noreferrer"

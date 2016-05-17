@@ -1,5 +1,5 @@
 ---
-author_twitter_username: '@marvinpinto'
+author_twitter_username: 'marvinpinto'
 date: 2016-05-11T18:09:46-04:00
 description: Trying to use Font Awesome icons as placeholder text in an input field for the most part does not work by default. Here's how to make this work!
 lastmod: 2016-05-11T18:09:46-04:00

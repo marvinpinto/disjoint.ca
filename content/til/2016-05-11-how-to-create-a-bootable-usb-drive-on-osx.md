@@ -1,5 +1,5 @@
 ---
-author_twitter_username: '@marvinpinto'
+author_twitter_username: 'marvinpinto'
 date: 2016-05-11T08:19:15-04:00
 description: Create an Ubuntu-bootable USB drive using OSX
 lastmod: 2016-05-11T08:19:15-04:00
