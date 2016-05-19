@@ -4,17 +4,35 @@
 
   <div class="row">
     <div class="text-center col-md-offset-1 col-md-10">
-      <h3><i class="fa fa-files-o"> Writing Archives</i></h3>
+      <h3>&#xf0c5; Writing Archives</h3>
+    </div>
+  </div>
+
+  {{ range (.Paginator 5).Pages }}
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h3><a href="{{.Permalink}}">{{ .Title }}</a></h3>
+      <small>
+        <span class="label label-primary">{{ .Date.Format .Site.Params.strings.date_format }}</span> using tags
+        {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
+      </small>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
-      <ul class="fa-ul">
-        {{ range .Data.Pages }}
-        <li><i class="fa-li fa fa-angle-right"></i><a href="{{.Permalink}}">{{ .Title }}</a>&#160;&#160;({{ .Date.Format .Site.Params.strings.date_format }})</li>
-        {{ end }}
-        </ul>
+      <br>
+      {{ .Summary }}
+      {{ if .Truncated }}
+      <a href="{{ .Permalink }}">&nbsp;<i class="fa fa-angle-double-right"></i> continue reading</a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10 text-center">
+        {{ template "_internal/pagination.html" . }}
     </div>
   </div>
 
@@ -25,4 +43,5 @@
   </div>
 
 </div>
+
 {{ partial "footer.html" . }}
