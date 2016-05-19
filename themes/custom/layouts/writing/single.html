@@ -46,19 +46,13 @@
   </script>
 
   <div class="row">
-    <div class="col-md-offset-1 col-md-10">
+
+    <div class="col-md-offset-1 col-md-9">
       <h3>{{ .Title }}</h3>
       <span class="label label-primary">{{ .Date.Format .Site.Params.strings.date_format }}</span> using tags
       {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
 
       <div class="pull-right">
-        <a href="#"
-          class="btn btn-secondary btn-sm hn-linkbutton"
-          target="blank"
-          data-url="{{ .Permalink }}"
-          data-title="{{ .Title }}"><i class="fa fa-comments-o"></i> Discuss
-        </a>
-
         <a href='https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}&via={{ .Param "author_twitter_username" }}'
           class="btn btn-secondary btn-sm"
           target="_blank"
@@ -67,14 +61,24 @@
         </a>
       </div>
 
+      <div>
+        <br>
+        {{ .Content }}
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-offset-1 col-md-10">
-      <br>
-      {{ .Content }}
+    <div class="col-md-2 adsense">
+      <!-- adsense -->
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-6377139471527368"
+        data-ad-slot="1182212332"
+        data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
+
   </div>
 
   <div class="row">
@@ -82,7 +86,6 @@
       <hr />
     </div>
   </div>
-
 
 </div>
 
