@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ .Site.Title }} (writing)</title>
+    <title>{{ .Site.Title }} (tags)</title>
     <link>{{ .Permalink }}</link>
-    <description>{{ .Site.Title }} Writing Archives</description>
+    <description>{{ .Site.Title }} Tags</description>
     <generator>Hugo (gohugo.io)</generator>
     <language>{{ .Site.LanguageCode }}</language>
     <managingEditor>{{ .Site.Author.email }} ({{ .Site.Author.name }})</managingEditor>
