@@ -1,39 +1,29 @@
 {{ partial "header.html" . }}
 
 <div class="container">
+
+  <div class="row">
+    <div class="text-center col-md-offset-1 col-md-10">
+      <h3>&#xf0eb; Today I Learned!</h3>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
       <p>This section contains a collection of things I've learned and
       re-learned over the years. It's been structured to make it easy to Ctrl+F
-      &amp; search for tidbits. Subscribe to the <a href="{{ .RSSlink }}"
-      type="application/rss+xml" target="_blank" rel="noreferrer">RSS feed</a> for updates!</p>
-    </div>
-  </div>
-
-  {{ range .Paginator.Pages }}
-  <div class="row">
-    <div class="col-md-offset-1 col-md-10">
-      <h3><a href="{{.Permalink}}">{{ .Title }}</a></h3>
-      <small>
-        <span class="label label-primary">{{ .Date.Format .Site.Params.strings.date_format }}</span> using tags
-        {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
-      </small>
+      &amp; search for tidbits (the searchbox in the navbar might be helpful
+      for non-title related searches here). Subscribe to the <a href="{{.RSSlink }}" type="application/rss+xml" target="_blank" rel="noreferrer"><i class="fa fa-rss-square"> RSS feed</i></a> for updates!</p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
-      <br>
-      {{ .Content }}
-      <br>
-    </div>
-  </div>
-  {{ end }}
-
-  <div class="row">
-
-    <div class="col-md-offset-1 col-md-10 text-center">
-        {{ template "_internal/pagination.html" . }}
+      <ul class="fa-ul">
+        {{ range .Data.Pages }}
+        <li><i class="fa-li fa fa-angle-right"></i><a href="{{.Permalink}}">{{ .Title }}</a>&nbsp;({{ .Date.Format .Site.Params.strings.date_format }})</li>
+        {{ end }}
+        </ul>
     </div>
   </div>
 
