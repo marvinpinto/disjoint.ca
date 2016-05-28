@@ -3,6 +3,8 @@ aliases:
   - '/posts/2015/11/26/a-framework-for-deployment-of-immutable-infrastructure/'
   - '/posts/2015/11/26/a-framework-for-deployment-of-immutable-infrastructure'
 date: 2015-11-26T00:00:00-05:00
+lastmod: 2016-05-28T17:30:00-04:00
+description: Using Immutable Infrastructure concepts to deploy an internal instance of GitHub Enterprise -- a short story on how we got here.
 tags:
   - aws
   - terraform

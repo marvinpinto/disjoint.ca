@@ -3,6 +3,8 @@ aliases:
   - '/posts/2016/02/28/using-a-serverless-architecture-to-deliver-irc-webhook-notifications/'
   - '/posts/2016/02/28/using-a-serverless-architecture-to-deliver-irc-webhook-notifications'
 date: 2016-02-28T00:00:00-05:00
+lastmod: 2016-05-28T17:30:00-04:00
+description: In this blog post I would like to explore the concept of a _Serverless Architecture_ and relate it back to a project that I have been working on -- IRC Hooky.
 tags:
   - aws
   - lambda

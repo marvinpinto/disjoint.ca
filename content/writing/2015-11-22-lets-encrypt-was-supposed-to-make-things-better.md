@@ -3,6 +3,8 @@ aliases:
   - '/posts/2015/11/22/lets-encrypt-was-supposed-to-make-things-easier/'
   - '/posts/2015/11/22/lets-encrypt-was-supposed-to-make-things-easier'
 date: 2015-11-22T12:44:12-05:00
+lastmod: 2016-05-28T17:30:00-04:00
+description: How to use Let’s Encrypt with Hugo or other static file generators -- a short story on what did and did not work for me.
 tags:
   - letsencrypt
   - cloudfront
