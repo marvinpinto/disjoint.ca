@@ -51,6 +51,7 @@
       <h3>{{ .Title }}</h3>
       <span class="label label-primary">{{ .Date.Format .Site.Params.strings.date_format }}</span> using tags
       {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
+      <span style="display:inline" title="Approximate reading time: {{.ReadingTime}} mins">&nbsp;<i class="fa fa-clock-o"></i>&thinsp;{{.ReadingTime}}min</span>
 
       <div class="pull-right">
         <a href='https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}&via={{ .Param "author_twitter_username" }}'
