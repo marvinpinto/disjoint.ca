@@ -235,6 +235,15 @@ it out on December 3, 2015, when [Let's Encrypt goes Public Beta][12].
 
 Happy Encrypting All The Things o/
 
+<br>
+
+<p class="text-center">The <a
+href="https://unsplash.com/photos/KhA08OATrQ4">banner</a> for this post was
+originally created by <a href="http://www.giuliomagnifico.it">Giulio
+Magnifico</a> and licensed under <a href="https://unsplash.com/license">CC0</a>
+(via unsplash)</p>
+
+
 [1]: https://letsencrypt.org/2015/10/19/lets-encrypt-is-trusted.html
 [2]: https://www.disjoint.ca
 [3]: https://docs.google.com/forms/d/15Ucm4A20y2rf9gySCTXD6yoLG6Tba7AwYgglV7CKHmM/viewform

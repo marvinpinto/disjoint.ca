@@ -292,6 +292,15 @@ Being able to _easily_ test upgrades & downgrades becomes very important
 because it removes that _one more barrier_, which in the end leads to event
 free deploys!
 
+<br>
+
+<p class="text-center">The <a
+href="https://unsplash.com/photos/FtRkRespN24">banner</a> for this post was
+originally created by <a href="https://unsplash.com/@bboba">Boba Jovanovic</a>
+and licensed under <a href="https://unsplash.com/license">CC0</a> (via
+unsplash)</p>
+
+
 [1]: https://www.freshbooks.com
 [2]: https://terraform.io
 [3]: https://atlas.hashicorp.com
