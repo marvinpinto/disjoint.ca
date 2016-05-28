@@ -48,7 +48,14 @@
   <div class="row">
 
     <div class="col-md-offset-1 col-md-9">
-      <h3>{{ .Title }}</h3>
+      <div
+        class="img-responsive jumbotron hero-blog-post-banner"
+        style="background-image: url('{{ .Param "meta_image" }}');">
+      </div>
+    </div>
+
+    <div class="col-md-offset-1 col-md-9">
+      <h2>{{ .Title }}</h2>
       <span class="label label-primary">{{ .Date.Format .Site.Params.strings.date_format }}</span> using tags
       {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
       <span style="display:inline" title="Approximate reading time: {{.ReadingTime}} mins">&nbsp;<i class="fa fa-clock-o"></i>&thinsp;{{.ReadingTime}}min</span>

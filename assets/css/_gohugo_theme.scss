@@ -5,3 +5,13 @@ h3 {
 .adsense {
   margin-top: $line-height-computed;
 }
+
+.hero-blog-post-banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+  min-height: 25em;
+  margin-bottom: inherit;
+}
