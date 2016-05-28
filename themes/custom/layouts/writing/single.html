@@ -54,6 +54,12 @@
       <span style="display:inline" title="Approximate reading time: {{.ReadingTime}} mins">&nbsp;<i class="fa fa-clock-o"></i>&thinsp;{{.ReadingTime}}min</span>
 
       <div class="pull-right">
+        <a href="#"
+          class="btn btn-secondary btn-sm hn-linkbutton"
+          target="blank"
+          data-url="{{ .Permalink }}"
+          data-title="{{ .Title }}"><i class="fa fa-comments-o"></i> Discuss
+        </a>
         <a href='https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}&via={{ .Param "author_twitter_username" }}'
           class="btn btn-secondary btn-sm"
           target="_blank"
