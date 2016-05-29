@@ -46,19 +46,7 @@
   </script>
 
   <div class="row">
-    <div class="col-md-2 adsense">
-      <!-- adsense -->
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-6377139471527368"
-        data-ad-slot="1182212332"
-        data-ad-format="auto"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-
-    <div class="col-md-9">
+    <div class="col-md-offset-1 col-md-10">
       <h3>{{ .Title }}</h3>
       <span class="label label-primary">{{ .Date.Format .Site.Params.strings.date_format }}</span> using tags
       {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
@@ -76,6 +64,20 @@
         <br>
         {{ .Content }}
       </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <!-- adsense -->
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-6377139471527368"
+        data-ad-slot="1182212332"
+        data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
   </div>
 
