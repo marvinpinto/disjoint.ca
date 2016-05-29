@@ -1,4 +1,4 @@
-.jumbotron {
+.hero-front-page-banner {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('https://s3.amazonaws.com/media.disjoint.ca/disjoint-ca-banner.jpg');
@@ -11,7 +11,7 @@
   z-index: -1;
 }
 
-.jumbotron h1 {
+.hero-front-page-banner h1 {
   font-weight: 900;
   font-family: 'Gudea', Verdana, Helvetica, sans-serif;
   text-align: center;
@@ -19,7 +19,7 @@
   color: white;
 }
 
-.jumbotron p {
+.hero-front-page-banner p {
   font-family: 'Rancho', Georgia, serif;
   text-transform: lowercase;
   color: white;

@@ -3,6 +3,8 @@ aliases:
   - '/posts/2015/11/26/a-framework-for-deployment-of-immutable-infrastructure/'
   - '/posts/2015/11/26/a-framework-for-deployment-of-immutable-infrastructure'
 date: 2015-11-26T00:00:00-05:00
+lastmod: 2016-05-28T17:30:00-04:00
+description: Using Immutable Infrastructure concepts to deploy an internal instance of GitHub Enterprise -- a short story on how we got here.
 tags:
   - aws
   - terraform
@@ -289,6 +291,15 @@ tedious to do in a VSphere/ESX environment.
 Being able to _easily_ test upgrades & downgrades becomes very important
 because it removes that _one more barrier_, which in the end leads to event
 free deploys!
+
+<br>
+
+<p class="text-center">The <a
+href="https://unsplash.com/photos/FtRkRespN24">banner</a> for this post was
+originally created by <a href="https://unsplash.com/@bboba">Boba Jovanovic</a>
+and licensed under <a href="https://unsplash.com/license">CC0</a> (via
+unsplash)</p>
+
 
 [1]: https://www.freshbooks.com
 [2]: https://terraform.io

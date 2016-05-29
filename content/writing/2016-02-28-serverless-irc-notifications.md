@@ -3,6 +3,8 @@ aliases:
   - '/posts/2016/02/28/using-a-serverless-architecture-to-deliver-irc-webhook-notifications/'
   - '/posts/2016/02/28/using-a-serverless-architecture-to-deliver-irc-webhook-notifications'
 date: 2016-02-28T00:00:00-05:00
+lastmod: 2016-05-28T17:30:00-04:00
+description: In this blog post I would like to explore the concept of a _Serverless Architecture_ and relate it back to a project that I have been working on -- IRC Hooky.
 tags:
   - aws
   - lambda
@@ -213,6 +215,15 @@ abstract out logic and reduce costs (complexity or otherwise).
 We have a long way to go before this becomes mainstream but given the
 innovation thus far by Amazon and other companies in this space (like
 [Google][19]), I'm excited about the possibilities!
+
+<br>
+
+<p class="text-center">The <a
+href="https://unsplash.com/photos/0StIOMbSXfA">banner</a> for this post was
+originally created by <a href="https://about.me/aaronburden">Aaron Burden</a>
+and licensed under <a href="https://unsplash.com/license">CC0</a> (via
+unsplash)</p>
+
 
 [1]: https://aws.amazon.com/lambda
 [2]: https://alestic.com/2015/05/aws-lambda-recurring-schedule

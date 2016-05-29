@@ -3,6 +3,8 @@ aliases:
   - '/posts/2015/11/22/lets-encrypt-was-supposed-to-make-things-easier/'
   - '/posts/2015/11/22/lets-encrypt-was-supposed-to-make-things-easier'
 date: 2015-11-22T12:44:12-05:00
+lastmod: 2016-05-28T17:30:00-04:00
+description: How to use Let’s Encrypt with Hugo or other static file generators -- a short story on what did and did not work for me.
 tags:
   - letsencrypt
   - cloudfront
@@ -232,6 +234,15 @@ you did not get a chance to participate in the closed-beta, I urge you to try
 it out on December 3, 2015, when [Let's Encrypt goes Public Beta][12].
 
 Happy Encrypting All The Things o/
+
+<br>
+
+<p class="text-center">The <a
+href="https://unsplash.com/photos/KhA08OATrQ4">banner</a> for this post was
+originally created by <a href="http://www.giuliomagnifico.it">Giulio
+Magnifico</a> and licensed under <a href="https://unsplash.com/license">CC0</a>
+(via unsplash)</p>
+
 
 [1]: https://letsencrypt.org/2015/10/19/lets-encrypt-is-trusted.html
 [2]: https://www.disjoint.ca
