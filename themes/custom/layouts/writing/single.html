@@ -14,7 +14,7 @@
       "@type": "Person",
       "name": "Marvin Pinto",
       "email": "hello@pinto.im",
-      "image": {{printf "%s" (print .Site.BaseURL "images/marvin-pinto-profile.jpg")}},
+      "image": {{printf "%s" (print .Site.BaseURL "/images/marvin-pinto-profile.jpg")}},
       "url": "https://disjoint.ca/page/about"
     },
     "datePublished": "{{ .Date.Format "2006-01-02T15:04:05-07:00" }}",
@@ -27,7 +27,7 @@
     "description": {{ $.Scratch.Get "local_description" }},
     "image": {
       "@type": "ImageObject",
-      "url": {{printf "%s" (print .Site.BaseURL (.Param "meta_image"))}}
+      "url": {{printf "%s" (print .Site.BaseURL "/" (.Param "meta_image"))}}
       "height": {{ .Param "meta_image_height" }},
       "width": {{ .Param "meta_image_width" }}
     },
@@ -37,7 +37,7 @@
       "url" : "https://disjoint.ca",
       "logo": {
         "@type": "ImageObject",
-        "url": {{printf "%s" (print .Site.BaseURL "images/disjoint-ca-logo.png")}},
+        "url": {{printf "%s" (print .Site.BaseURL "/images/disjoint-ca-logo.png")}},
         "width": 327,
         "height": 60
       }
@@ -47,14 +47,14 @@
 
   <div class="row">
 
-    <div class="col-md-offset-1 col-md-9">
+    <div class="col-md-offset-1 col-md-10">
       <div
         class="img-responsive jumbotron hero-blog-post-banner"
-        style="background-image: url('{{ .Site.BaseURL }}{{ .Param "meta_image" }}');">
+        style="background-image: url('{{ .Site.BaseURL }}/{{ .Param "meta_image" }}');">
       </div>
     </div>
 
-    <div class="col-md-offset-1 col-md-9">
+    <div class="col-md-offset-1 col-md-10">
       <h2>{{ .Title }}</h2>
       <span class="label label-primary">{{ .Date.Format .Site.Params.strings.date_format }}</span> using tags
       {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
@@ -80,8 +80,10 @@
         {{ .Content }}
       </div>
     </div>
+  </div>
 
-    <div class="col-md-2 adsense">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
       <!-- adsense -->
       <ins class="adsbygoogle"
         style="display:block"
@@ -92,7 +94,6 @@
       (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
     </div>
-
   </div>
 
   <div class="row">
