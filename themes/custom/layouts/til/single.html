@@ -27,7 +27,7 @@
     "description": {{ $.Scratch.Get "local_description" }},
     "image": {
       "@type": "ImageObject",
-      "url": {{ .Param "meta_image" }},
+      "url": {{printf "%s" (print .Site.BaseURL (.Param "meta_image"))}}
       "height": {{ .Param "meta_image_height" }},
       "width": {{ .Param "meta_image_width" }}
     },
