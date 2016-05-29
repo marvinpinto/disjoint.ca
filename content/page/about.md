@@ -84,7 +84,7 @@ was developed using [Hugo][3] - A Fast & Modern Static Website Engine.
 
 ### <i class="fa fa-paw"></i> Lady
 
-{{< figure class="img-responsive pull-left" src="https://s3.amazonaws.com/media.disjoint.ca/derpy-lady.jpg" alt="Lady the Dog" >}}
+<img src="/images/derpy-lady.jpg" alt="Lady the Dog" class="img-responsive img-rounded pull-left">
 
 And last but not least this here is my derpy dog Lady! She is very awkward for
 her age and completely adorable. We rescued her as a puppy from a shelter in

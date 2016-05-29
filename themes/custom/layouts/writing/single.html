@@ -37,7 +37,7 @@
       "url" : "https://disjoint.ca",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://s3.amazonaws.com/media.disjoint.ca/disjoint-ca-logo.png",
+        "url": {{printf "%s" (print .Site.BaseURL "images/disjoint-ca-logo.png")}},
         "width": 327,
         "height": 60
       }
