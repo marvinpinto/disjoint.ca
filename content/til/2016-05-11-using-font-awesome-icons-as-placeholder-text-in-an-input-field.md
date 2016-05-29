@@ -3,7 +3,7 @@ author_twitter_username: 'marvinpinto'
 date: 2016-05-11T18:09:46-04:00
 description: Trying to use Font Awesome icons as placeholder text in an input field for the most part does not work by default. Here's how to make this work!
 lastmod: 2016-05-11T18:09:46-04:00
-meta_image: https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700
+meta_image: "images/marvin-pinto-profile.jpg"
 meta_image_height: 700
 meta_image_width: 700
 tags:

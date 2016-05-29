@@ -3,7 +3,7 @@ author_twitter_username: marvinpinto
 date: 2016-05-17T11:47:40-04:00
 description: For the times when you need to know the file size of an HTTP object without actually downloading the file.
 lastmod: 2016-05-17T11:47:40-04:00
-meta_image: https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700
+meta_image: "images/marvin-pinto-profile.jpg"
 meta_image_height: 700
 meta_image_width: 700
 tags:

@@ -3,7 +3,7 @@ date: 2016-03-18T19:38:38-04:00
 tags:
   - git
 title: Modifying the date of a commit
-meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"
+meta_image: "images/marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 ---

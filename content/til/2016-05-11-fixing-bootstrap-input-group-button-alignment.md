@@ -3,7 +3,7 @@ author_twitter_username: 'marvinpinto'
 date: 2016-05-11T16:48:42-04:00
 description: How to set bootstrap number precision in Ember CLI
 lastmod: 2016-05-11T16:48:42-04:00
-meta_image: https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700
+meta_image: "images/marvin-pinto-profile.jpg"
 meta_image_height: 700
 meta_image_width: 700
 tags:
