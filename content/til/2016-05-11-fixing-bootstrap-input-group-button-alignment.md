@@ -3,7 +3,7 @@ author_twitter_username: 'marvinpinto'
 date: 2016-05-11T16:48:42-04:00
 description: How to set bootstrap number precision in Ember CLI
 lastmod: 2016-05-11T16:48:42-04:00
-meta_image: https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700
+meta_image: "images/marvin-pinto-profile.jpg"
 meta_image_height: 700
 meta_image_width: 700
 tags:
@@ -32,7 +32,7 @@ Assuming an `input-group` that looks like something like the example, you will
 notice that the height of the **Send** button is slightly shorter than that of
 input field.
 
-{{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/2016-05-11-bootstrap-button-before.png" alt="Bootstrap Alignment Before" >}}
+<img src="/images/2016-05-11-bootstrap-button-before.jpg" alt="Bootstrap Alignment Before" class="img-responsive">
 
 To fix this in Ember, set the appropriate `precision` value in
 `ember-cli-build.js`:
@@ -53,7 +53,7 @@ module.exports = function(defaults) {
 
 Your result will look something like:
 
-{{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/2016-05-11-bootstrap-button-after.png" alt="Bootstrap Alignment After" >}}
+<img src="/images/2016-05-11-bootstrap-button-after.jpg" alt="Bootstrap Alignment After" class="img-responsive">
 
 Much better!
 

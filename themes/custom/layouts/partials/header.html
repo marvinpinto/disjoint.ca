@@ -48,13 +48,13 @@
   <meta name="twitter:creator" content='@{{ .Param "author_twitter_username" }}' />
   <meta name="twitter:title" content='{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}' />
   <meta name="twitter:description" content='{{ $.Scratch.Get "local_description" }}' />
-  <meta name="twitter:image" content='{{ .Param "meta_image" }}' />
+  <meta name="twitter:image" content='{{ .Site.BaseURL }}{{ .Param "meta_image" }}' />
 
   <!-- Open Graph Protocol -->
   <meta name="og:title" content='{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}' />
   <meta name="og:type" content="website" />
   <meta name="og:url" content="{{ .Permalink }}" />
-  <meta name="og:image" content='{{ .Param "meta_image" }}' />
+  <meta name="og:image" content='{{ .Site.BaseURL }}{{ .Param "meta_image" }}' />
 
   <title>{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}</title>
 
@@ -98,7 +98,7 @@
     "url" : "https://disjoint.ca",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://s3.amazonaws.com/media.disjoint.ca/disjoint-ca-logo.png",
+      "url": {{printf "%s" (print .Site.BaseURL "images/disjoint-ca-logo.png")}},
       "width": 327,
       "height": 60
     }

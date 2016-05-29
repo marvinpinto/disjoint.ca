@@ -153,8 +153,14 @@ build-fonts:
 	cp node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.* static/fonts/
 	cp node_modules/font-awesome/fonts/fontawesome-webfont.* static/fonts/
 
+.PHONY: build-images
+build-images:
+	@mkdir -p static/images
+	@for file in assets/images/*.jpg; do convert -strip -interlace Plane -sampling-factor 4:2:0 -define jpeg:dct-method=float -quality 85% $$file static/images/`basename $$file`; done
+	@cp assets/images/*.png static/images/
+
 .PHONY: assets
-assets: build-js build-fonts build-css
+assets: build-js build-fonts build-css build-images
 	@echo "Assets rebuilt!"
 
 .PHONY: resume
@@ -175,10 +181,6 @@ resume:
 .PHONY: generate
 generate: install clean assets resume
 	$(HUGO)
-
-.PHONY: images
-images:
-	aws s3 sync --acl public-read --delete media/ s3://media.disjoint.ca
 
 .PHONY: clean
 clean:

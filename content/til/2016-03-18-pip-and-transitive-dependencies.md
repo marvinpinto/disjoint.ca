@@ -5,7 +5,7 @@ tags:
   - pip
   - setup.py
 title: pip and transitive dependencies
-meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"
+meta_image: "images/marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 ---

@@ -11,7 +11,7 @@ tags:
   - serverless
   - irchooky
 title: Using a Serverless Architecture to deliver IRC Webhook Notifications
-meta_image: "https://s3.amazonaws.com/media.disjoint.ca/2016-02-28-serverless-irc-notifications.jpg"
+meta_image: "images/2016-02-28-serverless-irc-notifications.jpg"
 meta_image_width: 700
 meta_image_height: 526
 ---
@@ -68,7 +68,7 @@ not yet a thing).
 
 #### Amazon Announced API Gateway
 
-{{< figure class="img-responsive pull-right" src="https://s3.amazonaws.com/media.disjoint.ca/you-had-me-at-autoscaling.jpg" alt="You had me at autoscaling meme" >}}
+<img src="/images/you-had-me-at-autoscaling.jpg" alt="You had me at autoscaling meme" class="img-responsive pull-right">
 
 Then in early July they announced another product called [API Gateway][3].
 Among other things, it was now possible to trigger Lambda functions through API
@@ -127,7 +127,7 @@ somewhat obsolete.
 
 ### What is IRC Hooky
 
-{{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/irc-hooky-brief-overview.png" alt="IRC Hooky brief overview" >}}
+<img src="/images/irc-hooky-brief-overview.png" alt="IRC Hooky brief overview" class="img-responsive">
 
 IRC Hooky is a framework for Lambda-driven IRC notifications. It currently
 supports Webhook events from [Github][5] and [Hashicorp Atlas][6].
@@ -172,7 +172,7 @@ The economics of running IRC Hooky (or other Lambda functions) at scale is what
 is most appealing about this architecture. To give you an idea of what this
 means, here is a screenshot from the [Lambda pricing example][10] page.
 
-{{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/lambda-pricing-screenshot.png" alt="Lambda pricing screenshot" >}}
+<img src="/images/lambda-pricing-screenshot.jpg" alt="Lambda pricing screenshot" class="img-responsive">
 
 128MB Lambda functions are allowed to consume ~889 hours per month (37 days)
 without charge, along with the first million requests free. API Gateway, on
@@ -192,7 +192,7 @@ Pretty neat, huh!
 
 
 
-{{< figure class="img-responsive pull-right" src="https://s3.amazonaws.com/media.disjoint.ca/empire-wants-you.jpg" alt="The empire wants you meme" >}}
+<img src="/images/empire-wants-you.jpg" alt="The empire wants you meme" class="img-responsive pull-right">
 ### Get Involved!
 
 So! If IRC Hooky sounds cool to you, I invite you to contribute in any way you

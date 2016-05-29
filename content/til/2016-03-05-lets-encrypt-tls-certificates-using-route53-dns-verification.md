@@ -5,7 +5,7 @@ tags:
   - dns
   - route53
 title: Let's Encrypt TLS Certificates using Route53 DNS verification
-meta_image: "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=700"
+meta_image: "images/marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 ---
