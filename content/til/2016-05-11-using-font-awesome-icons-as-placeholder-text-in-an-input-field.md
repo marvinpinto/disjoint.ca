@@ -24,7 +24,7 @@ Let's assume you have an input field that looks something like:
 
 This ends up looking something like:
 
-{{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/2016-05-11-placeholder-text-input-before.png" alt="Placeholder text before" >}}
+<img src="/images/2016-05-11-placeholder-text-input-before.jpg" alt="Placeholder text before" class="img-responsive">
 
 Which is really not what we expect. Here's how to make this work!
 
@@ -49,7 +49,7 @@ something along the lines of this works beautifully.
 
 Now this is much better looking input box!
 
-{{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/2016-05-11-placeholder-text-input-after.png" alt="Placeholder text after" >}}
+<img src="/images/2016-05-11-placeholder-text-input-after.jpg" alt="Placeholder text after" class="img-responsive">
 
 **Ember JS**
 

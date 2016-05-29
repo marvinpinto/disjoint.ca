@@ -32,7 +32,7 @@ Assuming an `input-group` that looks like something like the example, you will
 notice that the height of the **Send** button is slightly shorter than that of
 input field.
 
-{{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/2016-05-11-bootstrap-button-before.png" alt="Bootstrap Alignment Before" >}}
+<img src="/images/2016-05-11-bootstrap-button-before.jpg" alt="Bootstrap Alignment Before" class="img-responsive">
 
 To fix this in Ember, set the appropriate `precision` value in
 `ember-cli-build.js`:
@@ -53,7 +53,7 @@ module.exports = function(defaults) {
 
 Your result will look something like:
 
-{{< figure class="img-responsive" src="https://s3.amazonaws.com/media.disjoint.ca/2016-05-11-bootstrap-button-after.png" alt="Bootstrap Alignment After" >}}
+<img src="/images/2016-05-11-bootstrap-button-after.jpg" alt="Bootstrap Alignment After" class="img-responsive">
 
 Much better!
 
