@@ -14,7 +14,7 @@
       "@type": "Person",
       "name": "Marvin Pinto",
       "email": "hello@pinto.im",
-      "image": "https://s.gravatar.com/avatar/22784ea1769f025112c92c31321c6bf1?s=400",
+      "image": {{printf "%s" (print .Site.BaseURL "images/marvin-pinto-profile.jpg")}},
       "url": "https://disjoint.ca/page/about"
     },
     "datePublished": "{{ .Date.Format "2006-01-02T15:04:05-07:00" }}",
