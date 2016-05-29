@@ -155,8 +155,9 @@ build-fonts:
 
 .PHONY: build-images
 build-images:
-	mkdir -p static/images
+	@mkdir -p static/images
 	@for file in assets/images/*.jpg; do convert -strip -interlace Plane -sampling-factor 4:2:0 -define jpeg:dct-method=float -quality 85% $$file static/images/`basename $$file`; done
+	@cp assets/images/*.png static/images/
 
 .PHONY: assets
 assets: build-js build-fonts build-css build-images
