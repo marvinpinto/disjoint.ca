@@ -31,6 +31,7 @@ addons:
       - 'python-yaml'
 
 before_install:
+  - 'eval "$(gimme 1.5.3)"'
   - 'mkdir -p $HOME/bin'
   - 'mkdir -p $HOME/tmp'
   - '[ -f $HOME/bin/wkhtmltopdf ] || wget -O $HOME/bin/wkhtmltopdf https://github.com/h4cc/wkhtmltopdf-amd64/raw/master/bin/wkhtmltopdf-amd64'
