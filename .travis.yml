@@ -29,6 +29,7 @@ addons:
       - 'aspell'
       - 'aspell-en'
       - 'python-yaml'
+      - 'imagemagick'
 
 before_install:
   - 'eval "$(gimme 1.5.3)"'
