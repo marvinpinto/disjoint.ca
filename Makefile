@@ -182,10 +182,6 @@ resume:
 generate: install clean assets resume
 	$(HUGO)
 
-.PHONY: images
-images:
-	aws s3 sync --acl public-read --delete media/ s3://media.disjoint.ca
-
 .PHONY: clean
 clean:
 	rm -rf public
