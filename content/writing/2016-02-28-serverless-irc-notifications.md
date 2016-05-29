@@ -11,7 +11,7 @@ tags:
   - serverless
   - irchooky
 title: Using a Serverless Architecture to deliver IRC Webhook Notifications
-meta_image: "https://s3.amazonaws.com/media.disjoint.ca/2016-02-28-serverless-irc-notifications.jpg"
+meta_image: "images/2016-02-28-serverless-irc-notifications.jpg"
 meta_image_width: 700
 meta_image_height: 526
 ---
