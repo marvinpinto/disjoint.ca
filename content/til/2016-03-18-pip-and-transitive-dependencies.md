@@ -46,4 +46,4 @@ itself, but [this is considered bad form][1].
 This was more of a reminder to myself rather an a TIL. Hopefully useful to you
 too!
 
-[1]: http://python-packaging-user-guide.readthedocs.org/en/latest/requirements/
+[1]: https://packaging.python.org/requirements/#install-requires
