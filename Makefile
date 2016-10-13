@@ -5,7 +5,7 @@ CWD = $(shell pwd)
 
 .PHONY: help
 help:
-	@echo Start with "make hugo" and go from there
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-25s\033[0m %s\n", $$1, $$2}'
 
 hugo_0.15_linux_amd64/hugo:
 	wget --no-verbose https://github.com/spf13/hugo/releases/download/v0.15/hugo_0.15_linux_amd64.tar.gz -O /tmp/hugo.tar.gz
@@ -27,11 +27,11 @@ install: hugo_0.15_linux_amd64/hugo
 	pip install --user Pygments
 
 .PHONY: post
-post:
+post:  ## Create a new blog post
 	$(HUGO) new writing/$(HUGO_DATE)-new-post.md
 
 .PHONY: til
-til:
+til:  ## Create a new TIL post
 	$(HUGO) new til/$(HUGO_DATE)-new-til.md
 
 .PHONY: spellcheck
@@ -66,11 +66,11 @@ html-proofer:
 		./public
 
 .PHONY: test
-test: spellcheck html-proofer html5validator bootlint
+test: spellcheck html-proofer html5validator bootlint  ## Perform a basic set of smoke tests
 	@echo "Everything looks good!"
 
 .PHONY: server
-server: install clean assets resume
+server: install clean assets resume  ## Run a local version of the disjoint.ca website
 	@echo ===========================================================
 	@echo Head over to http://$(CONTAINER_IP):8080 for a live preview
 	@echo ===========================================================
