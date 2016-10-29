@@ -1,7 +1,7 @@
 ---
 author_twitter_username: marvinpinto
 date: 2016-10-13T10:00:52-04:00
-description: Short description
+description: Reload all vim buffer windows from disk
 lastmod: 2016-10-13T10:00:52-04:00
 meta_image: images/marvin-pinto-profile.jpg
 meta_image_height: 700
