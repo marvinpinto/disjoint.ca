@@ -23,7 +23,7 @@ You can of course specify a specific commit date:
 MYDATE="Wed Feb 16 14:00 2016 -0400" GIT_COMMITTER_DATE="$MYDATE" git commit --amend --date "$MYDATE"
 ```
 
-Another helpful tip for when you need to use a different date _while commiting_
+Another helpful tip for when you need to use a different date _while committing_
 (i.e. in non-rebase mode):
 
 ``` bash
