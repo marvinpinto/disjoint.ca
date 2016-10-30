@@ -57,6 +57,7 @@ cloudfront
 Cloudfront
 CloudFront
 CloudWatch
+COMMITTER
 config
 const
 contraints
@@ -132,6 +133,7 @@ img
 IMG
 incentivized
 init
+initiateRequest
 inkscape
 ip
 IP
@@ -142,6 +144,7 @@ irssi
 isAuthenticated
 iso
 ISRG
+istanbul
 javascript
 jbranchaud
 jdk
@@ -168,6 +171,7 @@ logout
 Macbook
 Magnifico
 maisons
+mapDispatchToProps
 marvin
 marvinpinto
 MERCHANTABILITY
@@ -179,6 +183,7 @@ mkdir
 moorereason
 msg
 mtime
+MYDATE
 namespace
 nginx
 NONINFRINGEMENT
@@ -189,6 +194,7 @@ npm
 numfmt
 oauth
 OAuth
+onSubmitFunction
 onwards
 opensentinel
 oraclejdk
@@ -211,9 +217,12 @@ py
 pyc
 Rackspace
 rdiskN
+reactjs
 readme
+rebase
 rebasing
 redirectUri
+redux
 refreshAccessTokens
 refreshLeeway
 reproducibility
