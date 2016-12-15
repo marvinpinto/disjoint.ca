@@ -6,7 +6,7 @@
   "dependencies": {
     "bootlint": "^0.14.2",
     "bootstrap-sass": "^3.3.6",
-    "font-awesome": "^4.6.1",
+    "font-awesome": "^4.7.0",
     "fresh-themes": "git+https://github.com/marvinpinto-archive/fresh-themes.git",
     "hackmyresume": "^1.8.0",
     "iframe-resizer": "^3.5.3",

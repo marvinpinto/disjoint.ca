@@ -1,4 +1,4 @@
-CONTAINER_IP = $(shell docker inspect --format '{{ .NetworkSettings.IPAddress }}' disjoint.ca)
+CONTAINER_IP = $(shell hostname --ip-address)
 HUGO_DATE = $(shell date +'%Y-%m-%d')
 HUGO = tmp/workspace/mygo/bin/hugo
 CWD = $(shell pwd)
