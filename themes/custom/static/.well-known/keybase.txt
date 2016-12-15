@@ -4,67 +4,60 @@ https://keybase.io/marvinpinto
 
 I hereby claim:
 
-  * I am an admin of https://www.disjoint.ca
+  * I am an admin of https://disjoint.ca
   * I am marvinpinto (https://keybase.io/marvinpinto) on keybase.
-  * I have a public key with fingerprint F19F F29A 34A2 DB3C D822  95F5 AF6F 391D 18CA 8A27
+  * I have a public key with fingerprint 00CD BD49 D9B8 767D B8A4  3EED 5265 4E6E B0BB 564B
 
 To do so, I am signing this object:
 
 {
     "body": {
         "key": {
-            "eldest_kid": "0101683685bccdebb9eebfc4de3e21ece3cfd462306c7d9cd1fe426e624a1739652e0a",
-            "fingerprint": "f19ff29a34a2db3cd82295f5af6f391d18ca8a27",
+            "eldest_kid": "0101535e633caf65cfa32b7bc0849daf0670ff57fdaad87f1e5d64cb8b6e3528fe9d0a",
+            "fingerprint": "00cdbd49d9b8767db8a43eed52654e6eb0bb564b",
             "host": "keybase.io",
-            "key_id": "af6f391d18ca8a27",
-            "kid": "0101683685bccdebb9eebfc4de3e21ece3cfd462306c7d9cd1fe426e624a1739652e0a",
+            "key_id": "52654e6eb0bb564b",
+            "kid": "0101535e633caf65cfa32b7bc0849daf0670ff57fdaad87f1e5d64cb8b6e3528fe9d0a",
             "uid": "a39e7d190f7197566250c90b487ff819",
             "username": "marvinpinto"
         },
-        "revoke": {
-            "sig_ids": [
-                "f5911e48501a41094b04558dda385cd145bb1ed33fa0301ba4670816e789c7620f"
-            ]
-        },
         "service": {
-            "hostname": "www.disjoint.ca",
+            "hostname": "disjoint.ca",
             "protocol": "https:"
         },
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1448164999,
+    "ctime": 1481807939,
     "expire_in": 157680000,
-    "prev": "ab473b68c937c11acaa0d6bc7c22ab24405db7e90412e3e158bae4941026f231",
-    "seqno": 13,
+    "prev": "4c9f96b376c8cbb3063ad02346d4233c54987194ff69bd5ed743293e1ae482bc",
+    "seqno": 30,
     "tag": "signature"
 }
 
 which yields the signature:
 
 -----BEGIN PGP MESSAGE-----
-Version: GnuPG v1
+Version: GnuPG v2.0.22 (GNU/Linux)
 Comment: GPGTools - https://gpgtools.org
 
-owGtkm9oVlUcx59nabHhyEDEhRaekKKeHs+/e+49Dy0QG/RvpRiLNt3T+Tuvz3bv
-43Ovz5ym2AuFNRv2UASKTUMQk/RNULhy+QdfbBUahhmsQbDCJMhXYSTr3GXvetl5
-cznnfn/f3+f3PedA6z25lvzpmK9YNvnWo/mpGzLXtf7p0Z1AxnoIlHaCipn/mH5t
-krRcCTUoAYggYgFhgSeV0kZKboy0impDDEZGGaKspgwTyJSvudLIGoqZYZgK5BPO
-PGygAAVgw6jP1Kq1MEqdrUXcWswFoQJrSZQOMOae9YRllnCkUaBEILDvCjfHSVbh
-4KRITDGM3ZnblOfx/kP/P3Nv+6cP4cbXiEPrI+57jGEPKg4lDXxrA8QzYWJqkRgw
-Tj0gavUwqrpRY7CrAGqmHldMFm0S9jnuBJR6gPU4QoYGHkSCIsiphNTzAq0FCTyH
-Qz0pkdGEWAEJRFJQ5sMAMeMHXPkMQws2OW/XtB6qefMsqLsAg4ODRR0mW2KHUFTZ
-GNVanMYq7nc/N6dpNSk5sHGQDlXn5UaW7xqVZRhpd1WupG5qSRhHoIRcH5WGmTOi
-1DFQznkBmO3VsGbKYabwfBZAt7JGpp4FJqlPJAsUJ75CSCghoGZS+QpjITGl0NPS
-NxxShN2VIC+QwlDuksDMYoJANtrWKHbepABS0ec8XXqRSLfVDNjVMpxfviCXb8nd
-u7Ape8S5lubF/77sA8vvu9P2sGnU1x3cd+jytYtHbrdPdF/Z+tvG5urSPU/Qq9+P
-/rhvbNPzV459s+WXgy+sNytPVqY/vnqpsXrt8bnHh86MT0/3vHym5/r50uvnvQ2T
-r33auv3k7SOvLl40++GFyv0bSOVE/yeTP0T7O240Lbk82NUJSNsHs4cn6ks+Ghmb
-vSmfOfXUzR2fv9L+fqlp5qeH/miffW5q1Y7imhU9p/a37u379oufO6aaf2/7amTp
-m4UXu/c8+1nDXljX8eTXw2snbP16b2fj3e6Zs7s7b8091ntn1V+Hrz0YHF356+l3
-BoZHDq25dOvssu4HWhd+ueii/8jATK9+I2j77lij670/59j43tEx+jbe/dK5c8X8
-gqG/AQ==
-=YPZO
+owGtkltIFUEYx8+pzDxRJFpPGbQUUdlprzM7R3qQrmDQjVASO83szNp6bPe0u+eo
+qUXUQ0VZD6WVUQhBIpZ2QaEo6CHSLKqHIiQf7GZ2ISLJwgebFXvrsXkZZr7///dd
++E7NmhqKhEczzuXl9sAX4b5hEirZenZDrUAcWiPEaoUEm7hYJWWeH09YVIgJoiRK
+mqIxoCgGNoFmmFiRCSSGqKuIYlMEUDRNDZoUY6pDU2IaBapBdAKYosm6yRAVsZAv
+mJZdztyka9l+gBUNSignIKJDACnRsaowRjUZaCoDjIiEaEAl3Ljb8QIHL45gj0Ut
+h//xR3yivH/o/3PdqQkcVhCDVEKiCSUENQBkTTSQSFRuNXUJBUKPuTbew7h6D3bT
+lp3krTpCfb7AA2nLYMFsg2YmRdTyKhwuiRpBmqTr+I7hVPLAbt9PerHA6NckA2UV
+I/FJRpxYNuWT5I40cz3LsYWYxJWGbwVQSdUlXYRIQfkCq05aLotbgUKDQBf5CfKw
+NEeqBjJRKSAKBIZuEKKIQMFUlBUVUFXmM9NUpPNWVdMEiFCNUagqMlKYhJmqy8QQ
+grb22o4QUzjVx+Uc6lnlNvZTLhPqI0fD86eFwpHQ9IwpwZKFIllz/m5e4+rM8b2H
+ohu7U/214ucX7es78povlu3a1Nt+Cz9Ovq3rXPNAWr6z9Xpm4tDK4yOw4sbRbAcl
+nvQ3NBR8bTiyeVbOqo+5b/KLyy5HZxpLmoZLknW3PqIVty9+a6t6Wbeuvu3dl9Z7
+A0VPTzdW75/RdLPjAFrckbo0727n8KMLP4tKS1MVXXTq1uxt38b2L1j9CXzver+q
+ua9o9sPCwd4t4wtb4MD4SW+pV6g7kWioIserOrap5ddIOOVn/4YFy+4fRh/qC39c
+m7soc627rK+qQLqfVTj2+k4xsux93fDZ0NrmkqFFzwc/qP052WdKBLSjuvfVYM/A
+wcauK92ygE8YowfP/9x+9Q8=
+=Sowy
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
