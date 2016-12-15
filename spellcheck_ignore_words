@@ -9,6 +9,7 @@ AMIs
 ansible
 Ansible
 ANSIBLE
+Ansible's
 apache
 api
 API
@@ -47,6 +48,7 @@ bs
 Ccj
 cd
 CDNs
+cfg
 charlesbot
 Charlesbot
 charset
@@ -69,6 +71,7 @@ da
 Datastore
 dateutil
 DCJgrjHlqKJDZN
+decrypt
 derpy
 des
 dev
@@ -119,6 +122,8 @@ Golang
 google
 Googled
 GOPATH
+gpg
+GPG
 Hashicorp
 hbs
 hdiutil
@@ -132,6 +137,7 @@ identificationField
 img
 IMG
 incentivized
+ini
 init
 initiateRequest
 inkscape
@@ -214,6 +220,7 @@ popup
 pre
 programmatically
 pwd
+pwgen
 py
 pyc
 Rackspace
@@ -226,9 +233,11 @@ redirectUri
 redux
 refreshAccessTokens
 refreshLeeway
+rekey
 reproducibility
 req
 rfs
+rl
 rmachielse
 routeAfterAuthentication
 RSA
@@ -317,6 +326,7 @@ workflow
 Workflow
 wtf
 WWWyZjHdUPA
+xargs
 xenolf
 xf
 xhtml
@@ -327,5 +337,6 @@ xvdf
 yaml
 yay
 yml
+Yubikey
 znc
 ZNC
