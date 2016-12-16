@@ -6,6 +6,7 @@ import decompress from 'gulp-decompress';
 import streamify from 'gulp-streamify';
 import gls from 'gulp-live-server';
 import eslint from 'gulp-eslint';
+import bootlint from 'gulp-bootlint';
 import source from 'vinyl-source-stream';
 import ip from 'ip';
 import {exec} from 'child_process';
@@ -17,7 +18,8 @@ const hugoUrl = `https://github.com/spf13/hugo/releases/download/v${hugoVersion}
 const environment = process.env.NODE_ENV || 'development';
 const files = {
   dest: 'public',
-  js: ['gulpfile.babel.js']
+  js: ['gulpfile.babel.js'],
+  html: 'public/**/*.html'
 };
 
 gulp.task('lint-javascript', () => {
@@ -27,7 +29,24 @@ gulp.task('lint-javascript', () => {
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('all-tests', ['lint-javascript'], () => {
+gulp.task('lint-bootstrap', ['generate-html'], () => {
+  const options = {
+    stoponerror: true,
+    disabledIds: [
+      'E045',
+      'W001',
+      'W002',
+      'W003',
+      'W005',
+      'E013',
+      'E028'
+    ]
+  };
+  return gulp.src(files.html)
+    .pipe(bootlint(options))
+});
+
+gulp.task('all-tests', ['lint-javascript', 'lint-bootstrap'], () => {
   gutil.log(gutil.colors.magenta('All tests passed'));
 });
 
