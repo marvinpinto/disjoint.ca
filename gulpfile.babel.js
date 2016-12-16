@@ -10,13 +10,15 @@ import bootlint from 'gulp-bootlint';
 import source from 'vinyl-source-stream';
 import ip from 'ip';
 import {exec} from 'child_process';
+import del from 'del';
 
 const hugoVersion = '0.17';
 const hugoBinary = `tmp/hugo_${hugoVersion}_linux_amd64`;
 const hugoUrl = `https://github.com/spf13/hugo/releases/download/v${hugoVersion}/hugo_${hugoVersion}_Linux-64bit.tar.gz`;
 
-const environment = process.env.NODE_ENV || 'development';
+const environment = process.env.HUGO_ENV || 'development';
 const files = {
+  src: ['content/**/*.*', 'themes/**/*.*', 'static/**/*.*'],
   dest: 'public',
   js: ['gulpfile.babel.js'],
   html: 'public/**/*.html'
@@ -62,8 +64,12 @@ gulp.task('download-hugo', () => {
 
 gulp.task('generate-html', ['download-hugo'], cb => {
   let hugoArgs = hugoBinary;
+
   if (environment === "development") {
     hugoArgs += ` --baseUrl="http://${ip.address()}"`;
+    gulp.watch(files.src, ['generate-html']);
+  } else {
+    del.sync([files.dest]);
   }
 
   return exec(hugoArgs, (err, stdout, stderr) => {
@@ -84,7 +90,6 @@ gulp.task('development-server', ['generate-html'], () => {
   gutil.log(gutil.colors.yellow(`Server available at http://${ip.address()}:${port}`));
 
   gulp.watch([`${files.dest}/**/*.*`], event => {
-    gutil.log(gutil.colors.magenta(`File ${event.path} was ${event.type}, reloading server`));
     server.notify.apply(server, [event]);
   });
 });
