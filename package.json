@@ -26,8 +26,8 @@
     "gulp-cli": "^1.2.2",
     "gulp-decompress": "^2.0.1",
     "gulp-eslint": "^3.0.1",
-    "gulp-live-server": "0.0.30",
     "gulp-streamify": "^1.0.2",
+    "gulp-webserver": "^0.9.1",
     "ip": "^1.1.4",
     "request": "^2.79.0",
     "vinyl-source-stream": "^1.1.0"
@@ -35,7 +35,7 @@
   "scripts": {
     "install": "pip install --user Pygments",
     "start": "gulp development-server",
-    "test": "gulp all-tests"
+    "test": "HUGO_ENV=testing gulp all-tests"
   },
   "repository": {
     "type": "git",
