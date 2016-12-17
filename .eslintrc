@@ -12,6 +12,8 @@
   "plugins": [],
   "parserOptions": {},
   "globals": {
-    "process": true
+    "process": true,
+    "require": true,
+    "module": true,
   }
 }

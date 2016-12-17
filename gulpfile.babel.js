@@ -7,10 +7,12 @@ import streamify from 'gulp-streamify';
 import webserver from 'gulp-webserver';
 import eslint from 'gulp-eslint';
 import bootlint from 'gulp-bootlint';
+import gulpif from 'gulp-if';
 import source from 'vinyl-source-stream';
 import ip from 'ip';
 import {exec} from 'child_process';
-import del from 'del';
+import webpack from 'webpack';
+import gulpWebpack from 'webpack-stream';
 
 const hugoVersion = '0.17';
 const hugoBinary = `tmp/hugo_${hugoVersion}_linux_amd64`;
@@ -19,10 +21,11 @@ const hugoPort = 8080;
 
 const environment = process.env.HUGO_ENV || 'development';
 const files = {
-  src: ['content/**/*.*', 'themes/**/*.*', 'static/**/*.*'],
+  src: ['content/**/*.*', 'themes/**/*.*', 'static/**/*.*', 'data/**/*.*'],
   dest: 'public',
-  js: ['gulpfile.babel.js'],
-  html: 'public/**/*.html'
+  js: ['gulpfile.babel.js', 'webpack.config.js'],
+  html: 'public/**/*.html',
+  assets: ['assets/css/**/*.*', 'assets/js/**/*.*']
 };
 
 gulp.task('lint-javascript', () => {
@@ -63,11 +66,7 @@ gulp.task('download-hugo', () => {
   return;
 });
 
-gulp.task('clean-html-workspace', () => {
-  return del([files.dest]);
-});
-
-gulp.task('generate-html', ['download-hugo', 'clean-html-workspace'], cb => {
+gulp.task('generate-html', ['download-hugo', 'generate-assets'], cb => {
   let hugoArgs = hugoBinary;
   if (environment === "development") {
     hugoArgs += ` --baseUrl="http://${ip.address()}:${hugoPort}"`;
@@ -83,6 +82,31 @@ gulp.task('generate-html', ['download-hugo', 'clean-html-workspace'], cb => {
     });
     cb(err);
   });
+});
+
+gulp.task('generate-assets', () => {
+  let options = require('./webpack.config.js');
+
+  const printStats = (err, stats) => {
+    stats.toString().split('\n').forEach(line => {
+      gutil.log(gutil.colors.magenta(line));
+    });
+    if (err) {
+      err.toString().split('\n').forEach(line => {
+        gutil.log(gutil.colors.red(line));
+      });
+    }
+  }
+
+  if (environment === "development") {
+    gulp.watch(files.assets, ['generate-assets']);
+  }
+
+  return gulp.src('assets/js/main.js')
+    .pipe(gulpWebpack(options, webpack, printStats))
+    .pipe(gulpif('*.js', gulp.dest('static/assets')))
+    .pipe(gulpif('*.css', gulp.dest('static/assets')))
+    .pipe(gulpif('*.json', gulp.dest('data')));
 });
 
 gulp.task('development-server', ['generate-html'], () => {

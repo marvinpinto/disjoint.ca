@@ -59,10 +59,10 @@
   <title>{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}</title>
 
   <!-- custom css -->
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/disjoint-ca.min.css" />
+  <link rel="stylesheet" href='{{ .Site.BaseURL }}/{{ index .Site.Data.assets "app.css" }}' />
 
   <!-- custom javascript -->
-  <script src="{{ .Site.BaseURL }}/js/disjoint-ca.min.js"></script>
+  <script src='{{ .Site.BaseURL }}/{{ index .Site.Data.assets "app.js" }}'></script>
 
   <!-- Google Analytics -->
   <script>

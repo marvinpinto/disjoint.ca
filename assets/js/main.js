@@ -1,3 +1,5 @@
+require('../css/main.scss');
+
 $.fn.hnButton = function() {
   // this is the button to be upgraded
   var linkbutton = this;
