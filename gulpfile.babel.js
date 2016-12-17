@@ -66,7 +66,7 @@ gulp.task('download-hugo', () => {
   return;
 });
 
-gulp.task('generate-html', ['download-hugo', 'generate-assets'], cb => {
+gulp.task('generate-html', ['download-hugo'], cb => {
   let hugoArgs = hugoBinary;
   if (environment === "development") {
     hugoArgs += ` --baseUrl="http://${ip.address()}:${hugoPort}"`;
@@ -109,7 +109,7 @@ gulp.task('generate-assets', () => {
     .pipe(gulpif('*.json', gulp.dest('data')));
 });
 
-gulp.task('development-server', ['generate-html'], () => {
+gulp.task('development-server', ['generate-assets', 'generate-html'], () => {
   const options = {
     livereload: true,
     host: ip.address(),
