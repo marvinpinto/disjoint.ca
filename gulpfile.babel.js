@@ -8,9 +8,10 @@ import webserver from 'gulp-webserver';
 import eslint from 'gulp-eslint';
 import bootlint from 'gulp-bootlint';
 import gulpif from 'gulp-if';
+import runSequence from 'run-sequence';
 import source from 'vinyl-source-stream';
 import ip from 'ip';
-import {exec} from 'child_process';
+import {exec} from 'child-process-promise';
 import webpack from 'webpack';
 import gulpWebpack from 'webpack-stream';
 
@@ -35,7 +36,7 @@ gulp.task('lint-javascript', () => {
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('lint-bootstrap', ['generate-html'], () => {
+gulp.task('lint-bootstrap', () => {
   const options = {
     stoponerror: true,
     disabledIds: [
@@ -52,8 +53,12 @@ gulp.task('lint-bootstrap', ['generate-html'], () => {
     .pipe(bootlint(options))
 });
 
-gulp.task('all-tests', ['lint-javascript', 'lint-bootstrap'], () => {
-  gutil.log(gutil.colors.magenta('All tests passed'));
+gulp.task('all-tests', (cb) => {
+  runSequence(
+    'generate-assets',
+    'generate-html',
+    ['lint-javascript', 'lint-bootstrap'],
+    cb);
 });
 
 gulp.task('download-hugo', () => {
@@ -66,25 +71,30 @@ gulp.task('download-hugo', () => {
   return;
 });
 
-gulp.task('generate-html', ['download-hugo'], cb => {
+gulp.task('generate-html', ['download-hugo'], () => {
   let hugoArgs = hugoBinary;
   if (environment === "development") {
     hugoArgs += ` --baseUrl="http://${ip.address()}:${hugoPort}"`;
     gulp.watch(files.src, ['generate-html']);
   }
 
-  return exec(hugoArgs, (err, stdout, stderr) => {
-    stdout.split('\n').forEach(line => {
+  return exec(hugoArgs).then(result => {
+    result.stdout.split('\n').forEach(line => {
       gutil.log(gutil.colors.magenta(line));
     });
-    stderr.split('\n').forEach(line => {
+    result.stderr.split('\n').forEach(line => {
       gutil.log(gutil.colors.red(line));
     });
-    cb(err);
+    return;
+  }).catch(err => {
+    err.toString().split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+    throw new Error("Error in task 'generate-html'");
   });
 });
 
-gulp.task('generate-assets', () => {
+gulp.task('generate-assets', ['compile-fonts'], () => {
   let options = require('./webpack.config.js');
 
   const printStats = (err, stats) => {
@@ -104,9 +114,32 @@ gulp.task('generate-assets', () => {
 
   return gulp.src('assets/js/main.js')
     .pipe(gulpWebpack(options, webpack, printStats))
-    .pipe(gulpif('*.js', gulp.dest('static/assets')))
-    .pipe(gulpif('*.css', gulp.dest('static/assets')))
+    .pipe(gulpif(['*.js', '*.css' ], gulp.dest('static/assets')))
+    .pipe(gulpif(['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'], gulp.dest('static')))
     .pipe(gulpif('*.json', gulp.dest('data')));
+});
+
+gulp.task('compile-fonts', () => {
+  const commonArgs = '--font-out=tmp/fonts/ --css-rel=../fonts --woff1=link --woff2=link';
+  const fonts = [
+    '"https://fonts.googleapis.com/css?family=Ubuntu:bold" --out=tmp/css/_ubuntu.scss',
+    '"https://fonts.googleapis.com/css?family=Rancho" --out=tmp/css/_rancho.scss',
+    '"https://fonts.googleapis.com/css?family=Gudea" --out=tmp/css/_gudea.scss',
+    '"https://fonts.googleapis.com/css?family=Oswald" --out=tmp/css/_oswald.scss'
+  ];
+
+  return exec('npm bin').then(result => {
+    return result.stdout.trim();
+  }).then(npmBinPath => {
+    return Promise.all(fonts.map(entry => {
+      return exec(`${npmBinPath}/webfont-dl ${entry} ${commonArgs}`);
+    }));
+  }).catch(err => {
+    err.toString().split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+    throw new Error("Error in task 'compile-fonts'");
+  });
 });
 
 gulp.task('development-server', ['generate-assets', 'generate-html'], () => {

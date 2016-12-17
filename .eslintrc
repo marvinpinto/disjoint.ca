@@ -15,5 +15,6 @@
     "process": true,
     "require": true,
     "module": true,
+    "Promise": true
   }
 }

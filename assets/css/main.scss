@@ -26,10 +26,6 @@ $jumbotron-heading-font-size: 130px;
 @import '../../node_modules/font-awesome/scss/font-awesome';
 
 // Custom fonts
-@import '../../build/css/ubuntu';
-@import '../../build/css/rancho';
-@import '../../build/css/gudea';
-@import '../../build/css/oswald';
 
 // Bootstrap customizations
 @import 'bootstrap_customizations';
@@ -57,3 +53,7 @@ $jumbotron-heading-font-size: 130px;
 
 // Selection Sharer
 @import '../../build/css/selection_sharer';
+@import '../../tmp/css/ubuntu';
+@import '../../tmp/css/rancho';
+@import '../../tmp/css/gudea';
+@import '../../tmp/css/oswald';
