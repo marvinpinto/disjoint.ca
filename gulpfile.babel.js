@@ -143,11 +143,13 @@ gulp.task('compile-fonts', () => {
   });
 });
 
-gulp.task('development-server', ['generate-assets', 'generate-html'], () => {
-  const options = {
-    livereload: true,
-    host: ip.address(),
-    port: hugoPort,
-  };
-  gulp.src(files.dest).pipe(webserver(options));
+gulp.task('development-server', () => {
+  runSequence('generate-assets', 'generate-html', () => {
+    const options = {
+      livereload: true,
+      host: ip.address(),
+      port: hugoPort,
+    };
+    gulp.src(files.dest).pipe(webserver(options));
+  });
 });
