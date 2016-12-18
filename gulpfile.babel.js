@@ -26,7 +26,7 @@ const files = {
   dest: 'public',
   js: ['gulpfile.babel.js', 'webpack.config.js'],
   html: 'public/**/*.html',
-  assets: ['assets/css/**/*.*', 'assets/js/**/*.*']
+  assets: ['assets/css/**/*.*', 'assets/js/**/*.*', 'assets/images/**/*.*']
 };
 
 gulp.task('lint-javascript', () => {
@@ -116,6 +116,7 @@ gulp.task('generate-assets', ['compile-fonts'], () => {
     .pipe(gulpWebpack(options, webpack, printStats))
     .pipe(gulpif(['*.js', '*.css' ], gulp.dest('static/assets')))
     .pipe(gulpif(['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'], gulp.dest('static/assets')))
+    .pipe(gulpif(['*.gif', '*.png', '*.jpg', '*.jpeg', '*.svg'], gulp.dest('static/assets')))
     .pipe(gulpif('*.json', gulp.dest('data')));
 });
 

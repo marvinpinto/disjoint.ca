@@ -38,7 +38,7 @@ params:
 
   # used for html meta elements
   author_twitter_username: "marvinpinto"
-  meta_image: "images/meta-social-media-image-20160426.jpg"
+  meta_image: "meta-social-media-image-20160426.jpg"
   meta_image_width: 1272
   meta_image_height: 682
 

@@ -32,8 +32,21 @@ module.exports = {
       {test: /\.svg$/, loader: 'file-loader?limit=65000&mimetype=image/svg+xml&name=[name]-[hash].[ext]'},
       {test: /\.[ot]tf$/, loader: 'file-loader?limit=65000&mimetype=application/octet-stream&name=[name]-[hash].[ext]'},
       {test: /\.eot$/, loader: 'file-loader?limit=65000&mimetype=application/vnd.ms-fontobject&name=[name]-[hash].[ext]'},
-      {test: /\.json$/, loader: 'json'}
+      {test: /\.json$/, loader: 'json'},
+
+      {
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
+        loaders: [
+          'file-loader?hash=sha512&digest=hex&name=[name]-[hash].[ext]',
+          'image-webpack'
+        ]
+      }
     ]
+  },
+
+  imageWebpackLoader: {
+    optimizationLevel: 7,
+    interlaced: false
   },
 
   plugins: [

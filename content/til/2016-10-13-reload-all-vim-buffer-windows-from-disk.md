@@ -3,7 +3,7 @@ author_twitter_username: marvinpinto
 date: 2016-10-13T10:00:52-04:00
 description: Reload all vim buffer windows from disk
 lastmod: 2016-10-13T10:00:52-04:00
-meta_image: images/marvin-pinto-profile.jpg
+meta_image: marvin-pinto-profile.jpg
 meta_image_height: 700
 meta_image_width: 700
 tags:

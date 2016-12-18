@@ -3,7 +3,7 @@ date: 2016-03-11T08:56:38-05:00
 tags:
 - golang
 title: Building and contributing back to a Golang project (aka short-lived forks)
-meta_image: "images/marvin-pinto-profile.jpg"
+meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 ---

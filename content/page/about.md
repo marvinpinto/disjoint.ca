@@ -12,7 +12,7 @@ menu: "main"
 
 <i class="fa fa-hand-peace-o"> Hello, I'm Marvin!</i>
 
-<img src="/images/marvin-pinto-profile.jpg" alt="Marvin Pinto" height="135" width="135" class="img-responsive img-rounded pull-right">
+{{< img src="marvin-pinto-profile.jpg" alt="Marvin Pinto" height="135" width="135" class="img-responsive img-rounded pull-right">}}
 
 I'm a developer who lives and works in the beautiful [City of Toronto][2]! I
 previously worked at a SaaS accounting company called [FreshBooks][7] where I
@@ -86,7 +86,7 @@ was developed using [Hugo][3] - A Fast & Modern Static Website Engine.
 
 ### <i class="fa fa-paw"></i> Lady
 
-<img src="/images/derpy-lady.jpg" alt="Lady the Dog" class="img-responsive img-rounded pull-left">
+{{< img src="derpy-lady.jpg" alt="Lady the Dog" class="img-responsive img-rounded pull-left">}}
 
 And last but not least this here is my derpy dog Lady! She is very awkward for
 her age and completely adorable. We rescued her as a puppy from a shelter in

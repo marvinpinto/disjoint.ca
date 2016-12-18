@@ -3,7 +3,7 @@ date: 2016-03-05T15:29:11-05:00
 tags:
   - svg
 title: SVG manipulation with 'svgo'
-meta_image: "images/marvin-pinto-profile.jpg"
+meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 ---

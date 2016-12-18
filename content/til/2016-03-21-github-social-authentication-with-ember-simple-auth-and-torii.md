@@ -4,7 +4,7 @@ tags:
   - emberjs
   - "ember-simple-auth"
 title: GitHub Social Authentication with Ember Simple Auth and Torii
-meta_image: "images/marvin-pinto-profile.jpg"
+meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 ---

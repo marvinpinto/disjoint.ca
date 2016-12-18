@@ -4,7 +4,7 @@ tags:
   - emberjs
   - s3
 title: Hosting an Ember app in S3 and Cloudfront
-meta_image: "images/marvin-pinto-profile.jpg"
+meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 ---

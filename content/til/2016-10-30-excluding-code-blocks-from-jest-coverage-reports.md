@@ -3,7 +3,7 @@ author_twitter_username: marvinpinto
 date: 2016-10-30T10:49:03-04:00
 description: Excluding code blocks from Jest coverage reports
 lastmod: 2016-10-30T10:49:03-04:00
-meta_image: images/marvin-pinto-profile.jpg
+meta_image: marvin-pinto-profile.jpg
 meta_image_height: 700
 meta_image_width: 700
 tags:

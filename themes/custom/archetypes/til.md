@@ -4,7 +4,7 @@ tags:
   - "tag2"
 author_twitter_username: "marvinpinto"
 description: "Short description"
-meta_image: "images/marvin-pinto-profile.jpg"
+meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 lastmod: "set-date-here"
