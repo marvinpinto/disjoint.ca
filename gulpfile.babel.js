@@ -115,7 +115,7 @@ gulp.task('generate-assets', ['compile-fonts'], () => {
   return gulp.src('assets/js/main.js')
     .pipe(gulpWebpack(options, webpack, printStats))
     .pipe(gulpif(['*.js', '*.css' ], gulp.dest('static/assets')))
-    .pipe(gulpif(['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'], gulp.dest('static')))
+    .pipe(gulpif(['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'], gulp.dest('static/assets')))
     .pipe(gulpif('*.json', gulp.dest('data')));
 });
 
