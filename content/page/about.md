@@ -27,7 +27,6 @@ Here's where you can find me on the Internet:
 - <i class="fa fa-envelope-o"> hello@pinto.im</i>
 - <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x52654E6EB0BB564B"><i class="fa fa-id-badge"> 0x52654E6EB0BB564B</i></a> (PGP Key ID)
 - <a href="https://keybase.io/marvinpinto"><i class="fa fa-key"> marvinpinto</i></a> (Keybase)
-- <a href="{{< relref "page/resume.md" >}}"><i class="fa fa-user-plus"> resume</i></a>
 
 
 

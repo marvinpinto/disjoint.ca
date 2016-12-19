@@ -9,6 +9,8 @@ import eslint from 'gulp-eslint';
 import bootlint from 'gulp-bootlint';
 import htmlhint from 'gulp-htmlhint';
 import gulpif from 'gulp-if';
+import run from 'gulp-run';
+import yaml from 'gulp-yaml';
 import vnuJar from 'vnu-jar';
 import runSequence from 'run-sequence';
 import source from 'vinyl-source-stream';
@@ -16,6 +18,7 @@ import ip from 'ip';
 import {exec} from 'child-process-promise';
 import webpack from 'webpack';
 import gulpWebpack from 'webpack-stream';
+import del from 'del';
 
 const hugoVersion = '0.17';
 const hugoBinary = `tmp/hugo_${hugoVersion}_linux_amd64`;
@@ -196,6 +199,23 @@ gulp.task('run-html-proofer', () => {
     });
     throw new Error("Error in task 'run-html-proofer'");
   });
+});
+
+gulp.task('generate-hackmyresume', () => {
+  let hackmyresume = 'hackmyresume BUILD tmp/resume/resume.json TO ';
+  hackmyresume += 'static/resume/marvin-pinto-resume.pdf ';
+  hackmyresume += 'static/resume/marvin-pinto-resume.html ';
+  hackmyresume += 'static/resume/marvin-pinto-resume.txt ';
+  hackmyresume += '-t positive --pdf wkhtmltopdf';
+
+  return gulp.src('resume.yaml')
+    .pipe(yaml({space: 2}))
+    .pipe(gulp.dest('tmp/resume/'))
+    .pipe(run(hackmyresume).exec())
+});
+
+gulp.task('create-resume', ['generate-hackmyresume'], () => {
+  return del(['static/resume/*.pdf.html', 'static/resume/*.css']);
 });
 
 gulp.task('development-server', () => {
