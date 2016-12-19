@@ -141,7 +141,7 @@ this.
 So basically I'm going to chalk all this up to _they fixed it, yay!_ and move
 on :D
 
-### <a name="tldr"></a>How to use Let's Encrypt with Hugo or other static file generators
+### <a id="tldr"></a>How to use Let's Encrypt with Hugo or other static file generators
 
 So, for future Marvin or anyone else that is interested, here is what
 (currently) needs to be done to obtain a Let's Encrypt SSL certificate.

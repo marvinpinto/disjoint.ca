@@ -7,7 +7,9 @@ import streamify from 'gulp-streamify';
 import webserver from 'gulp-webserver';
 import eslint from 'gulp-eslint';
 import bootlint from 'gulp-bootlint';
+import htmlhint from 'gulp-htmlhint';
 import gulpif from 'gulp-if';
+import vnuJar from 'vnu-jar';
 import runSequence from 'run-sequence';
 import source from 'vinyl-source-stream';
 import ip from 'ip';
@@ -57,7 +59,7 @@ gulp.task('all-tests', (cb) => {
   runSequence(
     'generate-assets',
     'generate-html',
-    ['lint-javascript', 'lint-bootstrap'],
+    ['lint-javascript', 'lint-bootstrap', 'analyize-html-content', 'validate-html5-content', 'run-html-proofer'],
     cb);
 });
 
@@ -140,6 +142,59 @@ gulp.task('compile-fonts', () => {
       gutil.log(gutil.colors.red(line));
     });
     throw new Error("Error in task 'compile-fonts'");
+  });
+});
+
+gulp.task('validate-html5-content', () => {
+  const vnuCmd = `java -jar ${vnuJar} --skip-non-html --errors-only public/`;
+
+  return exec(vnuCmd).then(result => {
+    result.stdout.split('\n').forEach(line => {
+      gutil.log(gutil.colors.magenta(line));
+    });
+    result.stderr.split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+
+    if (result.stderr) {
+      throw new Error("Error in task 'lint-html-content'");
+    }
+    return;
+  }).catch(err => {
+    err.toString().split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+    throw new Error("Error in task 'lint-html-content'");
+  });
+});
+
+gulp.task('analyize-html-content', () => {
+  return gulp.src(files.html)
+    .pipe(htmlhint('.htmlhintrc'))
+    .pipe(htmlhint.reporter("htmlhint-stylish"))
+    .pipe(htmlhint.failReporter({suppress: true}))
+});
+
+gulp.task('run-html-proofer', () => {
+  const htmlproofer = `htmlproofer --allow-hash-href --report-script-embeds --check-html --only-4xx --url-swap "https...disjoint.ca:" --file-ignore ./public/resume/marvin-pinto-resume.html ./public`;
+
+  return exec(htmlproofer).then(result => {
+    result.stdout.split('\n').forEach(line => {
+      gutil.log(gutil.colors.magenta(line));
+    });
+    result.stderr.split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+
+    if (result.stderr) {
+      throw new Error("Error in task 'run-html-proofer'");
+    }
+    return;
+  }).catch(err => {
+    err.toString().split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+    throw new Error("Error in task 'run-html-proofer'");
   });
 });
 

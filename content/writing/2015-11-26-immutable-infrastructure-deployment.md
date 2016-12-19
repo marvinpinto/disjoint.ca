@@ -86,14 +86,14 @@ some excellent documentation and this made our lives immensely easier!
 
 We wanted to do better though. Given that nodes in AWS can (and will!) go away
 in a moments notice, our GHE instance had to meet at least the following <a
-name="requirements"></a>requirements:
+id="requirements"></a>requirements:
 
 - It should recover from known AWS failure scenarios
 - It should never lose our data
 - It should be trivial to bring back to a known working state
 
 
-### <a name="workflow"></a>The Workflow
+### <a id="workflow"></a>The Workflow
 
 At FreshBooks, we very much heart the Pull Request workflow. We use it for all
 our applications and it is something that everyone is especially familiar with.
