@@ -1,5 +1,6 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ManifestPlugin = require('webpack-manifest-plugin');
+var webpack = require('webpack');
 
 module.exports = {
   name: 'assets',
@@ -54,6 +55,11 @@ module.exports = {
     new ManifestPlugin({
       fileName: 'assets.json',
       publicPath: 'assets/'
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     })
   ],
 
