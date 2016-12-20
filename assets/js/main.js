@@ -72,9 +72,41 @@ $.fn.hnButton = function() {
   return linkbutton;
 };
 
-// client-side javascript hackernews button
+// Tweet using Twitter Web Intents - https://dev.twitter.com/web/intents#retweet-intent
+jQuery.fn.tweetButton = function() {
+  let linkbutton = this;
+  const url = linkbutton.data('url');
+  const title = linkbutton.data('title');
+  const author = linkbutton.data('author');
+  const width = 550;
+  const height = 420;
+  const winHeight = screen.height;
+  const winWidth = screen.width;
+  const left = Math.round((winWidth / 2) - (width / 2));
+
+  let windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes';
+  let top;
+
+  top = 0;
+  if (winHeight > height) {
+    top = Math.round((winHeight / 2) - (height / 2));
+  }
+
+  windowOptions += `,width=${width},height=${height},left=${left},top={top}`;
+  const tweetUrl = `https://twitter.com/intent/tweet?text=${title}&url=${url}&via=${author}`;
+
+  linkbutton.click(function(evt){
+    evt.preventDefault();
+    window.open(tweetUrl, 'intent', windowOptions);
+  });
+  return linkbutton;
+};
+
 $(document).ready(function(){
   $('.hn-linkbutton').hnButton();
+
+  // Tweet using Twitter Web Intents - https://dev.twitter.com/web/intents#retweet-intent
+  $('.tweet-linkbutton').tweetButton();
 });
 
 // Google Analytics

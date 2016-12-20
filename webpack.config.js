@@ -5,7 +5,10 @@ var webpack = require('webpack');
 module.exports = {
   name: 'assets',
   entry: {
-    app: ['./tmp/js/google-analytics.js', './assets/js/main.js']
+    app: [
+      './tmp/js/google-analytics.js',
+      './assets/js/main.js'
+    ]
   },
 
   output: {
