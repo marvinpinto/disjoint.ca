@@ -19,6 +19,8 @@ import {exec} from 'child-process-promise';
 import webpack from 'webpack';
 import gulpWebpack from 'webpack-stream';
 import del from 'del';
+import sortedUniq from 'lodash/sortedUniq';
+import isEqual from 'lodash/isEqual';
 
 const hugoVersion = '0.17';
 const hugoBinary = `tmp/hugo_${hugoVersion}_linux_amd64`;
@@ -62,7 +64,7 @@ gulp.task('all-tests', (cb) => {
   runSequence(
     'generate-assets',
     'generate-html',
-    ['lint-javascript', 'lint-bootstrap', 'analyize-html-content', 'validate-html5-content', 'run-html-proofer'],
+    ['lint-javascript', 'lint-bootstrap', 'analyize-html-content', 'validate-html5-content', 'run-html-proofer', 'spellcheck'],
     cb);
 });
 
@@ -216,6 +218,60 @@ gulp.task('generate-hackmyresume', () => {
 
 gulp.task('create-resume', ['generate-hackmyresume'], () => {
   return del(['static/resume/*.pdf.html', 'static/resume/*.css']);
+});
+
+gulp.task('format-spellcheck-file', (cb) => {
+  let original = [];
+  let modified = [];
+
+  const spellingFile = fs.readFileSync('.spelling', "utf-8");
+  spellingFile.split('\n').forEach(line => {
+    if (!line) {
+      return;
+    }
+    original.push(line);
+    if (!line.startsWith("#") && !line.startsWith(" -")) {
+      modified.push(line);
+    }
+  });
+  modified = sortedUniq(modified.sort());
+
+  const msg = 'Run "`npm bin`/gulp format-spellcheck-file" to re-format the .spelling file';
+  if (environment === "development") {
+    fs.writeFileSync('.spelling', modified.join('\n'), 'utf-8');
+    cb();
+    return;
+  } else if (!isEqual(original, modified)) {
+    cb(msg);
+    return;
+  }
+  cb();
+});
+
+gulp.task('spellcheck', ['format-spellcheck-file'], () => {
+  let mdspell = "mdspell --no-suggestions --en-us --ignore-numbers --ignore-acronyms ";
+  mdspell += "'README.md' ";
+  mdspell += "'content/**/*.md'";
+
+  return exec('npm bin').then(result => {
+    return result.stdout.trim();
+  }).then(npmBinPath => {
+    return exec(`${npmBinPath}/${mdspell} --report`);
+  }).then(result => {
+    result.stdout.split('\n').forEach(line => {
+      gutil.log(gutil.colors.magenta(line));
+    });
+    result.stderr.split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+    return;
+  }).catch(err => {
+    err.toString().split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+    const msg = `Spell checker error -- run "\`npm bin\`/${mdspell}" and manually update the .spelling file`
+    throw new Error(msg);
+  });
 });
 
 gulp.task('development-server', () => {
