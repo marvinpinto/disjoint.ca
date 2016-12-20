@@ -25,6 +25,9 @@ require('../images/marvin-pinto-profile.jpg');
 require('../images/meta-social-media-image-20160426.jpg');
 require('../images/you-had-me-at-autoscaling.jpg');
 
+// External JS
+require('autotrack/lib');
+
 $.fn.hnButton = function() {
   // this is the button to be upgraded
   var linkbutton = this;

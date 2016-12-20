@@ -103,7 +103,7 @@ gulp.task('generate-html', ['download-hugo'], () => {
   });
 });
 
-gulp.task('generate-assets', ['compile-fonts'], () => {
+gulp.task('generate-assets', ['compile-fonts', 'download-google-analytics-js'], () => {
   let options = require('./webpack.config.js');
 
   const printStats = (err, stats) => {
@@ -150,6 +150,18 @@ gulp.task('compile-fonts', () => {
     });
     throw new Error("Error in task 'compile-fonts'");
   });
+});
+
+gulp.task('download-google-analytics-js', () => {
+  const googleAnalytics = 'tmp/js/google-analytics.js';
+  const googleAnalyticsUrl = 'https://www.google-analytics.com/analytics.js';
+
+  if (!fs.existsSync(googleAnalytics)) {
+    return request(googleAnalyticsUrl)
+      .pipe(source('google-analytics.js'))
+      .pipe(gulp.dest('tmp/js'));
+  }
+  return;
 });
 
 gulp.task('validate-html5-content', () => {

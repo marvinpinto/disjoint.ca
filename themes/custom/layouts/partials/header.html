@@ -67,6 +67,10 @@
   <!-- Google Analytics -->
   <script>
   ga('create', '{{ getenv "GOOGLE_ANALYTICS_ID" }}', 'auto');
+  ga('require', 'cleanUrlTracker');
+  ga('require', 'outboundLinkTracker');
+  ga('require', 'pageVisibilityTracker');
+  ga('require', 'socialWidgetTracker');
   ga('send', 'pageview');
   </script>
 
