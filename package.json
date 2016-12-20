@@ -26,8 +26,10 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
+    "gulp-awspublish": "^3.3.0",
     "gulp-bootlint": "^0.8.0",
     "gulp-cli": "^1.2.2",
+    "gulp-cloudfront-invalidate-aws-publish": "^0.2.1",
     "gulp-decompress": "^2.0.1",
     "gulp-eslint": "^3.0.1",
     "gulp-htmlhint": "^0.3.1",
@@ -60,7 +62,8 @@
     "install": "pip install --user Pygments && gem install --no-rdoc --no-ri html-proofer",
     "start": "gulp development-server",
     "test": "HUGO_ENV=testing gulp all-tests",
-    "cleanup": "rm -rf public static build tmp data"
+    "cleanup": "rm -rf public static build tmp data",
+    "deploy": "gulp deploy-website"
   },
   "repository": {
     "type": "git",

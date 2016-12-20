@@ -21,6 +21,8 @@ import gulpWebpack from 'webpack-stream';
 import del from 'del';
 import sortedUniq from 'lodash/sortedUniq';
 import isEqual from 'lodash/isEqual';
+import awspublish from 'gulp-awspublish';
+import cloudfront from 'gulp-cloudfront-invalidate-aws-publish';
 
 const hugoVersion = '0.17';
 const hugoBinary = `tmp/hugo_${hugoVersion}_linux_amd64`;
@@ -283,4 +285,29 @@ gulp.task('development-server', () => {
     };
     gulp.src(files.dest).pipe(webserver(options));
   });
+});
+
+gulp.task('deploy-website', () => {
+  const publisher = awspublish.create({
+    params: {
+      Bucket: 'disjoint.ca'
+    }
+  });
+
+  const headers = {
+    'Cache-Control': 'max-age=315360000'
+  };
+
+  const cfSettings = {
+    distribution: process.env.CLOUDFRONT_DISTRIBUTION_ID,
+    indexRootPath: true
+  }
+
+  return gulp.src(['public/**/*', 'public/**/.*', 'public/.**/*', 'public/.**/.*'])
+    .pipe(publisher.publish(headers))
+    .pipe(publisher.sync())
+    .pipe(cloudfront(cfSettings))
+    .pipe(awspublish.reporter({
+      states: ['create', 'update', 'delete']
+    }));
 });
