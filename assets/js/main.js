@@ -25,8 +25,11 @@ require('../images/marvin-pinto-profile.jpg');
 require('../images/meta-social-media-image-20160426.jpg');
 require('../images/you-had-me-at-autoscaling.jpg');
 
-// External JS
-require('autotrack/lib');
+// Google Analytics Autotrack
+require('autotrack/lib/plugins/clean-url-tracker');
+require('autotrack/lib/plugins/outbound-link-tracker');
+require('autotrack/lib/plugins/page-visibility-tracker');
+require('autotrack/lib/plugins/social-widget-tracker');
 
 // Hacker News button
 jQuery.fn.hnButton = function() {
@@ -111,4 +114,7 @@ $(document).ready(function(){
 });
 
 // Google Analytics
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+window.ga = window.ga || function() {
+  (ga.q = ga.q || []).push(arguments)
+};
+window.ga.l = new Date;
