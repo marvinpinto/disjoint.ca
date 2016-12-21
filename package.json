@@ -64,7 +64,9 @@
     "start": "gulp development-server",
     "test": "HUGO_ENV=production gulp all-tests",
     "cleanup": "rm -rf public static build tmp data",
-    "deploy": "gulp deploy-website"
+    "deploy": "gulp deploy-website",
+    "new-til": "gulp new-til",
+    "new-post": "gulp new-post"
   },
   "repository": {
     "type": "git",

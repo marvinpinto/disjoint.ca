@@ -103,6 +103,36 @@ gulp.task('generate-html', ['download-hugo'], () => {
   });
 });
 
+gulp.task('new-til', ['download-hugo'], () => {
+  const today = new Date();
+  const formattedDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
+  const hugoArgs = `${hugoBinary} new til/${formattedDate}-new-til.md`;
+
+  return exec(hugoArgs).then(result => {
+    return;
+  }).catch(err => {
+    err.toString().split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+    throw new Error("Error in task 'new-til'");
+  });
+});
+
+gulp.task('new-post', ['download-hugo'], () => {
+  const today = new Date();
+  const formattedDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
+  const hugoArgs = `${hugoBinary} new writing/${formattedDate}-new-post.md`;
+
+  return exec(hugoArgs).then(result => {
+    return;
+  }).catch(err => {
+    err.toString().split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+    throw new Error("Error in task 'new-post'");
+  });
+});
+
 gulp.task('generate-assets', ['compile-fonts', 'download-google-analytics-js'], () => {
   let options = require('./webpack.config.js');
 
@@ -176,14 +206,14 @@ gulp.task('validate-html5-content', () => {
     });
 
     if (result.stderr) {
-      throw new Error("Error in task 'lint-html-content'");
+      throw new Error("Error in task 'validate-html5-content'");
     }
     return;
   }).catch(err => {
     err.toString().split('\n').forEach(line => {
       gutil.log(gutil.colors.red(line));
     });
-    throw new Error("Error in task 'lint-html-content'");
+    throw new Error("Error in task 'validate-html5-content'");
   });
 });
 
