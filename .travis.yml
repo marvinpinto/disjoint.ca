@@ -7,6 +7,10 @@ node_js:
 jdk:
   - 'oraclejdk8'
 
+cache:
+  directories:
+    - 'node_modules'
+
 env:
   global:
     - 'AWS_ACCESS_KEY_ID=AKIAJOOPEXUKZIPG6FIA'
