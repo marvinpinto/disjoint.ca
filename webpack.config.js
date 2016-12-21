@@ -5,6 +5,10 @@ var webpack = require('webpack');
 function getPlugins() {
   var plugins = [];
 
+  plugins.push(new webpack.DefinePlugin({
+    GOOGLE_ADSENSE_CLIENT_ID: process.env.GOOGLE_ADSENSE_CLIENT_ID
+  }));
+
   plugins.push(new webpack.optimize.UglifyJsPlugin({
     sourceMap: true,
     compress: {
