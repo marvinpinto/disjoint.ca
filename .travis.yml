@@ -1,19 +1,11 @@
-language: 'ruby'
+language: 'node_js'
 sudo: false
-rvm:
-  - '2.3.0'
+dist: 'trusty'
+node_js:
+  - "5.12.0"
 
 jdk:
   - 'oraclejdk8'
-
-cache:
-  bundler: true
-  pip: true
-  directories:
-    - 'hugo_0.15_linux_amd64'
-    - '$HOME/.local'
-    - 'tmp/workspace'
-    - '$HOME/bin'
 
 env:
   global:
@@ -25,37 +17,21 @@ env:
     - 'GOOGLE_ADSENSE_CLIENT_ID=ca-pub-6377139471527368'
     - 'GOOGLE_ADSENSE_SLOT_ID=1182212332'
 
-addons:
-  apt:
-    packages:
-      - 'aspell'
-      - 'aspell-en'
-      - 'python-yaml'
-      - 'imagemagick'
-
 before_install:
-  - 'eval "$(gimme 1.5.3)"'
-  - 'mkdir -p $HOME/bin'
-  - 'mkdir -p $HOME/tmp'
-  - '[ -f $HOME/bin/wkhtmltopdf ] || wget -O $HOME/bin/wkhtmltopdf https://github.com/h4cc/wkhtmltopdf-amd64/raw/master/bin/wkhtmltopdf-amd64'
-  - '[ -f $HOME/bin/git-lfs ] || (wget -O $HOME/tmp/git-lfs.tar.gz https://github.com/github/git-lfs/releases/download/v1.2.0/git-lfs-linux-amd64-1.2.0.tar.gz && tar xfz $HOME/tmp/git-lfs.tar.gz -C $HOME/tmp/ && mv $HOME/tmp/git-lfs-1.2.0/git-lfs $HOME/bin/git-lfs)'
-  - 'chmod +x $HOME/bin/wkhtmltopdf'
-  - 'chmod +x $HOME/bin/git-lfs'
-  - 'export PATH=$PATH:$HOME/bin/'
   - 'git lfs install'
   - 'git lfs pull'
+  - 'rvm use 2.3'
 
 install:
-  - 'make hugo'
-  - 'make install'
+  - 'npm install'
 
 script:
-  - 'make generate'
-  - 'make test'
+  - 'npm run cleanup'
+  - 'npm test'
 
 deploy:
   provider: 'script'
-  script: 'PATH="${TRAVIS_BUILD_DIR}/bin:$PATH" rvm "$TRAVIS_RUBY_VERSION" do bundle exec s3_website push'
+  script: 'npm run deploy'
   skip_cleanup: true
   on:
     branch: 'master'
