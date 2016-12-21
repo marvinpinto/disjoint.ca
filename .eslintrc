@@ -15,6 +15,11 @@
     "process": true,
     "require": true,
     "module": true,
-    "Promise": true
+    "Promise": true,
+    "jQuery": true,
+    "document": true,
+    "window": true,
+    "$": true,
+    "screen": true
   }
 }

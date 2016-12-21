@@ -95,7 +95,7 @@ jQuery.fn.tweetButton = function() {
     top = Math.round((winHeight / 2) - (height / 2));
   }
 
-  windowOptions += `,width=${width},height=${height},left=${left},top={top}`;
+  windowOptions += `,width=${width},height=${height},left=${left},top=${top}`;
   const tweetUrl = `https://twitter.com/intent/tweet?text=${title}&url=${url}&via=${author}`;
 
   linkbutton.click(function(evt){
@@ -115,6 +115,6 @@ $(document).ready(function(){
 
 // Google Analytics
 window.ga = window.ga || function() {
-  (ga.q = ga.q || []).push(arguments)
+  (window.ga.q = window.ga.q || []).push(arguments)
 };
 window.ga.l = new Date;

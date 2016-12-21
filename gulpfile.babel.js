@@ -33,7 +33,7 @@ const environment = process.env.HUGO_ENV || 'development';
 const files = {
   src: ['content/**/*.*', 'themes/**/*.*', 'static/**/*.*', 'data/**/*.*'],
   dest: 'public',
-  js: ['gulpfile.babel.js', 'webpack.config.js'],
+  js: ['gulpfile.babel.js', 'webpack.config.js', 'assets/js/**/*.js'],
   html: 'public/**/*.html',
   assets: ['assets/css/**/*.*', 'assets/js/**/*.*', 'assets/images/**/*.*']
 };
