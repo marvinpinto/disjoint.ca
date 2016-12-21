@@ -24,7 +24,7 @@
     "del": "^2.2.2",
     "eslint": "^3.12.2",
     "eslint-config-google": "^0.7.1",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
     "gulp-awspublish": "^3.3.0",
@@ -55,14 +55,14 @@
     "vinyl-source-stream": "^1.1.0",
     "vnu-jar": "^16.6.29",
     "webfont-dl": "^0.1.2",
-    "webpack": "^1.14.0",
+    "webpack": "^2.2.0-rc.1",
     "webpack-manifest-plugin": "^1.1.0",
     "webpack-stream": "^3.2.0"
   },
   "scripts": {
     "install": "pip install --user Pygments && gem install --no-rdoc --no-ri html-proofer",
     "start": "gulp development-server",
-    "test": "HUGO_ENV=testing gulp all-tests",
+    "test": "HUGO_ENV=production gulp all-tests",
     "cleanup": "rm -rf public static build tmp data",
     "deploy": "gulp deploy-website"
   },

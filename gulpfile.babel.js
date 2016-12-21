@@ -123,14 +123,14 @@ gulp.task('generate-assets', ['compile-fonts', 'download-google-analytics-js'], 
 
   return gulp.src('assets/js/main.js')
     .pipe(gulpWebpack(options, webpack, printStats))
-    .pipe(gulpif(['*.js', '*.css' ], gulp.dest('static/assets')))
+    .pipe(gulpif(['*.js', '*.css', '*.map' ], gulp.dest('static/assets')))
     .pipe(gulpif(['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'], gulp.dest('static/assets')))
     .pipe(gulpif(['*.gif', '*.png', '*.jpg', '*.jpeg', '*.svg'], gulp.dest('static/assets')))
     .pipe(gulpif('*.json', gulp.dest('data')));
 });
 
 gulp.task('compile-fonts', () => {
-  const commonArgs = '--font-out=tmp/fonts/ --css-rel=../fonts --woff1=link --woff2=link';
+  const commonArgs = '--font-out=tmp/fonts/ --css-rel=../../tmp/fonts --woff1=link --woff2=link';
   const fonts = [
     '"https://fonts.googleapis.com/css?family=Ubuntu:bold" --out=tmp/css/_ubuntu.scss',
     '"https://fonts.googleapis.com/css?family=Rancho" --out=tmp/css/_rancho.scss',
