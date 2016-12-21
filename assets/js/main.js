@@ -1,5 +1,3 @@
-/* global GOOGLE_ADSENSE_CLIENT_ID */
-
 // CSS
 require('../css/main.scss');
 
@@ -120,10 +118,3 @@ window.ga = window.ga || function() {
   (window.ga.q = window.ga.q || []).push(arguments)
 };
 window.ga.l = new Date;
-
-// Google Adsense
-window.adsbygoogle = window.adsbygoogle || [];
-window.adsbygoogle.push({
-  google_ad_client: GOOGLE_ADSENSE_CLIENT_ID,
-  enable_page_level_ads: true
-});
