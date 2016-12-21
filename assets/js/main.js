@@ -28,11 +28,11 @@ require('../images/you-had-me-at-autoscaling.jpg');
 // External JS
 require('autotrack/lib');
 
-$.fn.hnButton = function() {
-  // this is the button to be upgraded
-  var linkbutton = this;
-  var title = document.title;
-  var thisUrl = window.location.href;
+// Hacker News button
+jQuery.fn.hnButton = function() {
+  let linkbutton = this;
+  let title = document.title;
+  let thisUrl = window.location.href;
   if (linkbutton.data('url')) {
     thisUrl = linkbutton.data('url');
   }
@@ -48,8 +48,8 @@ $.fn.hnButton = function() {
   });
 
   if (linkbutton.length) {
-    var api = 'https://hn.algolia.com/api/v1/search';
-    var params = {
+    const api = 'https://hn.algolia.com/api/v1/search';
+    const params = {
       tags: 'story',
       query: thisUrl,
       restrictSearchableAttributes: 'url',
@@ -60,7 +60,7 @@ $.fn.hnButton = function() {
         $.each(data.hits, function(index, item){
           if (item.url === thisUrl) {
             // this is our item!
-            var hnPostLink = hnUrlPrefix + item.objectID;
+            const hnPostLink = hnUrlPrefix + item.objectID;
             linkbutton.unbind('click');
             linkbutton.attr('href', hnPostLink);
             return;
@@ -103,6 +103,7 @@ jQuery.fn.tweetButton = function() {
 };
 
 $(document).ready(function(){
+  // client-side javascript hackernews button
   $('.hn-linkbutton').hnButton();
 
   // Tweet using Twitter Web Intents - https://dev.twitter.com/web/intents#retweet-intent
