@@ -52,11 +52,13 @@
       {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="/tags/{{ . | urlize }}">{{ $e }}</a>{{ end }}
 
       <div class="pull-right">
-        <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}&via={{ .Param "author_twitter_username" }}"
-          class="btn btn-secondary btn-sm"
-          target="_blank"
+        <a href="#"
+          class="btn btn-secondary btn-sm tweet-linkbutton"
+          target="blank"
           rel="noreferrer"
-          ><i class="fa fa-twitter"></i> Tweet
+          data-url="{{ .Permalink }}"
+          data-title="{{ .Title }}"
+          data-author="{{ .Param "author_twitter_username" }}"><i class="fa fa-twitter"></i> Tweet
         </a>
       </div>
 
