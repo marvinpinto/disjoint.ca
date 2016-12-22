@@ -24,7 +24,7 @@ import isEqual from 'lodash/isEqual';
 import awspublish from 'gulp-awspublish';
 import cloudfront from 'gulp-cloudfront-invalidate-aws-publish';
 
-const hugoVersion = '0.17';
+const hugoVersion = '0.18';
 const hugoBinary = `tmp/hugo_${hugoVersion}_linux_amd64`;
 const hugoUrl = `https://github.com/spf13/hugo/releases/download/v${hugoVersion}/hugo_${hugoVersion}_Linux-64bit.tar.gz`;
 const hugoPort = 8080;
