@@ -4,12 +4,12 @@
   "description": "disjoint.ca",
   "main": "index.js",
   "dependencies": {
-    "bootstrap-sass": "^3.3.6",
+    "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.7.0",
     "fresh-themes": "git+https://github.com/marvinpinto-archive/fresh-themes.git",
     "hackmyresume": "^1.8.0",
     "iframe-resizer": "^3.5.3",
-    "jquery": "^2.2.4",
+    "jquery": "^3.1.1",
     "uglify-js": "^2.6.2"
   },
   "devDependencies": {

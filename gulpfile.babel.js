@@ -24,7 +24,7 @@ import isEqual from 'lodash/isEqual';
 import awspublish from 'gulp-awspublish';
 import cloudfront from 'gulp-cloudfront-invalidate-aws-publish';
 
-const hugoVersion = '0.17';
+const hugoVersion = '0.18';
 const hugoBinary = `tmp/hugo_${hugoVersion}_linux_amd64`;
 const hugoUrl = `https://github.com/spf13/hugo/releases/download/v${hugoVersion}/hugo_${hugoVersion}_Linux-64bit.tar.gz`;
 const hugoPort = 8080;
@@ -65,6 +65,7 @@ gulp.task('lint-bootstrap', () => {
 gulp.task('all-tests', (cb) => {
   runSequence(
     'generate-assets',
+    'generate-version-sha',
     'generate-html',
     ['lint-javascript', 'lint-bootstrap', 'analyize-html-content', 'validate-html5-content', 'run-html-proofer', 'spellcheck'],
     cb);
@@ -130,6 +131,22 @@ gulp.task('new-post', ['download-hugo'], () => {
       gutil.log(gutil.colors.red(line));
     });
     throw new Error("Error in task 'new-post'");
+  });
+});
+
+gulp.task('generate-version-sha', () => {
+  return exec('git rev-parse HEAD').then(result => {
+    const sha = result.stdout.trim();
+    const version = {
+      short: sha.substring(0,7),
+      full: sha
+    };
+    return fs.writeFileSync('data/version.json', JSON.stringify(version));
+  }).catch(err => {
+    err.toString().split('\n').forEach(line => {
+      gutil.log(gutil.colors.red(line));
+    });
+    throw new Error("Error in task 'generate-version-sha'");
   });
 });
 
@@ -225,7 +242,7 @@ gulp.task('analyize-html-content', () => {
 });
 
 gulp.task('run-html-proofer', () => {
-  const htmlproofer = `htmlproofer --allow-hash-href --report-script-embeds --check-html --only-4xx --url-swap "https...disjoint.ca:" --file-ignore ./public/resume/marvin-pinto-resume.html ./public`;
+  const htmlproofer = `htmlproofer --allow-hash-href --report-script-embeds --check-html --only-4xx --url-swap "https...disjoint.ca:" --file-ignore ./public/resume/marvin-pinto-resume.html --url-ignore "/github.com\/marvinpinto\/disjoint.ca\/commit/" ./public`;
 
   return exec(htmlproofer).then(result => {
     result.stdout.split('\n').forEach(line => {
@@ -319,7 +336,7 @@ gulp.task('spellcheck', ['format-spellcheck-file'], () => {
 });
 
 gulp.task('development-server', () => {
-  runSequence('generate-assets', 'generate-html', () => {
+  runSequence('generate-assets', 'generate-version-sha', 'generate-html', () => {
     const options = {
       livereload: true,
       host: ip.address(),

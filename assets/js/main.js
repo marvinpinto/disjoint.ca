@@ -31,8 +31,11 @@ require('autotrack/lib/plugins/outbound-link-tracker');
 require('autotrack/lib/plugins/page-visibility-tracker');
 require('autotrack/lib/plugins/social-widget-tracker');
 
+import $ from 'jquery';
+import * as bootstrap from 'bootstrap-sass/assets/javascripts/bootstrap';  // eslint-disable-line no-unused-vars
+
 // Hacker News button
-jQuery.fn.hnButton = function() {
+$.fn.hnButton = function() {
   let linkbutton = this;
   let title = document.title;
   let thisUrl = window.location.href;
@@ -76,7 +79,7 @@ jQuery.fn.hnButton = function() {
 };
 
 // Tweet using Twitter Web Intents - https://dev.twitter.com/web/intents#retweet-intent
-jQuery.fn.tweetButton = function() {
+$.fn.tweetButton = function() {
   let linkbutton = this;
   const url = linkbutton.data('url');
   const title = linkbutton.data('title');
