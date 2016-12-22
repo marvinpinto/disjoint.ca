@@ -2,7 +2,7 @@
 author_twitter_username: 'marvinpinto'
 date: 2016-04-25T20:43:57-04:00
 description: Make Ansible Vault diffs great again
-meta_image: "images/marvin-pinto-profile.jpg"
+meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 tags:

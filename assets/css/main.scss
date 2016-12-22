@@ -1,8 +1,8 @@
 // Font-awesome overrides
-$fa-font-path: "../fonts";
+$fa-font-path: "~font-awesome/fonts/";
 
 // Bootstrap overrides
-$icon-font-path: "../fonts/";
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 $font-family-sans-serif: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $headings-font-family: 'Oswald', sans-serif;
 $line-height-base: 1.5;
@@ -20,16 +20,16 @@ $jumbotron-font-size: 35px;
 $jumbotron-heading-font-size: 130px;
 
 // Bootstrap
-@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 // Fontawesome
-@import '../../node_modules/font-awesome/scss/font-awesome';
+@import '~font-awesome/scss/font-awesome';
 
 // Custom fonts
-@import '../../build/css/ubuntu';
-@import '../../build/css/rancho';
-@import '../../build/css/gudea';
-@import '../../build/css/oswald';
+@import '../../tmp/css/ubuntu';
+@import '../../tmp/css/rancho';
+@import '../../tmp/css/gudea';
+@import '../../tmp/css/oswald';
 
 // Bootstrap customizations
 @import 'bootstrap_customizations';
@@ -54,6 +54,3 @@ $jumbotron-heading-font-size: 130px;
 
 // Hugo theme customizations
 @import 'gohugo_theme';
-
-// Selection Sharer
-@import '../../build/css/selection_sharer';

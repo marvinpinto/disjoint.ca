@@ -12,7 +12,7 @@ menu: "main"
 
 <i class="fa fa-hand-peace-o"> Hello, I'm Marvin!</i>
 
-<img src="/images/marvin-pinto-profile.jpg" alt="Marvin Pinto" height="135" width="135" class="img-responsive img-rounded pull-right">
+{{< img src="marvin-pinto-profile.jpg" alt="Marvin Pinto" height="135" width="135" class="img-responsive img-rounded pull-right">}}
 
 I'm a developer who lives and works in the beautiful [City of Toronto][2]! I
 previously worked at a SaaS accounting company called [FreshBooks][7] where I
@@ -27,7 +27,6 @@ Here's where you can find me on the Internet:
 - <i class="fa fa-envelope-o"> hello@pinto.im</i>
 - <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x52654E6EB0BB564B"><i class="fa fa-id-badge"> 0x52654E6EB0BB564B</i></a> (PGP Key ID)
 - <a href="https://keybase.io/marvinpinto"><i class="fa fa-key"> marvinpinto</i></a> (Keybase)
-- <a href="{{< relref "page/resume.md" >}}"><i class="fa fa-user-plus"> resume</i></a>
 
 
 
@@ -86,7 +85,7 @@ was developed using [Hugo][3] - A Fast & Modern Static Website Engine.
 
 ### <i class="fa fa-paw"></i> Lady
 
-<img src="/images/derpy-lady.jpg" alt="Lady the Dog" class="img-responsive img-rounded pull-left">
+{{< img src="derpy-lady.jpg" class="img-responsive img-rounded pull-left" alt="Derpy Lady the Dog">}}
 
 And last but not least this here is my derpy dog Lady! She is very awkward for
 her age and completely adorable. We rescued her as a puppy from a shelter in

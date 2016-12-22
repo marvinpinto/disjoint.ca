@@ -3,7 +3,7 @@ author_twitter_username: marvinpinto
 date: 2016-12-14T20:01:55-05:00
 description: Using xsel to copy and paste text between the CLI and GUI
 lastmod: 2016-12-14T20:01:55-05:00
-meta_image: images/marvin-pinto-profile.jpg
+meta_image: marvin-pinto-profile.jpg
 meta_image_height: 700
 meta_image_width: 700
 tags:

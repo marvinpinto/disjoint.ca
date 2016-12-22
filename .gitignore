@@ -1,9 +1,7 @@
 public/
-/media/
-/hugo_*_linux_amd64
 env_vars
 /tmp
 /static/*
 /build
 /node_modules
-/.sass-cache
+/data

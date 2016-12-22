@@ -1,0 +1,8 @@
+<!-- image -->
+<img
+  src="{{ .Site.BaseURL }}/{{ index .Site.Data.assets (.Get "src") }}"
+  alt="{{ .Get "alt" }}"
+  {{ if isset .Params "height" }}height="{{ .Get "height" }}"{{ end }}
+  {{ if isset .Params "width" }}width="{{ .Get "width" }}"{{ end }}
+  {{ if isset .Params "class" }}class="{{ .Get "class" }}"{{ end }}/>
+<!-- image -->

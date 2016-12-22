@@ -38,41 +38,45 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content='{{ $.Scratch.Get "local_description" }}' />
+  <meta name="description" content="{{ $.Scratch.Get "local_description" }}" />
   <meta name="author" content="{{ .Site.Params.author }}" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
   <!-- Twitter Cards -->
-  <meta name="twitter:card" content='{{ $.Scratch.Get "local_card_type" }}' />
+  <meta name="twitter:card" content="{{ $.Scratch.Get "local_card_type" }}" />
   <meta name="twitter:site" content="@marvinpinto" />
-  <meta name="twitter:creator" content='@{{ .Param "author_twitter_username" }}' />
-  <meta name="twitter:title" content='{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}' />
-  <meta name="twitter:description" content='{{ $.Scratch.Get "local_description" }}' />
-  <meta name="twitter:image" content='{{ .Site.BaseURL }}/{{ .Param "meta_image" }}' />
+  <meta name="twitter:creator" content="@{{ .Param "author_twitter_username" }}" />
+  <meta name="twitter:title" content="{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}" />
+  <meta name="twitter:description" content="{{ $.Scratch.Get "local_description" }}" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}/{{ index .Site.Data.assets (.Param "meta_image") }}" />
 
   <!-- Open Graph Protocol -->
-  <meta name="og:title" content='{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}' />
+  <meta name="og:title" content="{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}" />
   <meta name="og:type" content="website" />
   <meta name="og:url" content="{{ .Permalink }}" />
-  <meta name="og:image" content='{{ .Site.BaseURL }}/{{ .Param "meta_image" }}' />
+  <meta name="og:image" content="{{ .Site.BaseURL }}/{{ index .Site.Data.assets (.Param "meta_image") }}" />
 
   <title>{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}</title>
 
   <!-- custom css -->
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/disjoint-ca.min.css" />
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/{{ index .Site.Data.assets "app.css" }}" />
 
   <!-- custom javascript -->
-  <script src="{{ .Site.BaseURL }}/js/disjoint-ca.min.js"></script>
+  <script src="{{ .Site.BaseURL }}/{{ index .Site.Data.assets "app.js" }}"></script>
 
   <!-- Google Analytics -->
   <script>
   ga('create', '{{ getenv "GOOGLE_ANALYTICS_ID" }}', 'auto');
+  ga('require', 'cleanUrlTracker');
+  ga('require', 'outboundLinkTracker');
+  ga('require', 'pageVisibilityTracker');
+  ga('require', 'socialWidgetTracker');
   ga('send', 'pageview');
   </script>
 
   <!-- rss -->
-  {{ if .RSSlink }}
-  <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ if and (.RSSLink) (ne .URL "/404/") }}
+  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   {{ end }}
 
   <!-- structured data social profile links -->
@@ -98,7 +102,7 @@
     "url" : "https://disjoint.ca",
     "logo": {
       "@type": "ImageObject",
-      "url": {{printf "%s" (print .Site.BaseURL "/images/disjoint-ca-logo.png")}},
+      "url": {{printf "%s" (print .Site.BaseURL "/" (index .Site.Data.assets "disjoint-ca-logo.png"))}},
       "width": 327,
       "height": 60
     }
@@ -115,15 +119,6 @@
     "url" : "https://disjoint.ca"
   }
   </script>
-
-  <!-- adsense -->
-  <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-  google_ad_client: "ca-pub-6377139471527368",
-  enable_page_level_ads: true
-  });
-  </script>
-
 </head>
 <body lang="{{ .Site.Params.languageCode }}">
   <!-- navbar -->

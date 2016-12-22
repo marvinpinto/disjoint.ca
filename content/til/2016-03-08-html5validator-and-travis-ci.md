@@ -5,7 +5,7 @@ tags:
   - html5validator
   - java
 title: html5validator and Travis CI
-meta_image: "images/marvin-pinto-profile.jpg"
+meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 ---

@@ -3,7 +3,7 @@ author_twitter_username: marvinpinto
 date: 2016-03-18T19:38:38-04:00
 description: Modifying the date of a git commit
 lastmod: 2016-11-04T15:07:00-04:00
-meta_image: images/marvin-pinto-profile.jpg
+meta_image: marvin-pinto-profile.jpg
 meta_image_height: 700
 meta_image_width: 700
 tags:

@@ -27,8 +27,8 @@
             <i class="fa fa-flickr fa-2x"></i></a>
           {{ end }}
 
-          {{ if .RSSlink }}
-          <a href="{{ .RSSlink }}" type="application/rss+xml" target="_blank" rel="noreferrer">
+          {{ if and (.RSSLink) (ne .URL "/404/") }}
+          <a href="{{ .RSSLink }}" type="application/rss+xml" target="_blank" rel="noreferrer">
             <i class="fa fa-rss-square fa-2x"></i></a>
           {{ end }}
         </div>
@@ -36,10 +36,6 @@
     </div>
   </div>
 </div>
-
-<script>
-$('p').selectionSharer();
-</script>
 
 </body>
 </html>

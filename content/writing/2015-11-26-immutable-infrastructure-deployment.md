@@ -9,7 +9,7 @@ tags:
   - aws
   - terraform
 title: A Framework for Deployment of Immutable Infrastructure
-meta_image: "images/2015-11-26-immutable-infrastructure-deployment.jpg"
+meta_image: "2015-11-26-immutable-infrastructure-deployment.jpg"
 meta_image_width: 700
 meta_image_height: 467
 ---
@@ -86,14 +86,14 @@ some excellent documentation and this made our lives immensely easier!
 
 We wanted to do better though. Given that nodes in AWS can (and will!) go away
 in a moments notice, our GHE instance had to meet at least the following <a
-name="requirements"></a>requirements:
+id="requirements"></a>requirements:
 
 - It should recover from known AWS failure scenarios
 - It should never lose our data
 - It should be trivial to bring back to a known working state
 
 
-### <a name="workflow"></a>The Workflow
+### <a id="workflow"></a>The Workflow
 
 At FreshBooks, we very much heart the Pull Request workflow. We use it for all
 our applications and it is something that everyone is especially familiar with.
@@ -211,22 +211,22 @@ allowing a human to _approve_ a change.
 1. After a Pull Request gets submitted, Atlas kicks off a `terraform plan` (dry
    run) and updates the Github build status.
 
-    <img src="/images/atlas-gh-build-status.jpg" alt="Atlas GitHub build status" class="img-responsive">
+    {{< img src="atlas-gh-build-status.jpg" alt="Atlas GitHub build status" class="img-responsive">}}
 
 1. After the PR gets merged, Atlas kicks off another Terraform run which
    notifies us in Slack and prompts us to approve this change.
 
-    <img src="/images/atlas-slack-confirm.jpg" alt="Atlas Slack confirm page" class="img-responsive">
+    {{< img src="atlas-slack-confirm.jpg" alt="Atlas Slack confirm page" class="img-responsive">}}
 
 1. In the Atlas interface, it's easy to see _exactly_ what will happen once a
    change gets approved.
 
-    <img src="/images/atlas-approve-change.jpg" alt="Atlas approve deployment" class="img-responsive">
+    {{< img src="atlas-approve-change.jpg" alt="Atlas approve deployment" class="img-responsive">}}
 
 1. Hitting the **Confirm & Apply** button kicks off another Terraform run that
    goes and makes the required changes (and then notifies us in Slack)
 
-    <img src="/images/atlas-slack-success.jpg" alt="Atlas Slack success message" class="img-responsive">
+    {{< img src="atlas-slack-success.jpg" alt="Atlas Slack success message" class="img-responsive">}}
 
 And that's it! There are enough checks and guards in this workflow and yet
 lightweight enough that this works.
