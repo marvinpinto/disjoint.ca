@@ -1,0 +1,29 @@
+.carbonads-container {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10.5px;
+  max-width: 200px;
+  margin-left: 20px;
+}
+
+.carbon-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.carbon-text {
+  display: block;
+  padding: 10px 0 10px 0;
+  font-size: $font-size-base - 3;
+  text-align: center;
+}
+
+.carbon-poweredby {
+  display: block;
+  color: $text-muted;
+  font-size: $font-size-base - 5;
+  text-align: right;
+}
