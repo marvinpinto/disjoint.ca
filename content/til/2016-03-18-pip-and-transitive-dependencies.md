@@ -3,7 +3,7 @@ date: 2016-03-18T19:10:28-04:00
 tags:
   - python
   - pip
-  - setup.py
+  - setup_py
 title: pip and transitive dependencies
 meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
