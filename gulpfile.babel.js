@@ -182,7 +182,7 @@ gulp.task('compile-fonts', () => {
     '"https://fonts.googleapis.com/css?family=Ubuntu:bold" --out=tmp/css/_ubuntu.scss',
     '"https://fonts.googleapis.com/css?family=Rancho" --out=tmp/css/_rancho.scss',
     '"https://fonts.googleapis.com/css?family=Gudea" --out=tmp/css/_gudea.scss',
-    '"https://fonts.googleapis.com/css?family=Oswald" --out=tmp/css/_oswald.scss'
+    '"https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" --out=tmp/css/_yanone_kaffeesatz.scss'
   ];
 
   return exec('npm bin').then(result => {
