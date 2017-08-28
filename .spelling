@@ -1,9 +1,12 @@
 0x52654e6eb0bb564b
 3am
+Cognito
+DynamoDB
 Fairpixels
 Freenode
 Heroku
 Keybase
+NodeJS
 SaaS
 _
 _solution
@@ -45,6 +48,7 @@ failovers
 filesystem
 firewalled
 freshbooks
+frontend
 github
 giulio
 golang
@@ -114,6 +118,7 @@ unsplash.com
 users.js
 vnu.jar
 vsphere
+webapp
 webhook
 wevs
 whitelist
