@@ -1,5 +1,6 @@
 ---
 date: "2015-11-15"
+lastmod: "2017-08-28"
 title: "\uf1b3 About Me"
 keywords:
   - "marvinpinto"
@@ -32,13 +33,19 @@ Here's where you can find me on the Internet:
 
 ### <i class="fa fa-graduation-cap"></i> Recent Projects
 
-- **Open Sentinel** is a distributed monitoring system I'm working on with a
-few other people. Its REST backend will be powered by AWS API Gateway and
-Lambda, fronted by an EmberJS single-page-app. This project is very much in its
-infancy. The really neat thing here is that we intend on open-sourcing all the
-components right from the beginning so you get to experience everything, warts
-and all! Follow along on the <a href="https://github.com/opensentinel"><i
-class="fa fa-github"> opensentinel</i></a> org on GitHub.
+- **Switchboard** is a webapp built to give people full control over their
+internet-based phone number. It allows people to control exactly when and how
+they are interrupted, along with regular phone-like features people have come
+to expect (push messaging, call forwarding, and so on).
+
+    The backend is a NodeJS application powered by a few AWS & Google services:
+    Lambda, API Gateway, DynamoDB, S3, Cognito, Firebase, and others. The
+    frontend is a single-page-app written in React. I've had a lot of fun
+    building this so lookout for the upcoming blog posts about it!
+
+    Switchboard is in beta at the moment while we're learning about our users
+    so go **check it out!** <a
+    href="https://goswitchboard.com">https://goswitchboard.com</a>
 
 - **Charlesbot** is a modular Slackbot written using Python 3's asyncio
 framework. It was designed to be self-deployed and easily extendible (via the
