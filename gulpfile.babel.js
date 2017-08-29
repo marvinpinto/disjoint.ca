@@ -2,22 +2,19 @@ import request from 'request';
 import fs from 'fs';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
+import {exec, spawn} from 'child-process-promise';
 import decompress from 'gulp-decompress';
 import streamify from 'gulp-streamify';
 import webserver from 'gulp-webserver';
 import eslint from 'gulp-eslint';
 import bootlint from 'gulp-bootlint';
 import htmlhint from 'gulp-htmlhint';
-import gulpif from 'gulp-if';
 import run from 'gulp-run';
 import yaml from 'gulp-yaml';
 import vnuJar from 'vnu-jar';
 import runSequence from 'run-sequence';
 import source from 'vinyl-source-stream';
 import ip from 'ip';
-import {exec} from 'child-process-promise';
-import webpack from 'webpack';
-import gulpWebpack from 'webpack-stream';
 import del from 'del';
 import sortedUniq from 'lodash/sortedUniq';
 import isEqual from 'lodash/isEqual';
@@ -30,6 +27,64 @@ const hugoUrl = `https://github.com/spf13/hugo/releases/download/v${hugoVersion}
 const hugoPort = 8080;
 
 const environment = process.env.HUGO_ENV || 'development';
+
+const printOutput = (tag, output) => {
+  if (output.stdout) {
+    output.stdout.split('\n').forEach((line) => {
+      const tline = line.trim();
+      if (tline) {
+        gutil.log(gutil.colors.magenta(`${tag}: ${tline}`));
+      }
+    });
+  }
+
+  if (output.stderr) {
+    output.stderr.split('\n').forEach((line) => {
+      const tline = line.trim();
+      if (tline) {
+        gutil.log(gutil.colors.red(`${tag}: ${tline}`));
+      }
+    });
+  }
+};
+
+const executeAsyncProcess = (args) => {
+  let isStderrOutputPresent = false;
+
+  return Promise.resolve().then(() => {
+    if (!args.process ||
+        !args.taskTag ||
+        !args.processArguments ||
+        args.envVars === undefined) {
+      throw new Error('Invalid arguments passed into "executeAsyncProcess"');
+    }
+
+    if (!args.failOnStderr) {
+      args.failOnStderr = false;
+    }
+
+    // Use spawn to execute the specified process
+    const overriddenEnv = Object.assign({}, process.env, args.envVars);
+    const promise = spawn(args.process, args.processArguments, {env: overriddenEnv});
+    const childProcess = promise.childProcess;
+    childProcess.stdout.on('data', (data) => {
+      printOutput(args.taskTag, {stdout: data.toString(), stderr: ''});
+    });
+    childProcess.stderr.on('data', (data) => {
+      isStderrOutputPresent = true;
+      printOutput(args.taskTag, {stdout: '', stderr: data.toString()});
+    });
+    return promise;
+  }).then(() => {
+    if (args.failOnStderr && isStderrOutputPresent) {
+      return Promise.reject('Failed due to stderr output');
+    }
+
+    return Promise.resolve();
+  });
+};
+
+
 const files = {
   src: ['content/**/*.*', 'themes/**/*.*', 'static/**/*.*', 'data/**/*.*'],
   dest: 'public',
@@ -151,29 +206,32 @@ gulp.task('generate-version-sha', () => {
 });
 
 gulp.task('generate-assets', ['compile-fonts', 'download-google-analytics-js'], () => {
-  let options = require('./webpack.config.js');
+  const tag = 'generate-assets';
 
-  const printStats = (err, stats) => {
-    stats.toString().split('\n').forEach(line => {
-      gutil.log(gutil.colors.magenta(line));
-    });
-    if (err) {
-      err.toString().split('\n').forEach(line => {
-        gutil.log(gutil.colors.red(line));
-      });
+  return Promise.resolve().then(() => {
+    return exec('npm bin');
+  }).then((result) => {
+    const yarnBinPath = result.stdout.trim();
+
+    let processArgs = [
+      '--colors',
+      '--config', 'webpack.config.babel.js',
+      '--output-path', './static',
+    ];
+    if (environment === "development") {
+      processArgs.push('--watch');
     }
-  }
 
-  if (environment === "development") {
-    gulp.watch(files.assets, ['generate-assets']);
-  }
-
-  return gulp.src('assets/js/main.js')
-    .pipe(gulpWebpack(options, webpack, printStats))
-    .pipe(gulpif(['*.js', '*.css', '*.map' ], gulp.dest('static/assets')))
-    .pipe(gulpif(['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'], gulp.dest('static/assets')))
-    .pipe(gulpif(['*.gif', '*.png', '*.jpg', '*.jpeg', '*.svg'], gulp.dest('static/assets')))
-    .pipe(gulpif('*.json', gulp.dest('data')));
+    return executeAsyncProcess({
+      process: `${yarnBinPath}/webpack`,
+      processArguments: processArgs,
+      envVars: {},
+      taskTag: tag,
+    });
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
+  });
 });
 
 gulp.task('compile-fonts', () => {
