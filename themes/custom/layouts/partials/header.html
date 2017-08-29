@@ -66,6 +66,7 @@
 
   <!-- Google Analytics -->
   <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
   ga('create', '{{ getenv "GOOGLE_ANALYTICS_ID" }}', 'auto');
   ga('require', 'cleanUrlTracker');
   ga('require', 'outboundLinkTracker');
@@ -73,6 +74,7 @@
   ga('require', 'socialWidgetTracker');
   ga('send', 'pageview');
   </script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
 
   <!-- rss -->
   {{ if and (.RSSLink) (ne .URL "/404/") }}
