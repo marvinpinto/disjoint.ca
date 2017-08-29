@@ -253,7 +253,15 @@ gulp.task('new-post', ['download-hugo'], () => {
 gulp.task('generate-version-sha', () => {
   const tag = 'generate-version-sha';
 
-  return exec('git rev-parse HEAD').then(result => {
+  return Promise.resolve().then(() => {
+    // create the 'data' directory, if it does not exist
+    if (fs.existsSync('data')) {
+      return Promise.resolve();
+    }
+    return fs.mkdirSync('data');
+  }).then(() => {
+    return exec('git rev-parse HEAD');
+  }).then((result) => {
     const sha = result.stdout.trim();
     const version = {
       short: sha.substring(0,7),
