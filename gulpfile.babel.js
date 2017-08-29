@@ -305,6 +305,7 @@ gulp.task('generate-assets', ['compile-fonts', 'download-google-analytics-js'], 
 
 gulp.task('compile-fonts', () => {
   const tag = 'compile-fonts';
+  const commonArgs = '--font-out=tmp/fonts/ --css-rel=../../tmp/fonts --woff1=link --woff2=link';
   const fonts = [
     '"https://fonts.googleapis.com/css?family=Ubuntu:bold" --out=tmp/css/_ubuntu.scss',
     '"https://fonts.googleapis.com/css?family=Rancho" --out=tmp/css/_rancho.scss',
@@ -316,20 +317,8 @@ gulp.task('compile-fonts', () => {
     return exec('npm bin');
   }).then((result) => {
     const yarnBinPath = result.stdout.trim();
-
-    return Promise.all(fonts.map(entry => {
-      return executeAsyncProcess({
-        process: `${yarnBinPath}/webfont-dl`,
-        processArguments: [
-          entry,
-          '--font-out=tmp/fonts/',
-          '--css-rel=../../tmp/fonts',
-          '--woff1=link',
-          '--woff2=link',
-        ],
-        envVars: {},
-        taskTag: tag,
-      });
+    return Promise.all(fonts.map((entry) => {
+      return exec(`${yarnBinPath}/webfont-dl ${entry} ${commonArgs}`);
     }));
   }).catch((err) => {
     printOutput(tag, {stdout: '', stderr: err.toString()});
