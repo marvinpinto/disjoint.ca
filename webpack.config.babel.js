@@ -13,7 +13,7 @@ const getPlugins = () => {
   plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
 
   plugins.push(new ExtractTextPlugin({
-    filename: process.env.NODE_ENV === 'production' ? '[name]-[hash].css' : '[name].css',
+    filename: process.env.HUGO_ENV === 'production' ? '[name]-[hash].css' : '[name].css',
     allChunks: true,
   }));
 
