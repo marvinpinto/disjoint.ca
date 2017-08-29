@@ -58,8 +58,11 @@ const getPlugins = () => {
         'kbd',
         'pre',
         'samp',
+        '*fa-*',
       ],
+      rejected: false, // enable this to debug purify-css
     },
+    verbose: true,
   }));
 
   plugins.push(new ManifestPlugin({
