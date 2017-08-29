@@ -52,14 +52,13 @@ const getPlugins = () => {
     ]),
     minimize: true,
     purifyOptions: {
-      // whitelist: [
-      //   'highlight',
-      //   'code',
-      //   'kbd',
-      //   'pre',
-      //   'samp',
-      //   'docs-single-page-answer',
-      // ],
+      whitelist: [
+        'highlight',
+        'code',
+        'kbd',
+        'pre',
+        'samp',
+      ],
     },
   }));
 
