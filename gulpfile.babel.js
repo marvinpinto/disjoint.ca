@@ -20,6 +20,7 @@ import isEqual from 'lodash/isEqual';
 import awspublish from 'gulp-awspublish';
 import cloudfront from 'gulp-cloudfront-invalidate-aws-publish';
 import promiseRetry from 'promise-retry';
+import axios from 'axios';
 
 const hugoVersion = '0.18';
 const hugoBinary = `tmp/hugo_${hugoVersion}_linux_amd64`;
@@ -480,4 +481,32 @@ gulp.task('deploy-website', () => {
     .pipe(awspublish.reporter({
       states: ['create', 'update', 'delete']
     }));
+});
+
+gulp.task('submit-sitemaps', () => {
+  const tag = 'submit-sitemaps';
+  return Promise.resolve().then(() => {
+    const urls = [
+      'https://www.google.com/ping',
+      'https://www.bing.com/ping',
+    ];
+
+    const promises = urls.map((ele) => {
+      return axios.request({
+        method: 'get',
+        url: ele,
+        params: {
+          sitemap: 'https://disjoint.ca/sitemap.xml',
+        },
+      });
+    });
+
+    return Promise.all(promises);
+  }).then(() => {
+    printOutput(tag, {stdout: 'Sitemaps successfully submitted', stderr: ''});
+    return Promise.resolve();
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
+  });
 });

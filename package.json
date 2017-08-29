@@ -4,6 +4,7 @@
   "description": "disjoint.ca",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.16.2",
     "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.7.0",
     "fresh-themes": "git+https://github.com/marvinpinto-archive/fresh-themes.git",
@@ -68,7 +69,7 @@
     "test": "HUGO_ENV=production gulp all-tests",
     "lint": "gulp lint-javascript lint-bootstrap analyize-html-content validate-html5-content run-html-proofer spellcheck",
     "cleanup": "rm -rf public static build tmp data",
-    "deploy": "gulp deploy-website",
+    "deploy": "gulp deploy-website && gulp submit-sitemaps",
     "new-til": "gulp new-til",
     "new-post": "gulp new-post"
   },
