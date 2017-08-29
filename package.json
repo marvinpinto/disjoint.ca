@@ -90,5 +90,32 @@
       "stage-2",
       "es2015"
     ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "google",
+      "eslint:recommended"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+      "require-jsdoc": 0,
+      "quote-props": [
+        2,
+        "as-needed"
+      ]
+    },
+    "plugins": [],
+    "parserOptions": {},
+    "globals": {
+      "process": true,
+      "require": true,
+      "module": true,
+      "Promise": true,
+      "jQuery": true,
+      "document": true,
+      "window": true,
+      "$": true,
+      "screen": true
+    }
   }
 }
