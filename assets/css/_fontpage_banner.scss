@@ -1,7 +1,5 @@
 .hero-front-page-banner {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../images/disjoint-ca-banner.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../images/disjoint-ca-banner.jpg'); // sass-lint:disable-line no-color-literals
   background-size: cover;
   position: relative;
   top: 0;
@@ -9,19 +7,19 @@
   right: 0;
   bottom: 0;
   z-index: -1;
-}
 
-.hero-front-page-banner h1 {
-  font-weight: 900;
-  font-family: 'Gudea', Verdana, Helvetica, sans-serif;
-  text-align: center;
-  font-variant: small-caps;
-  color: white;
-}
+  h1 {
+    font-weight: 900;
+    font-family: 'Gudea', Verdana, Helvetica, sans-serif;
+    text-align: center;
+    font-variant: small-caps;
+    color: #FFF; // sass-lint:disable-line no-color-literals
+  }
 
-.hero-front-page-banner p {
-  font-family: 'Rancho', Georgia, serif;
-  text-transform: lowercase;
-  color: white;
-  text-align: center;
+  p {
+    font-family: 'Rancho', Georgia, serif;
+    text-transform: lowercase;
+    color: #FFF; // sass-lint:disable-line no-color-literals
+    text-align: center;
+  }
 }

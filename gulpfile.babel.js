@@ -145,7 +145,7 @@ gulp.task('all-tests', (cb) => {
     'generate-assets',
     'generate-version-sha',
     'generate-html',
-    ['lint-javascript', 'lint-bootstrap', 'analyize-html-content', 'validate-html5-content', 'run-html-proofer', 'spellcheck'],
+    ['lint-javascript', 'lint-bootstrap', 'analyize-html-content', 'validate-html5-content', 'run-html-proofer', 'spellcheck', 'lint-css'],
     cb);
 });
 
@@ -493,6 +493,27 @@ gulp.task('submit-sitemaps', () => {
   }).then(() => {
     printOutput(tag, {stdout: 'Sitemaps successfully submitted', stderr: ''});
     return Promise.resolve();
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
+  });
+});
+
+gulp.task('lint-css', () => {
+  const tag = 'lint-css';
+  return exec('npm bin').then((result) => {
+    return result;
+  }).then((result) => {
+    const yarnBinPath = result.stdout.trim();
+
+    return executeAsyncProcess({
+      process: `${yarnBinPath}/sass-lint`,
+      processArguments: [
+        '--verbose',
+      ],
+      envVars: {},
+      taskTag: tag,
+    });
   }).catch((err) => {
     printOutput(tag, {stdout: '', stderr: err.toString()});
     throw new Error(`Error in task "${tag}"`);

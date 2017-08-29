@@ -1,16 +1,16 @@
 // Font-awesome overrides
-$fa-font-path: "~font-awesome/fonts/";
+$fa-font-path: '~font-awesome/fonts/';
 
 // Bootstrap overrides
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-$font-family-sans-serif: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+$font-family-sans-serif: Verdana, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $headings-font-family: 'Yanone Kaffeesatz', sans-serif;
 $line-height-base: 1.5;
 $font-size-base: 15px;
 $pre-color: #333;
 $pre-bg: inherit;
 $gray-dark: #595653;
-$brand-primary: #68829e;
+$brand-primary: #68829E;
 $link-hover-decoration: none;
 $link-hover-color: #505160;
 $label-primary-bg: $link-hover-color;
@@ -23,7 +23,7 @@ $font-size-h2: floor(($font-size-base * 2.15 * 1.15)) !default;
 $font-size-h3: ceil(($font-size-base * 1.7 * 1.15)) !default;
 $font-size-h4: ceil(($font-size-base * 1.25 * 1.15)) !default;
 $font-size-h5: $font-size-base !default;
-$font-size-h6: ceil(($font-size-base * 0.85 * 1.15)) !default;
+$font-size-h6: ceil(($font-size-base * .85 * 1.15)) !default;
 
 // Bootstrap
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';

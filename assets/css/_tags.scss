@@ -1,58 +1,57 @@
-$tag-background-color: #b6d1ec;
+$tag-background-color: #B6D1EC;
 
 .tags {
+  margin: 0; // sass-lint:disable-line variable-for-property
   list-style: none;
-  margin: 0;
   overflow: hidden;
   padding: 0;
-}
 
-.tags li {
-  float: left;
+  li {
+    float: left;
+  }
 }
 
 .tag {
-  background: #eee;
-  border-radius: 3px 0 0 3px;
-  color: #999;
   display: inline-block;
+  margin: 0 10px 10px 0; // sass-lint:disable-line variable-for-property
+  background: #EEE; // sass-lint:disable-line no-color-literals
+  border-radius: 3px 0 0 3px;
+  color: #999; // sass-lint:disable-line no-color-literals
   height: 26px;
   line-height: 26px;
   padding: 0 20px 0 23px;
   position: relative;
-  margin: 0 10px 10px 0;
   text-decoration: none;
-  -webkit-transition: color 0.2s;
-}
 
-.tag::before {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
-  content: '';
-  height: 6px;
-  left: 10px;
-  position: absolute;
-  width: 6px;
-  top: 10px;
-}
+  &::before {
+    background: #FFF; // sass-lint:disable-line no-color-literals
+    border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, .25); // sass-lint:disable-line no-color-literals
+    content: ''; // sass-lint:disable-line variable-for-property
+    height: 6px;
+    left: 10px;
+    position: absolute;
+    width: 6px;
+    top: 10px;
+  }
 
-.tag::after {
-  background: #fff;
-  border-bottom: 13px solid transparent;
-  border-left: 10px solid #eee;
-  border-top: 13px solid transparent;
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-}
+  &::after {
+    background: #FFF; // sass-lint:disable-line no-color-literals
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid #EEE; // sass-lint:disable-line no-color-literals
+    border-top: 13px solid transparent;
+    content: ''; // sass-lint:disable-line variable-for-property
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 
-.tag:hover {
-  background-color: $tag-background-color;
-  color: white;
-}
+  &:hover {
+    background-color: $tag-background-color;
+    color: #FFF; // sass-lint:disable-line no-color-literals
 
-.tag:hover::after {
-  border-left-color: $tag-background-color;
+    &::after {
+      border-left-color: $tag-background-color;
+    }
+  }
 }

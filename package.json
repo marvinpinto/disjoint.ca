@@ -10,7 +10,8 @@
     "fresh-themes": "git+https://github.com/marvinpinto-archive/fresh-themes.git",
     "hackmyresume": "^1.8.0",
     "iframe-resizer": "^3.5.3",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "sass-lint": "^1.11.1"
   },
   "devDependencies": {
     "autotrack": "^2.4.1",
@@ -68,7 +69,7 @@
     "start": "concurrently --raw --kill-others-on-fail \"gulp generate-assets\" \"gulp generate-version-sha\" \"gulp generate-html\"",
     "test": "HUGO_ENV=production gulp all-tests",
     "generate-html": "HUGO_ENV=production gulp generate-assets generate-version-sha generate-html",
-    "lint": "gulp lint-javascript lint-bootstrap analyize-html-content validate-html5-content run-html-proofer spellcheck",
+    "lint": "gulp lint-javascript lint-bootstrap analyize-html-content validate-html5-content run-html-proofer spellcheck lint-css",
     "cleanup": "rm -rf public static build tmp data",
     "deploy": "gulp deploy-website && gulp submit-sitemaps",
     "new-til": "gulp new-til",
