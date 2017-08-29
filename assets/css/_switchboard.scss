@@ -1,0 +1,19 @@
+.switchboard-container {
+  display: block;
+  border: 1px solid $gray-dark;
+  border-radius: 4px;
+  padding: 10.5px;
+  max-width: 200px;
+  margin-left: 3rem;
+}
+
+.switchboard-container-text {
+  display: block;
+  padding: 10px 0;
+  font-size: $font-size-base - 3;
+  text-align: center;
+
+  .text-emphasis {
+    font-weight: bold;
+  }
+}

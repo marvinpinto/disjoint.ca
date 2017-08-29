@@ -2,27 +2,25 @@ import request from 'request';
 import fs from 'fs';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
+import {exec, spawn} from 'child-process-promise';
 import decompress from 'gulp-decompress';
 import streamify from 'gulp-streamify';
-import webserver from 'gulp-webserver';
 import eslint from 'gulp-eslint';
 import bootlint from 'gulp-bootlint';
 import htmlhint from 'gulp-htmlhint';
-import gulpif from 'gulp-if';
 import run from 'gulp-run';
 import yaml from 'gulp-yaml';
 import vnuJar from 'vnu-jar';
 import runSequence from 'run-sequence';
 import source from 'vinyl-source-stream';
 import ip from 'ip';
-import {exec} from 'child-process-promise';
-import webpack from 'webpack';
-import gulpWebpack from 'webpack-stream';
 import del from 'del';
 import sortedUniq from 'lodash/sortedUniq';
 import isEqual from 'lodash/isEqual';
 import awspublish from 'gulp-awspublish';
 import cloudfront from 'gulp-cloudfront-invalidate-aws-publish';
+import promiseRetry from 'promise-retry';
+import axios from 'axios';
 
 const hugoVersion = '0.18';
 const hugoBinary = `tmp/hugo_${hugoVersion}_linux_amd64`;
@@ -30,6 +28,86 @@ const hugoUrl = `https://github.com/spf13/hugo/releases/download/v${hugoVersion}
 const hugoPort = 8080;
 
 const environment = process.env.HUGO_ENV || 'development';
+
+const printOutput = (tag, output) => {
+  if (output.stdout) {
+    output.stdout.split('\n').forEach((line) => {
+      const tline = line.trim();
+      if (tline) {
+        gutil.log(gutil.colors.magenta(`${tag}: ${tline}`));
+      }
+    });
+  }
+
+  if (output.stderr) {
+    output.stderr.split('\n').forEach((line) => {
+      const tline = line.trim();
+      if (tline) {
+        gutil.log(gutil.colors.red(`${tag}: ${tline}`));
+      }
+    });
+  }
+};
+
+const executeAsyncProcess = (args) => {
+  let isStderrOutputPresent = false;
+
+  return Promise.resolve().then(() => {
+    if (!args.process ||
+        !args.taskTag ||
+        !args.processArguments ||
+        args.envVars === undefined) {
+      throw new Error('Invalid arguments passed into "executeAsyncProcess"');
+    }
+
+    if (!args.failOnStderr) {
+      args.failOnStderr = false;
+    }
+
+    // Use spawn to execute the specified process
+    const overriddenEnv = Object.assign({}, process.env, args.envVars);
+    const promise = spawn(args.process, args.processArguments, {env: overriddenEnv});
+    const childProcess = promise.childProcess;
+    childProcess.stdout.on('data', (data) => {
+      printOutput(args.taskTag, {stdout: data.toString(), stderr: ''});
+    });
+    childProcess.stderr.on('data', (data) => {
+      isStderrOutputPresent = true;
+      printOutput(args.taskTag, {stdout: '', stderr: data.toString()});
+    });
+    return promise;
+  }).then(() => {
+    if (args.failOnStderr && isStderrOutputPresent) {
+      return Promise.reject('Failed due to stderr output');
+    }
+
+    return Promise.resolve();
+  });
+};
+
+const waitUntilFileExists = (args) => {
+  return Promise.resolve().then(() => {
+    if (!args.filename || !args.taskTag || !args.retries) {
+      throw new Error('Invalid arguments passed into "waitUntilFileExists"');
+    }
+
+    const doesFileExistPromise = (file) => {
+      return Promise.resolve().then(() => {
+        if (fs.existsSync(file)) {
+          return true;
+        }
+        throw new Error(`File ${file} does not exist`);
+      });
+    };
+
+    return promiseRetry((retry, number) => {
+      const msg = `Attempting to check if "${args.filename}" exists (attempt #${number})`;
+      printOutput(args.taskTag, {stdout: msg, stderr: ''});
+      return doesFileExistPromise(args.filename).catch(retry);
+    }, {retries: args.retries});
+  });
+};
+
 const files = {
   src: ['content/**/*.*', 'themes/**/*.*', 'static/**/*.*', 'data/**/*.*'],
   dest: 'public',
@@ -67,7 +145,7 @@ gulp.task('all-tests', (cb) => {
     'generate-assets',
     'generate-version-sha',
     'generate-html',
-    ['lint-javascript', 'lint-bootstrap', 'analyize-html-content', 'validate-html5-content', 'run-html-proofer', 'spellcheck'],
+    ['lint-javascript', 'lint-bootstrap', 'analyize-html-content', 'validate-html5-content', 'run-html-proofer', 'spellcheck', 'lint-css'],
     cb);
 });
 
@@ -82,60 +160,109 @@ gulp.task('download-hugo', () => {
 });
 
 gulp.task('generate-html', ['download-hugo'], () => {
-  let hugoArgs = hugoBinary;
-  if (environment === "development") {
-    hugoArgs += ` --baseUrl="http://${ip.address()}:${hugoPort}"`;
-    gulp.watch(files.src, ['generate-html']);
-  }
+  const tag = 'generate-html';
 
-  return exec(hugoArgs).then(result => {
-    result.stdout.split('\n').forEach(line => {
-      gutil.log(gutil.colors.magenta(line));
+  return Promise.resolve().then(() => {
+    let promises = [];
+
+    promises.push(waitUntilFileExists({
+      filename: 'data/assets.json',
+      taskTag: tag,
+      retries: 10,
+    }));
+
+    promises.push(waitUntilFileExists({
+      filename: 'data/version.json',
+      taskTag: tag,
+      retries: 10,
+    }));
+
+    return Promise.all(promises);
+  }).then(() => {
+    let processArgs = [
+      '--cleanDestinationDir',
+      '--source', '.',
+      '--config', './config.yaml',
+      '--destination', './public',
+    ];
+
+    if (environment === "development") {
+      const additionalArgs = [
+        '--baseUrl', `http://${ip.address()}:${hugoPort}`,
+        '--bind', '0.0.0.0',
+        '--port', hugoPort,
+        '--watch',
+        '--quiet',
+      ];
+
+      processArgs.unshift('server');
+      processArgs.push(...additionalArgs);
+    }
+
+    return executeAsyncProcess({
+      process: hugoBinary,
+      processArguments: processArgs,
+      taskTag: tag,
+      envVars: {},
     });
-    result.stderr.split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
-    });
-    return;
-  }).catch(err => {
-    err.toString().split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
-    });
-    throw new Error("Error in task 'generate-html'");
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
   });
 });
 
 gulp.task('new-til', ['download-hugo'], () => {
+  const tag = 'new-til';
   const today = new Date();
   const formattedDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
-  const hugoArgs = `${hugoBinary} new til/${formattedDate}-new-til.md`;
 
-  return exec(hugoArgs).then(result => {
-    return;
-  }).catch(err => {
-    err.toString().split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
+  return Promise.resolve().then(() => {
+    return executeAsyncProcess({
+      process: hugoBinary,
+      processArguments: [
+        'new', `til/${formattedDate}-new-til.md`,
+      ],
+      taskTag: tag,
+      envVars: {},
     });
-    throw new Error("Error in task 'new-til'");
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
   });
 });
 
 gulp.task('new-post', ['download-hugo'], () => {
+  const tag = 'new-post';
   const today = new Date();
   const formattedDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
-  const hugoArgs = `${hugoBinary} new writing/${formattedDate}-new-post.md`;
 
-  return exec(hugoArgs).then(result => {
-    return;
-  }).catch(err => {
-    err.toString().split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
+  return Promise.resolve().then(() => {
+    return executeAsyncProcess({
+      process: hugoBinary,
+      processArguments: [
+        'new', `writing/${formattedDate}-new-post.md`,
+      ],
+      taskTag: tag,
+      envVars: {},
     });
-    throw new Error("Error in task 'new-post'");
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
   });
 });
 
 gulp.task('generate-version-sha', () => {
-  return exec('git rev-parse HEAD').then(result => {
+  const tag = 'generate-version-sha';
+
+  return Promise.resolve().then(() => {
+    // create the 'data' directory, if it does not exist
+    if (fs.existsSync('data')) {
+      return Promise.resolve();
+    }
+    return fs.mkdirSync('data');
+  }).then(() => {
+    return exec('git rev-parse HEAD');
+  }).then((result) => {
     const sha = result.stdout.trim();
     const version = {
       short: sha.substring(0,7),
@@ -143,40 +270,42 @@ gulp.task('generate-version-sha', () => {
     };
     return fs.writeFileSync('data/version.json', JSON.stringify(version));
   }).catch(err => {
-    err.toString().split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
-    });
-    throw new Error("Error in task 'generate-version-sha'");
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
   });
 });
 
-gulp.task('generate-assets', ['compile-fonts', 'download-google-analytics-js'], () => {
-  let options = require('./webpack.config.js');
+gulp.task('generate-assets', ['compile-fonts'], () => {
+  const tag = 'generate-assets';
 
-  const printStats = (err, stats) => {
-    stats.toString().split('\n').forEach(line => {
-      gutil.log(gutil.colors.magenta(line));
-    });
-    if (err) {
-      err.toString().split('\n').forEach(line => {
-        gutil.log(gutil.colors.red(line));
-      });
+  return Promise.resolve().then(() => {
+    return exec('npm bin');
+  }).then((result) => {
+    const yarnBinPath = result.stdout.trim();
+
+    let processArgs = [
+      '--colors',
+      '--config', 'webpack.config.babel.js',
+      '--output-path', './static',
+    ];
+    if (environment === "development") {
+      processArgs.push('--watch');
     }
-  }
 
-  if (environment === "development") {
-    gulp.watch(files.assets, ['generate-assets']);
-  }
-
-  return gulp.src('assets/js/main.js')
-    .pipe(gulpWebpack(options, webpack, printStats))
-    .pipe(gulpif(['*.js', '*.css', '*.map' ], gulp.dest('static/assets')))
-    .pipe(gulpif(['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2'], gulp.dest('static/assets')))
-    .pipe(gulpif(['*.gif', '*.png', '*.jpg', '*.jpeg', '*.svg'], gulp.dest('static/assets')))
-    .pipe(gulpif('*.json', gulp.dest('data')));
+    return executeAsyncProcess({
+      process: `${yarnBinPath}/webpack`,
+      processArguments: processArgs,
+      envVars: {},
+      taskTag: tag,
+    });
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
+  });
 });
 
 gulp.task('compile-fonts', () => {
+  const tag = 'compile-fonts';
   const commonArgs = '--font-out=tmp/fonts/ --css-rel=../../tmp/fonts --woff1=link --woff2=link';
   const fonts = [
     '"https://fonts.googleapis.com/css?family=Ubuntu:bold" --out=tmp/css/_ubuntu.scss',
@@ -185,52 +314,38 @@ gulp.task('compile-fonts', () => {
     '"https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" --out=tmp/css/_yanone_kaffeesatz.scss'
   ];
 
-  return exec('npm bin').then(result => {
-    return result.stdout.trim();
-  }).then(npmBinPath => {
-    return Promise.all(fonts.map(entry => {
-      return exec(`${npmBinPath}/webfont-dl ${entry} ${commonArgs}`);
+  return Promise.resolve().then(() => {
+    return exec('npm bin');
+  }).then((result) => {
+    const yarnBinPath = result.stdout.trim();
+    return Promise.all(fonts.map((entry) => {
+      return exec(`${yarnBinPath}/webfont-dl ${entry} ${commonArgs}`);
     }));
-  }).catch(err => {
-    err.toString().split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
-    });
-    throw new Error("Error in task 'compile-fonts'");
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
   });
 });
 
-gulp.task('download-google-analytics-js', () => {
-  const googleAnalytics = 'tmp/js/google-analytics.js';
-  const googleAnalyticsUrl = 'https://www.google-analytics.com/analytics.js';
-
-  if (!fs.existsSync(googleAnalytics)) {
-    return request(googleAnalyticsUrl)
-      .pipe(source('google-analytics.js'))
-      .pipe(gulp.dest('tmp/js'));
-  }
-  return;
-});
-
 gulp.task('validate-html5-content', () => {
-  const vnuCmd = `java -jar ${vnuJar} --skip-non-html --errors-only public/`;
-
-  return exec(vnuCmd).then(result => {
-    result.stdout.split('\n').forEach(line => {
-      gutil.log(gutil.colors.magenta(line));
+  const tag = 'vnujar-validate-html5-content';
+  return Promise.resolve().then(() => {
+    return executeAsyncProcess({
+      process: 'java',
+      processArguments: [
+        '-jar', vnuJar,
+        '--skip-non-html',
+        '--errors-only',
+        '--exit-zero-always',
+        'public/',
+      ],
+      taskTag: tag,
+      envVars: {},
+      failOnStderr: true,
     });
-    result.stderr.split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
-    });
-
-    if (result.stderr) {
-      throw new Error("Error in task 'validate-html5-content'");
-    }
-    return;
-  }).catch(err => {
-    err.toString().split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
-    });
-    throw new Error("Error in task 'validate-html5-content'");
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
   });
 });
 
@@ -242,25 +357,17 @@ gulp.task('analyize-html-content', () => {
 });
 
 gulp.task('run-html-proofer', () => {
-  const htmlproofer = `htmlproofer --allow-hash-href --report-script-embeds --check-html --only-4xx --url-swap "https...disjoint.ca:" --file-ignore ./public/resume/marvin-pinto-resume.html --url-ignore "/github.com\/marvinpinto\/disjoint.ca\/commit/" ./public`;
+  const tag = 'run-html-proofer';
+  const htmlproofer = `htmlproofer --allow-hash-href --report-script-embeds --check-html --only-4xx --url-swap "https...disjoint.ca:" --file-ignore ./public/resume/marvin-pinto-resume.html --url-ignore "/github.com\/marvinpinto\/disjoint.ca\/commit/" ./public`; // eslint-disable-line no-useless-escape
 
-  return exec(htmlproofer).then(result => {
-    result.stdout.split('\n').forEach(line => {
-      gutil.log(gutil.colors.magenta(line));
-    });
-    result.stderr.split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
-    });
-
-    if (result.stderr) {
-      throw new Error("Error in task 'run-html-proofer'");
-    }
+  return Promise.resolve().then(() => {
+    return exec(htmlproofer);
+  }).then((result) => {
+    printOutput(tag, result);
     return;
-  }).catch(err => {
-    err.toString().split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
-    });
-    throw new Error("Error in task 'run-html-proofer'");
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
   });
 });
 
@@ -310,39 +417,32 @@ gulp.task('format-spellcheck-file', (cb) => {
 });
 
 gulp.task('spellcheck', ['format-spellcheck-file'], () => {
-  let mdspell = "mdspell --no-suggestions --en-us --ignore-numbers --ignore-acronyms ";
-  mdspell += "'README.md' ";
-  mdspell += "'content/**/*.md'";
+  const tag = 'spellcheck';
 
-  return exec('npm bin').then(result => {
-    return result.stdout.trim();
-  }).then(npmBinPath => {
-    return exec(`${npmBinPath}/${mdspell} --report`);
-  }).then(result => {
-    result.stdout.split('\n').forEach(line => {
-      gutil.log(gutil.colors.magenta(line));
+  const mdspellArgs = [
+    '--no-suggestions', '--en-us', '--ignore-numbers', '--ignore-acronyms',
+    'README.md',
+    'content/**/*.md',
+  ];
+
+  return Promise.resolve().then(() => {
+    return exec('npm bin');
+  }).then((result) => {
+    const yarnBinPath = result.stdout.trim();
+
+    return executeAsyncProcess({
+      process: `${yarnBinPath}/mdspell`,
+      processArguments: [
+        ...mdspellArgs,
+        '--report',
+      ],
+      envVars: {},
+      taskTag: tag,
     });
-    result.stderr.split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
-    });
-    return;
-  }).catch(err => {
-    err.toString().split('\n').forEach(line => {
-      gutil.log(gutil.colors.red(line));
-    });
-    const msg = `Spell checker error -- run "\`npm bin\`/${mdspell}" and manually update the .spelling file`
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    const msg = `Spell checker error -- run "\`npm bin\`/mdspell ${mdspellArgs.join(' ')}" and manually update the .spelling file`
     throw new Error(msg);
-  });
-});
-
-gulp.task('development-server', () => {
-  runSequence('generate-assets', 'generate-version-sha', 'generate-html', () => {
-    const options = {
-      livereload: true,
-      host: ip.address(),
-      port: hugoPort,
-    };
-    gulp.src(files.dest).pipe(webserver(options));
   });
 });
 
@@ -369,4 +469,53 @@ gulp.task('deploy-website', () => {
     .pipe(awspublish.reporter({
       states: ['create', 'update', 'delete']
     }));
+});
+
+gulp.task('submit-sitemaps', () => {
+  const tag = 'submit-sitemaps';
+  return Promise.resolve().then(() => {
+    const urls = [
+      'https://www.google.com/ping',
+      'https://www.bing.com/ping',
+    ];
+
+    const promises = urls.map((ele) => {
+      return axios.request({
+        method: 'get',
+        url: ele,
+        params: {
+          sitemap: 'https://disjoint.ca/sitemap.xml',
+        },
+      });
+    });
+
+    return Promise.all(promises);
+  }).then(() => {
+    printOutput(tag, {stdout: 'Sitemaps successfully submitted', stderr: ''});
+    return Promise.resolve();
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
+  });
+});
+
+gulp.task('lint-css', () => {
+  const tag = 'lint-css';
+  return exec('npm bin').then((result) => {
+    return result;
+  }).then((result) => {
+    const yarnBinPath = result.stdout.trim();
+
+    return executeAsyncProcess({
+      process: `${yarnBinPath}/sass-lint`,
+      processArguments: [
+        '--verbose',
+      ],
+      envVars: {},
+      taskTag: tag,
+    });
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
+  });
 });

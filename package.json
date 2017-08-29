@@ -4,67 +4,74 @@
   "description": "disjoint.ca",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.16.2",
     "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.7.0",
     "fresh-themes": "git+https://github.com/marvinpinto-archive/fresh-themes.git",
     "hackmyresume": "^1.8.0",
     "iframe-resizer": "^3.5.3",
     "jquery": "^3.1.1",
-    "uglify-js": "^2.6.2"
+    "sass-lint": "^1.11.1"
   },
   "devDependencies": {
-    "autotrack": "^1.0.3",
+    "autotrack": "^2.4.1",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.18.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "bootlint": "^0.14.2",
     "child-process-promise": "^2.2.0",
-    "css-loader": "^0.26.1",
-    "del": "^2.2.2",
-    "eslint": "^3.12.2",
-    "eslint-config-google": "^0.7.1",
-    "extract-text-webpack-plugin": "^2.0.0-beta.4",
-    "file-loader": "^0.9.0",
+    "concurrently": "^3.5.0",
+    "css-loader": "^0.28.5",
+    "del": "^3.0.0",
+    "eslint": "^4.5.0",
+    "eslint-config-google": "^0.9.1",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
     "gulp": "^3.9.1",
     "gulp-awspublish": "^3.3.0",
     "gulp-bootlint": "^0.8.0",
     "gulp-cli": "^1.2.2",
     "gulp-cloudfront-invalidate-aws-publish": "^0.2.1",
     "gulp-decompress": "^2.0.1",
-    "gulp-eslint": "^3.0.1",
+    "gulp-eslint": "^4.0.0",
     "gulp-htmlhint": "^0.3.1",
-    "gulp-if": "^2.0.2",
     "gulp-run": "^1.7.1",
     "gulp-streamify": "^1.0.2",
-    "gulp-webserver": "^0.9.1",
     "gulp-yaml": "^1.0.1",
     "htmlhint-stylish": "^1.0.3",
-    "image-webpack-loader": "^3.1.0",
+    "image-webpack-loader": "^3.4.0",
     "ip": "^1.1.4",
     "lodash": "^4.17.2",
-    "markdown-spellcheck": "^0.11.0",
+    "markdown-spellcheck": "^1.0.0",
     "node-sass": "^4.0.0",
+    "promise-retry": "^1.1.1",
+    "purify-css": "^1.2.5",
+    "purifycss-webpack": "^0.7.0",
     "request": "^2.79.0",
     "resolve-url": "^0.2.1",
-    "resolve-url-loader": "^1.6.1",
-    "run-sequence": "^1.2.2",
-    "sass-loader": "^4.1.0",
-    "sinon": "^1.17.6",
-    "style-loader": "^0.13.1",
+    "resolve-url-loader": "^2.1.0",
+    "run-sequence": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "sinon": "^3.2.1",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "beta",
     "vinyl-source-stream": "^1.1.0",
-    "vnu-jar": "^16.6.29",
+    "vnu-jar": "^17.9.0",
     "webfont-dl": "^0.1.2",
-    "webpack": "^2.2.0-rc.1",
-    "webpack-manifest-plugin": "^1.1.0",
-    "webpack-stream": "^3.2.0"
+    "webpack": "^3.5.5",
+    "webpack-manifest-plugin": "^1.1.0"
   },
   "scripts": {
     "install": "pip install --user Pygments && gem install --no-rdoc --no-ri html-proofer",
-    "start": "gulp development-server",
+    "start": "concurrently --raw --kill-others-on-fail \"gulp generate-assets\" \"gulp generate-version-sha\" \"gulp generate-html\"",
     "test": "HUGO_ENV=production gulp all-tests",
+    "generate-html": "HUGO_ENV=production gulp generate-assets generate-version-sha generate-html",
+    "lint": "gulp lint-javascript lint-bootstrap analyize-html-content validate-html5-content run-html-proofer spellcheck lint-css",
     "cleanup": "rm -rf public static build tmp data",
-    "deploy": "gulp deploy-website",
+    "deploy": "gulp deploy-website && gulp submit-sitemaps",
     "new-til": "gulp new-til",
     "new-post": "gulp new-post"
   },
@@ -77,5 +84,38 @@
   "bugs": {
     "url": "https://github.com/marvinpinto/disjoint.ca/issues"
   },
-  "homepage": "https://github.com/marvinpinto/disjoint.ca#readme"
+  "homepage": "https://github.com/marvinpinto/disjoint.ca#readme",
+  "babel": {
+    "presets": [
+      "stage-2",
+      "es2015"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "google",
+      "eslint:recommended"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+      "require-jsdoc": 0,
+      "quote-props": [
+        2,
+        "as-needed"
+      ]
+    },
+    "plugins": [],
+    "parserOptions": {},
+    "globals": {
+      "process": true,
+      "require": true,
+      "module": true,
+      "Promise": true,
+      "jQuery": true,
+      "document": true,
+      "window": true,
+      "$": true,
+      "screen": true
+    }
+  }
 }
