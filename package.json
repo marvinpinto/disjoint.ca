@@ -67,6 +67,7 @@
     "install": "pip install --user Pygments && gem install --no-rdoc --no-ri html-proofer",
     "start": "concurrently --raw --kill-others-on-fail \"gulp generate-assets\" \"gulp generate-version-sha\" \"gulp generate-html\"",
     "test": "HUGO_ENV=production gulp all-tests",
+    "generate-html": "HUGO_ENV=production gulp generate-assets generate-version-sha generate-html",
     "lint": "gulp lint-javascript lint-bootstrap analyize-html-content validate-html5-content run-html-proofer spellcheck",
     "cleanup": "rm -rf public static build tmp data",
     "deploy": "gulp deploy-website && gulp submit-sitemaps",
