@@ -464,7 +464,7 @@ gulp.task('deploy-website', () => {
 
   return gulp.src(['public/**/*', 'public/**/.*', 'public/.**/*', 'public/.**/.*'])
     .pipe(publisher.publish(headers))
-    .pipe(publisher.sync())
+    .pipe(publisher.sync('/', [/^projects/]))
     .pipe(cloudfront(cfSettings))
     .pipe(awspublish.reporter({
       states: ['create', 'update', 'delete']
