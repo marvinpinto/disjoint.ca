@@ -15,10 +15,11 @@ menu: "main"
 
 {{< img src="marvin-pinto-profile.jpg" alt="Marvin Pinto" height="135" width="135" class="img-responsive img-rounded pull-right">}}
 
-I'm a developer who lives and works in the beautiful [City of Toronto][2]! I
-previously worked at a SaaS accounting company called [FreshBooks][7] where I
-got to build cool systems and play with all parts of the stack -- it was very
-interesting work!
+I'm a software developer who lives and works in the beautiful [City of
+Toronto][2]. I started my own company a little while back as part of shipping a
+side project I've been working on - [Switchboard][switchboard] (more info
+below). If you're looking for a consultant or to fill a full-time
+development role, get in touch! I'm always up to chat.
 
 Here's where you can find me on the Internet:
 
@@ -33,6 +34,13 @@ Here's where you can find me on the Internet:
 
 ### <i class="fa fa-graduation-cap"></i> Recent Projects
 
+- **Ledger Reconciler** is a Node.js command-line tool to automatically
+download and reconcile your [Ledger][ledger-cli] financial entries. It uses
+[Headless Chrome][headless-chrome] and the [puppeteer][puppeteer] library to
+automate the task of logging into all your bank accounts and reconciling your
+transactions.
+[https://disjoint.ca/projects/ledger-reconciler][ledger-reconciler]
+
 - **Switchboard** is a webapp built to give people full control over their
 internet-based phone number. It allows people to control exactly when and how
 they are interrupted, along with regular phone-like features people have come
@@ -40,12 +48,8 @@ to expect (push messaging, call forwarding, and so on).
 
     The backend is a NodeJS application powered by a few AWS & Google services:
     Lambda, API Gateway, DynamoDB, S3, Cognito, Firebase, and others. The
-    frontend is a single-page-app written in React. I've had a lot of fun
-    building this so lookout for the upcoming blog posts about it!
-
-    Switchboard is in beta at the moment while we're learning about our users
-    so go **check it out!** <a
-    href="https://goswitchboard.com">https://goswitchboard.com</a>
+    frontend is a single-page-app written in React.
+    [https://goswitchboard.com][switchboard]
 
 - **Charlesbot** is a modular Slackbot written using Python 3's asyncio
 framework. It was designed to be self-deployed and easily extendible (via the
@@ -110,7 +114,6 @@ stick to [doggy pictures only][1] <i class="fa fa-hand-spock-o"></i>
 [4]: https://github.com/marvinpinto/disjoint.ca/issues
 [5]: https://webchat.freenode.net
 [6]: https://www.facebook.com/BlueCollaredCanines
-[7]: https://www.freshbooks.com
 [8]: https://charlesbot.org
 [9]: https://irchooky.org
 [10]: {{< relref "writing/2016-02-28-serverless-irc-notifications.md" >}}
@@ -120,3 +123,8 @@ stick to [doggy pictures only][1] <i class="fa fa-hand-spock-o"></i>
 [14]: https://unsplash.com
 [15]: http://www.logodust.com
 [16]: http://fairpixels.co
+[switchboard]: https://goswitchboard.com
+[ledger-cli]: http://ledger-cli.org/
+[headless-chrome]: https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
+[puppeteer]: https://github.com/GoogleChrome/puppeteer
+[ledger-reconciler]: https://disjoint.ca/projects/ledger-reconciler

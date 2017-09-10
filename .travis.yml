@@ -28,6 +28,7 @@ before_install:
 
 install:
   - 'yarn install'
+  - 'yarn add --force node-sass'
 
 script:
   - 'yarn run cleanup'
