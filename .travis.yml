@@ -30,6 +30,9 @@ install:
   - 'yarn install'
   - 'yarn add --force node-sass'
 
+before_script:
+  - 'unset JAVA_TOOL_OPTIONS && unset _JAVA_OPTIONS'
+
 script:
   - 'yarn run cleanup'
   - 'yarn test'
