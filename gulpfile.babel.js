@@ -454,7 +454,7 @@ gulp.task('deploy-website', () => {
   });
 
   const headers = {
-    'Cache-Control': 'max-age=315360000'
+    'Cache-Control': 'max-age=7200', // 2 hours
   };
 
   const cfSettings = {

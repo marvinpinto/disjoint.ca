@@ -1,7 +1,17 @@
 <div class="switchboard-container pull-right">
-  <span class="switchboard-container-text">
-    <span class="text-emphasis">Hey there!</span> I recently launched a beta
-    version of a new app I've been working on. Check it out!  <a
-    href="https://goswitchboard.com">https://goswitchboard.com</a>
-  </span>
+  <div class="switchboard-ad-img">
+    <a href="https://goswitchboard.com/?utm_source=disjoint-ca&utm_medium=banner&utm_campaign=beta-launch">
+      <img src="{{printf "%s" (print .Site.BaseURL "/" (index .Site.Data.assets "switchboard-logo-full.png"))}}" alt="Switchboard Logo">
+    </a>
+  </div>
+
+  <div class="switchboard-ad-content">
+    <a href="https://goswitchboard.com/?utm_source=disjoint-ca&utm_medium=banner&utm_campaign=beta-launch" class="sb-content">
+      Take control of how people reach you. Sign up for our free beta today.
+    </a>
+  </div>
+
+  <div class="switchboard-ad-url">
+    Ad for <a href="https://goswitchboard.com/?utm_source=disjoint-ca&utm_medium=banner&utm_campaign=beta-launch">https://goswitchboard.com</a>
+  </div>
 </div>

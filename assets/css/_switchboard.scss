@@ -1,19 +1,42 @@
 .switchboard-container {
   display: block;
-  border: 1px solid $gray-dark;
-  border-radius: 4px;
   padding: 10.5px;
   max-width: 200px;
   margin-left: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1); // sass-lint:disable-line no-color-literals
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-.switchboard-container-text {
-  display: block;
-  padding: 10px 0;
+.switchboard-ad-img {
+  padding-bottom: .8rem;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.switchboard-ad-content {
+  padding-bottom: .8rem;
   font-size: $font-size-base - 3;
   text-align: center;
 
-  .text-emphasis {
-    font-weight: bold;
+  a {
+    color: $gray-dark;
+  }
+}
+
+.switchboard-ad-url {
+  font-size: $font-size-base - 4;
+  text-align: center;
+  color: lighten($gray-dark, 10%);
+
+  a {
+    color: lighten($gray-dark, 10%);
   }
 }

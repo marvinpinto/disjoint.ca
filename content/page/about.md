@@ -46,22 +46,19 @@ internet-based phone number. It allows people to control exactly when and how
 they are interrupted, along with regular phone-like features people have come
 to expect (push messaging, call forwarding, and so on).
 
-    The backend is a NodeJS application powered by a few AWS & Google services:
-    Lambda, API Gateway, DynamoDB, S3, Cognito, Firebase, and others. The
-    frontend is a single-page-app written in React.
+    The backend is a Node.js application powered by a few AWS & Google
+    services: Lambda, API Gateway, DynamoDB, S3, Cognito, Firebase, and others.
+    The frontend is a single-page-app written in React.
     [https://goswitchboard.com][switchboard]
 
 - **Charlesbot** is a modular Slackbot written using Python 3's asyncio
 framework. It was designed to be self-deployed and easily extendible (via the
-plugin system). More information to come! For now, read up some more on
-[charlesbot.org][8] and follow along its development at <a
-href="https://github.com/marvinpinto/charlesbot"><i class="fa fa-github">
-marvinpinto/charlesbot</i></a>.
+plugin system). [https://charlesbot.org][8]
 
 - **IRC Hooky** makes it easy to send custom webhook-triggered notifications to
 IRC using an entirely serverless architecture. Read more about it at
-[irchooky.org][9] and the article I wrote titled [Using a Serverless
-Architecture to deliver IRC Webhook Notifications][10].
+[irchooky.org][9] and the article I wrote: [Using a Serverless Architecture to
+deliver IRC Webhook Notifications][10].
 
 
 
