@@ -9,6 +9,7 @@ pygmentsstyle: 'lovelace'
 pygmentsuseclasses: false
 pygmentscodefences: true
 canonifyurls: true
+enableRobotsTXT: true
 
 author:
   name: "Marvin Pinto"
