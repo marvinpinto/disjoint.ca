@@ -22,6 +22,7 @@ authorizationcode
 autolocation
 autoscaling
 aws
+axios
 backend
 boba
 bootable
