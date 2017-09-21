@@ -29,6 +29,7 @@ Here's where you can find me on the Internet:
 - <i class="fa fa-envelope-o"> hello@pinto.im</i>
 - <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x52654E6EB0BB564B"><i class="fa fa-id-badge"> 0x52654E6EB0BB564B</i></a> (PGP Key ID)
 - <a href="https://keybase.io/marvinpinto"><i class="fa fa-key"> marvinpinto</i></a> (Keybase)
+- <a href="https://stackoverflow.com/users/1101070/marvin-pinto"><i class="fa fa-stack-overflow"> Stack Overflow</i></a> (I don't answer questions too often these days)
 
 
 
