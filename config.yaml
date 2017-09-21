@@ -1,7 +1,6 @@
 ---
 baseurl: "https://disjoint.ca"
 title: "disjoint.ca"
-paginate: 10
 MetaDataFormat: "yaml"
 languageCode: "en-us"
 theme: 'custom'

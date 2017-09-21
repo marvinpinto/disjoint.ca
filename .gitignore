@@ -5,3 +5,4 @@ env_vars
 /build
 /node_modules
 /data
+/notes.txt
