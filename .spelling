@@ -1,4 +1,5 @@
 0x52654e6eb0bb564b
+250ms
 3am
 Cognito
 DynamoDB
@@ -22,6 +23,7 @@ authorizationcode
 autolocation
 autoscaling
 aws
+axios
 backend
 boba
 bootable
@@ -41,6 +43,7 @@ dev-tools
 disjoint.ca
 diskutil
 dns-01
+e.g.
 ember-cli
 emberjs
 fa-github
@@ -50,6 +53,7 @@ firewalled
 freshbooks
 frontend
 github
+github.com
 giulio
 golang
 hashicorp
@@ -73,12 +77,14 @@ lego
 linux
 logodust.com
 macbook
+mailcomposer
 marvinpinto
 moorereason
 namespace
 nginx
 no-brainer
 node.js
+nodemailer
 non-rebase
 npm
 oauth
@@ -92,6 +98,7 @@ pre-baked
 programmatically
 rackspace
 readme
+readme.md
 rebase
 rebasing
 resize
@@ -101,6 +108,7 @@ rvm
 s3
 schweet
 screencast
+sendRawEmail
 serverless
 shipit
 showterm
@@ -115,12 +123,15 @@ svg
 symlink
 symlinking
 tl
+tmux
 unicode
 unix
 unmount
 unsplash
 unsplash.com
+untracked
 users.js
+v4.0.1
 vnu.jar
 vsphere
 webapp
