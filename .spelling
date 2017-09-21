@@ -51,6 +51,7 @@ firewalled
 freshbooks
 frontend
 github
+github.com
 giulio
 golang
 hashicorp
@@ -74,12 +75,14 @@ lego
 linux
 logodust.com
 macbook
+mailcomposer
 marvinpinto
 moorereason
 namespace
 nginx
 no-brainer
 node.js
+nodemailer
 non-rebase
 npm
 oauth
@@ -93,6 +96,7 @@ pre-baked
 programmatically
 rackspace
 readme
+readme.md
 rebase
 rebasing
 resize
@@ -102,6 +106,7 @@ rvm
 s3
 schweet
 screencast
+sendRawEmail
 serverless
 shipit
 showterm
@@ -122,6 +127,7 @@ unmount
 unsplash
 unsplash.com
 users.js
+v4.0.1
 vnu.jar
 vsphere
 webapp
