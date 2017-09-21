@@ -1,24 +1,2 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{ .Site.Title }} (tags)</title>
-    <link>{{ .Permalink }}</link>
-    <description>{{ .Site.Title }} Tags</description>
-    <generator>Hugo (gohugo.io)</generator>
-    <language>{{ .Site.LanguageCode }}</language>
-    <managingEditor>{{ .Site.Author.email }} ({{ .Site.Author.name }})</managingEditor>
-    <webMaster>{{ .Site.Author.name }}</webMaster>
-    <copyright>Copyright 2016 Marvin Pinto</copyright>
-    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
-    <ttl>60</ttl>
-    <atom:link href="{{.URL}}" rel="self" type="application/rss+xml" />
-    {{ range first 15 .Data.Pages }}
-      <item>
-        <title>{{ .Title }}</title>
-        <link>{{ .Permalink }}</link>
-        <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-        <guid>{{ .Permalink }}</guid>
-        <description>{{ .Summary | html }} Read more at {{ .Permalink | html }}.</description>
-      </item>
-    {{ end }}
-  </channel>
 </rss>
