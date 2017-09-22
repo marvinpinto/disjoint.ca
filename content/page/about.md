@@ -31,35 +31,7 @@ Here's where you can find me on the Internet:
 - <a href="https://keybase.io/marvinpinto"><i class="fa fa-key"> marvinpinto</i></a> (Keybase)
 - <a href="https://stackoverflow.com/users/1101070/marvin-pinto"><i class="fa fa-stack-overflow"> Stack Overflow</i></a> (I don't answer questions too often these days)
 
-
-
-### <i class="fa fa-graduation-cap"></i> Recent Projects
-
-- **Ledger Reconciler** is a Node.js command-line tool to automatically
-download and reconcile your [Ledger][ledger-cli] financial entries. It uses
-[Headless Chrome][headless-chrome] and the [puppeteer][puppeteer] library to
-automate the task of logging into all your bank accounts and reconciling your
-transactions.
-[https://disjoint.ca/projects/ledger-reconciler][ledger-reconciler]
-
-- **Switchboard** is a webapp built to give people full control over their
-internet-based phone number. It allows people to control exactly when and how
-they are interrupted, along with regular phone-like features people have come
-to expect (push messaging, call forwarding, and so on).
-
-    The backend is a Node.js application powered by a few AWS & Google
-    services: Lambda, API Gateway, DynamoDB, S3, Cognito, Firebase, and others.
-    The frontend is a single-page-app written in React.
-    [https://goswitchboard.com][switchboard]
-
-- **Charlesbot** is a modular Slackbot written using Python 3's asyncio
-framework. It was designed to be self-deployed and easily extendible (via the
-plugin system). [https://charlesbot.org][8]
-
-- **IRC Hooky** makes it easy to send custom webhook-triggered notifications to
-IRC using an entirely serverless architecture. Read more about it at
-[irchooky.org][9] and the article I wrote: [Using a Serverless Architecture to
-deliver IRC Webhook Notifications][10].
+Curious as to what I've been up to lately? &thinsp;<a href="/projects"><i class="fa fa-graduation-cap">&hairsp;Projects</i></a>
 
 
 
@@ -112,9 +84,6 @@ stick to [doggy pictures only][1] <i class="fa fa-hand-spock-o"></i>
 [4]: https://github.com/marvinpinto/disjoint.ca/issues
 [5]: https://webchat.freenode.net
 [6]: https://www.facebook.com/BlueCollaredCanines
-[8]: https://charlesbot.org
-[9]: https://irchooky.org
-[10]: {{< relref "writing/2016-02-28-serverless-irc-notifications.md" >}}
 [11]: https://github.com/des4maisons/til
 [12]: https://github.com/jbranchaud/til
 [13]: https://twitter.com/des4maisons
@@ -122,7 +91,4 @@ stick to [doggy pictures only][1] <i class="fa fa-hand-spock-o"></i>
 [15]: http://www.logodust.com
 [16]: http://fairpixels.co
 [switchboard]: https://goswitchboard.com
-[ledger-cli]: http://ledger-cli.org/
-[headless-chrome]: https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
-[puppeteer]: https://github.com/GoogleChrome/puppeteer
-[ledger-reconciler]: https://disjoint.ca/projects/ledger-reconciler
+[projects]: /projects

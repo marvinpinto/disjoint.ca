@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Marvin Pinto - {{ .Site.Title }}</title>
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="canonical" href="{{ .Site.BaseURL }}/page/about"/>
-<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-<meta http-equiv="refresh" content="0; url={{ .Site.BaseURL }}/page/about"/>
-</head>
-</html>
+{{ partial "header.html" . }}
+
+<div class="container">
+
+  <div class="row">
+    <div class="text-center col-md-offset-1 col-md-10">
+      <h3>&#xf19d; Recent Projects</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      {{.Content}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <hr />
+    </div>
+  </div>
+
+</div>
+
+{{ partial "footer.html" . }}
