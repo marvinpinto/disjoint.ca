@@ -18,6 +18,7 @@ amis
 ansible
 api
 apis
+ascii
 asyncio
 authorizationcode
 autolocation
@@ -33,6 +34,7 @@ charlesbot.org
 cli
 cloudfront
 cloudwatch
+config
 contraints
 coreos
 cron
@@ -56,6 +58,8 @@ github
 github.com
 giulio
 golang
+gpg-encrypt
+gpg-encrypted
 hashicorp
 href
 html
