@@ -1,7 +1,7 @@
 ---
 author_twitter_username: marvinpinto
 date: 2017-09-23T11:59:08-04:00
-lastmod: 2017-09-23T11:59:08-04:00
+lastmod: 2017-09-25
 meta_image: marvin-pinto-profile.jpg
 meta_image_height: 700
 meta_image_width: 700
@@ -56,7 +56,7 @@ sekret123
 **Note:** If you're wondering where the `52654E6EB0BB564B` value came from, you
 can find your own GPG ID as follows:
 ```bash
-# gpg --list-keys
+$ gpg --list-keys
 /home/marvin/.gnupg/pubring.gpg
 -------------------------------
 pub   4096R/52654E6EB0BB564B 2016-12-13

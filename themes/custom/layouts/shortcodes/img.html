@@ -1,6 +1,6 @@
 <!-- image -->
 <img
-  src="{{ .Site.BaseURL }}/{{ index .Site.Data.assets (.Get "src") }}"
+  src="{{ (index .Site.Data.assets (.Get "src")) | absURL }}"
   alt="{{ .Get "alt" }}"
   {{ if isset .Params "height" }}height="{{ .Get "height" }}"{{ end }}
   {{ if isset .Params "width" }}width="{{ .Get "width" }}"{{ end }}

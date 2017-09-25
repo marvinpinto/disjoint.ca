@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="{{.Site.BaseURL}}" class="navbar-brand brand">
+      <a href="{{ "/" | absURL }}" class="navbar-brand brand">
         <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 293.631 53.879188">
             <g fill-rule="evenodd">
                 <path d="M33.667 47.528l-6.363 6.35-14.81-14.808 6.364-6.35 14.81 14.808z" fill="#598234"/>
@@ -35,10 +35,10 @@
         </form>
         </li>
 
-        <li><a href="{{ .Site.BaseURL }}/writing/"><i class="fa fa-pencil-square-o"></i>&nbsp;Writing</a></li>
-        <li><a href="{{ .Site.BaseURL }}/til/"><i class="fa fa-lightbulb-o"></i>&nbsp;TIL</a></li>
-        <li><a href="{{ .Site.BaseURL }}/projects/"><i class="fa fa-graduation-cap"></i>&nbsp;Projects</a></li>
-        <li><a href="{{ .Site.BaseURL }}/page/about/"><i class="fa fa-cubes"></i>&nbsp;About</a></li>
+        <li><a href="{{ "writing/" | absURL }}"><i class="fa fa-pencil-square-o"></i>&nbsp;Writing</a></li>
+        <li><a href="{{ "til/" | absURL }}"><i class="fa fa-lightbulb-o"></i>&nbsp;TIL</a></li>
+        <li><a href="{{ "projects/" | absURL }}"><i class="fa fa-graduation-cap"></i>&nbsp;Projects</a></li>
+        <li><a href="{{ "page/about/" | absURL }}"><i class="fa fa-cubes"></i>&nbsp;About</a></li>
 
       </ul>
     </div>

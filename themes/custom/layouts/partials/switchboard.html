@@ -1,7 +1,7 @@
 <div class="switchboard-container pull-right">
   <div class="switchboard-ad-img">
     <a href="https://goswitchboard.com/?utm_source=disjoint-ca&utm_medium=banner&utm_campaign=beta-launch">
-      <img src="{{printf "%s" (print .Site.BaseURL "/" (index .Site.Data.assets "switchboard-logo-full.png"))}}" alt="Switchboard Logo">
+      <img src="{{ (index .Site.Data.assets "switchboard-logo-full.png") | absURL }}" alt="Switchboard Logo">
     </a>
   </div>
 
