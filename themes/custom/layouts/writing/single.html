@@ -6,7 +6,7 @@
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "articleBody": {{ .Content }},
+    "articleBody": "{{ .Content | plainify }}",
     "articleSection": "writing",
     "wordCount": {{ .WordCount }},
     "timeRequired": "P{{ .ReadingTime }}M",
@@ -14,20 +14,20 @@
       "@type": "Person",
       "name": "Marvin Pinto",
       "email": "hello@pinto.im",
-      "image": {{printf "%s" (print .Site.BaseURL "/" (index .Site.Data.assets "marvin-pinto-profile.jpg"))}},
+      "image": "{{ (index .Site.Data.assets "marvin-pinto-profile.jpg") | absURL }}",
       "url": "https://disjoint.ca/page/about"
     },
     "datePublished": "{{ .Date.Format "2006-01-02T15:04:05-07:00" }}",
     "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}",
-    "headline": {{ .Title }},
+    "headline": "{{ .Title }}",
     "mainEntityOfPage":{
       "@type": "WebPage",
-      "@id": {{ .Permalink }}
+      "@id": "{{ .Permalink }}"
     },
-    "description": {{ $.Scratch.Get "local_description" }},
+    "description": "{{ $.Scratch.Get "local_description" | plainify }}",
     "image": {
       "@type": "ImageObject",
-      "url": {{printf "%s" (print .Site.BaseURL "/" (index .Site.Data.assets (.Param "meta_image")))}}
+      "url": "{{ (index .Site.Data.assets (.Param "meta_image")) | absURL }}",
       "height": {{ .Param "meta_image_height" }},
       "width": {{ .Param "meta_image_width" }}
     },
@@ -37,7 +37,7 @@
       "url" : "https://disjoint.ca",
       "logo": {
         "@type": "ImageObject",
-        "url": {{printf "%s" (print .Site.BaseURL "/" (index .Site.Data.assets "disjoint-ca-logo.png"))}},
+        "url": "{{ (index .Site.Data.assets "disjoint-ca-logo.png") | absURL }}",
         "width": 327,
         "height": 60
       }
@@ -50,7 +50,7 @@
     <div class="col-md-offset-1 col-md-10">
       <div
         class="img-responsive jumbotron hero-blog-post-banner"
-        style="background-image: url('{{ .Site.BaseURL }}/{{ index .Site.Data.assets (.Param "meta_image") }}');">
+        style="background-image: url('{{ (index .Site.Data.assets (.Param "meta_image")) | absURL }}');">
       </div>
     </div>
 

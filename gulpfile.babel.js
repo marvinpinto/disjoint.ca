@@ -13,7 +13,6 @@ import yaml from 'gulp-yaml';
 import vnuJar from 'vnu-jar';
 import runSequence from 'run-sequence';
 import source from 'vinyl-source-stream';
-import ip from 'ip';
 import del from 'del';
 import sortedUniq from 'lodash/sortedUniq';
 import isEqual from 'lodash/isEqual';
@@ -22,10 +21,9 @@ import cloudfront from 'gulp-cloudfront-invalidate-aws-publish';
 import promiseRetry from 'promise-retry';
 import axios from 'axios';
 
-const hugoVersion = '0.18';
-const hugoBinary = `tmp/hugo_${hugoVersion}_linux_amd64`;
-const hugoUrl = `https://github.com/spf13/hugo/releases/download/v${hugoVersion}/hugo_${hugoVersion}_Linux-64bit.tar.gz`;
-const hugoPort = 8080;
+const hugoVersion = '0.28';
+const hugoBinary = `tmp/${hugoVersion}/hugo`;
+const hugoUrl = `https://github.com/gohugoio/hugo/releases/download/v${hugoVersion}/hugo_${hugoVersion}_Linux-64bit.tar.gz`;
 
 const environment = process.env.HUGO_ENV || 'development';
 
@@ -108,6 +106,36 @@ const waitUntilFileExists = (args) => {
   });
 };
 
+const startNgrokTunnel = (args) => {
+  return Promise.resolve().then(() => {
+    if (!args.tunnelName || !args.taskTag || !args.tunnelPort) {
+      throw new Error('Invalid arguments passed into "startNewNgrokTunnel"');
+    }
+
+    return promiseRetry((retry, number) => {
+      const msg = `Attempting to start an ngrok tunnel for "${args.tunnelName}" (attempt #${number})`;
+      printOutput(args.taskTag, {stdout: msg, stderr: ''});
+      return axios.request({
+        method: 'post',
+        url: 'http://127.0.0.1:4040/api/tunnels',
+        timeout: 5000,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          name: args.tunnelName,
+          proto: 'http',
+          addr: args.tunnelPort,
+          bind_tls: true,
+          hostname: args.hostname,
+        },
+      }).then((response) => {
+        return response.data.public_url;
+      }).catch(retry);
+    }, {retries: 4});
+  });
+};
+
 const files = {
   src: ['content/**/*.*', 'themes/**/*.*', 'static/**/*.*', 'data/**/*.*'],
   dest: 'public',
@@ -154,7 +182,7 @@ gulp.task('download-hugo', () => {
     return request(hugoUrl)
       .pipe(source('hugo.tar.gz'))
       .pipe(streamify(decompress({strip: 1})))
-      .pipe(gulp.dest('tmp'));
+      .pipe(gulp.dest(`tmp/${hugoVersion}`));
   }
   return;
 });
@@ -177,8 +205,16 @@ gulp.task('generate-html', ['download-hugo'], () => {
       retries: 10,
     }));
 
+    if (environment === "development") {
+      promises.push(startNgrokTunnel({
+        tunnelName: 'hugo-server',
+        tunnelPort: '1313',
+        taskTag: tag,
+      }));
+    }
+
     return Promise.all(promises);
-  }).then(() => {
+  }).then((results) => {
     let processArgs = [
       '--cleanDestinationDir',
       '--source', '.',
@@ -188,11 +224,12 @@ gulp.task('generate-html', ['download-hugo'], () => {
 
     if (environment === "development") {
       const additionalArgs = [
-        '--baseUrl', `http://${ip.address()}:${hugoPort}`,
-        '--bind', '0.0.0.0',
-        '--port', hugoPort,
+        '--baseUrl', results[2],
         '--watch',
         '--quiet',
+        '--appendPort=false',
+        '--liveReloadPort=443',
+        '--navigateToChanged',
       ];
 
       processArgs.unshift('server');
@@ -513,6 +550,29 @@ gulp.task('lint-css', () => {
       ],
       envVars: {},
       taskTag: tag,
+    });
+  }).catch((err) => {
+    printOutput(tag, {stdout: '', stderr: err.toString()});
+    throw new Error(`Error in task "${tag}"`);
+  });
+});
+
+gulp.task('ngrok-process', () => {
+  const tag = 'ngrok-process';
+  return exec('npm bin').then((result) => {
+    return result;
+  }).then((result) => {
+    const yarnBinPath = result.stdout.trim();
+
+    return executeAsyncProcess({
+      process: `${yarnBinPath}/ngrok`,
+      processArguments: [
+        'start', '--none', '--log=stdout',
+        '--log-format', 'term',
+        '--log-level', 'warn',
+      ],
+      taskTag: tag,
+      envVars: {},
     });
   }).catch((err) => {
     printOutput(tag, {stdout: '', stderr: err.toString()});

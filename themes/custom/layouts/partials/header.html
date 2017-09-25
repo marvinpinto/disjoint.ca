@@ -48,13 +48,13 @@
   <meta name="twitter:creator" content="@{{ .Param "author_twitter_username" }}" />
   <meta name="twitter:title" content="{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}" />
   <meta name="twitter:description" content="{{ $.Scratch.Get "local_description" }}" />
-  <meta name="twitter:image" content="{{ .Site.BaseURL }}/{{ index .Site.Data.assets (.Param "meta_image") }}" />
+  <meta name="twitter:image" content="{{ (index .Site.Data.assets (.Param "meta_image")) | absURL }}"/>
 
   <!-- Open Graph Protocol -->
   <meta name="og:title" content="{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}" />
   <meta name="og:type" content="website" />
   <meta name="og:url" content="{{ .Permalink }}" />
-  <meta name="og:image" content="{{ .Site.BaseURL }}/{{ index .Site.Data.assets (.Param "meta_image") }}" />
+  <meta name="og:image" content="{{ (index .Site.Data.assets (.Param "meta_image")) | absURL }}"/>
 
   <!-- Bing Site Verification -->
   <meta name="msvalidate.01" content="55CA018201B546078483184F3DDE2D19" />
@@ -62,10 +62,10 @@
   <title>{{ $.Scratch.Get "local_title" }} | {{ .Site.Title }}</title>
 
   <!-- custom css -->
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}/{{ index .Site.Data.assets "app.css" }}" />
+  <link rel="stylesheet" href="{{ (index .Site.Data.assets "app.css") | absURL }}" />
 
   <!-- custom javascript -->
-  <script src="{{ .Site.BaseURL }}/{{ index .Site.Data.assets "app.js" }}"></script>
+  <script src="{{ (index .Site.Data.assets "app.js") | absURL }}"></script>
 
   <!-- Google Analytics -->
   <script>
@@ -107,7 +107,7 @@
     "url" : "https://disjoint.ca",
     "logo": {
       "@type": "ImageObject",
-      "url": {{printf "%s" (print .Site.BaseURL "/" (index .Site.Data.assets "disjoint-ca-logo.png"))}},
+      "url": "{{ (index .Site.Data.assets "disjoint-ca-logo.png") | absURL }}",
       "width": 327,
       "height": 60
     }
