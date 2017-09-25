@@ -65,7 +65,7 @@
     "webpack-manifest-plugin": "^1.1.0"
   },
   "scripts": {
-    "install": "pip install --user Pygments && gem install --no-rdoc --no-ri html-proofer",
+    "install": "gem install --no-rdoc --no-ri html-proofer",
     "start": "concurrently --raw --kill-others-on-fail \"gulp ngrok-process\" \"gulp generate-assets\" \"gulp generate-version-sha\" \"gulp generate-html\"",
     "test": "HUGO_ENV=production gulp all-tests",
     "generate-html": "HUGO_ENV=production gulp generate-assets generate-version-sha generate-html",
