@@ -4,7 +4,7 @@ meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 date: 2017-10-04T11:54:50-04:00
-lastmod: 2017-10-04T11:54:50-04:00
+lastmod: 2017-10-04T15:19:00-04:00
 title: "Signing your git commits using your gpg key"
 tags:
   - 'git'
@@ -54,7 +54,19 @@ $ git log --graph --pretty=format:"%C(yellow)%h %Creset%C(cyan)%G?%Creset %C(gre
 * 8655782 N git@example.com Unsigned commit
 ```
 
-It is helpful to add these to your global `gitconfig` file as aliases - [have a
-look at
-mine](https://github.com/marvinpinto/laptop/blob/master/roles/git/files/gitconfig)
-for inspiration.
+**Starting from the most recent, non-interactively sign all the commits up to
+and including SHA:**
+``` bash
+$ git rebase --exec 'git commit --amend --no-edit -S -s' SHA
+```
+
+This is useful because it allows you to go back and sign all the commits on
+your working branch. Using the [git alias I setup][signall-alias-commit] as an
+example, `git signall my-dev-branch` would gpg-sign each and every commit on
+the `my-dev-branch` branch.
+
+Browse through [my global gitconfig aliases][marvin-gitconfig] for more ideas
+on optimizing your git workflow!
+
+[signall-alias-commit]: https://github.com/marvinpinto/laptop/commit/3bd321461a27151a362edc694a6bc4486dd8f869
+[marvin-gitconfig]: https://github.com/marvinpinto/laptop/blob/master/roles/git/files/gitconfig
