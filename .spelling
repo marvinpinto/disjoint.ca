@@ -58,6 +58,7 @@ gitconfig
 github
 github.com
 giulio
+gnupg
 golang
 gpg
 gpg-encrypt
@@ -127,6 +128,8 @@ spf13
 startssl
 stdout
 strace
+subkey
+subkeys
 svg
 symlink
 symlinking
@@ -151,3 +154,4 @@ wtf
 xenolf
 yay
 yubikey
+yubitouch.sh
