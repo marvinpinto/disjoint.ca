@@ -25,6 +25,8 @@ require('../images/marvin-pinto-profile.jpg');
 require('../images/meta-social-media-image-20160426.jpg');
 require('../images/you-had-me-at-autoscaling.jpg');
 require('../images/switchboard-logo-full.png');
+require('../images/2017-10-09-recording-with-flicker.gif');
+require('../images/2017-10-09-recording-without-flicker.gif');
 
 // Google Analytics Autotrack
 require('autotrack/lib/plugins/clean-url-tracker');
