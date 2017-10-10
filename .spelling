@@ -34,9 +34,11 @@ charlesbot.org
 cli
 cloudfront
 cloudwatch
+codebase
 config
 contraints
 coreos
+cosmoconfig
 cron
 datastore
 derpy
@@ -46,6 +48,7 @@ disjoint.ca
 diskutil
 dns-01
 e.g.
+emacs
 ember-cli
 emberjs
 fa-github
@@ -87,7 +90,9 @@ linux
 logodust.com
 macbook
 mailcomposer
+makefile
 marvinpinto
+monorepo
 moorereason
 namespace
 nginx
@@ -99,6 +104,8 @@ npm
 oauth
 onwards
 opensentinel
+package.json
+package.json.
 pdb
 pinto.im
 plaintext
@@ -110,6 +117,7 @@ readme
 readme.md
 rebase
 rebasing
+repos
 resize
 rmachielse
 route53
@@ -148,6 +156,8 @@ vnu.jar
 vsphere
 webapp
 webhook
+webpack
+webpack.config.js
 wevs
 whitelist
 whitelisted
