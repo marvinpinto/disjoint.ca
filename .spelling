@@ -148,6 +148,8 @@ vnu.jar
 vsphere
 webapp
 webhook
+webpack
+webpack.config.js
 wevs
 whitelist
 whitelisted
