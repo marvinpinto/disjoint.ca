@@ -47,5 +47,9 @@ deploy:
 
 notifications:
   email: false
-  irc:
-    secure: "QTE6uJWybuew3He1jp/pfg2JoF76D7ldoOOwa4y7udyDhOdGasMTxO9ISvx100Jh4F3GRMyJH1QwZJHMmCX5QbDao/Kv2auITOFb6lUtjYW4+gb7WV1vcSdArqyc1ludiGrIAqMyzHUbF5uDuE24qLMiJxgxsjCBNaJ6IML5xNdBgOvJ/xj34vBKGPHVCYNwkmWxfX8xe+3QfG/CAhlDgtFfziW6zYZw6dd9cTH5ecbXkxULNXWgXzr+hsqCyFLp497bTbc+sz/BdY8q7lGzqFQbFE1zYr8Kw7gqFBL4vCalySgyuVu1rtvDY7S5tGjDmUxfjEY/imWeJMHJiyKZlZPiQT3Ay24xXLtvUDQTQS1m6LVeRLzWaW1SLfgqnBayJu4+K8sQmSv57CiF0GxuAWlFTj58AtxLrGg3DrjxJFUkya6uUGdR7sOiSD3TZShQHf/mA/uI3ndqGK6lXmHRFuz8BKLIiezUiDj4WISb6o+RcT+TodFhDLjDTB/I4pcxHSJ3i6oxtZ/f9dh9cJs3OM1Pn4OFq56dCV3lzmZOfjWXbHi/NKY80iX8Qz6MD6lTJHgCb1IaIbqgcID1s7jdN5FfP0DqMripG8RkkeKz9Scapwrn7FOjFXDMXR2SdM2lyknErtrbVygYZcvqC3DUh5fYc0GnM43J8dublZhwbAQ="
+  webhooks:
+    urls:
+      - secure: "rJsX/QMAeRfzRxMZxi0kb28K4lgZX1APG0+J2hr61MS/3yjMIK6DNBkORg7kHYzRKCdL/RmlMgimMQCPsV5RHZiczm35reISG/EskBqyIo+owz16KCDTOdO+90SoG83QbfnDNBAgHTZYK06ujbySpGcYXHWWp03mpP93D3XpI+gaY8qBvj0ajttlyoiBXO1KcD4RIMhDbOMs4DttVjYvdwwJqP3yJ/in78HdUnLMwYK7dQr9l441+Aro3/ME6a3BU9f3o2cLLI+b8zQqATvx4D6t2iZtGpkezyXdaoQOGmZUOPzziLTdAIyEO8VUcnPwLI0cjnBkQbc/AmDvScds/giCkAW8brSjscmubNwH3ryfOn/Dao5gjv1UcCaCxLaA5NeJ7VDTOXG5Kn3DxVRQSVYedZjUx1O1dZ3Tc8JTO3kM5KJVIVZZlDV8Ka+c1eGXeD8i+Ep2yIW3mwFufbF6Z93LwnpHZv2azzBh0Y+Hv+o3iyEVuoPdHWmCnpQbXILWnPA2R3h3m1479RxYpWh4oFevAgWzzwk2slI2kLt1DuvOPOkf5XAcj4NAYzdJ+8hI9hrkZbcUdGVbiZIl0xAFPj+oXuuh9d2sR+qhEXuoPIbsPtcDLqsR6VF87exzgMBFFW83QwcbP6I6kTX2+F9lHTHunWUSGMyQIUYZviFyGDk="
+    on_success: always  # options: [always|never|change] default: always
+    on_failure: always  # options: [always|never|change] default: always
+    on_start: never     # options: [always|never|change] default: always
