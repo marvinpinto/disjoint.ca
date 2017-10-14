@@ -1,12 +1,14 @@
 ---
 author_twitter_username: 'marvinpinto'
 date: 2016-04-25T22:03:51-04:00
+lastmod: 2017-10-14
 description: A cheatsheet, if you will
 meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 tags:
   - znc
+  - irssi
 title: Useful ZNC commands
 ---
 

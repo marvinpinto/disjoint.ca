@@ -60,6 +60,8 @@ frontend
 gitconfig
 github
 github.com
+gitter
+gitter.im
 giulio
 gnupg
 golang
@@ -67,6 +69,9 @@ gpg
 gpg-encrypt
 gpg-encrypted
 hashicorp
+hilight
+hilighted
+hilighting
 href
 html
 html5validator
@@ -75,6 +80,7 @@ hugo
 i.e.
 incentivized
 inkscape
+irc.gitter.im
 irchooky.org
 irssi
 javascript
@@ -144,6 +150,7 @@ symlink
 symlinking
 tl
 tmux
+trigger.pl
 unicode
 unix
 unmount
