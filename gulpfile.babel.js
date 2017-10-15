@@ -395,7 +395,7 @@ gulp.task('analyize-html-content', () => {
 
 gulp.task('run-html-proofer', () => {
   const tag = 'run-html-proofer';
-  const htmlproofer = `htmlproofer --allow-hash-href --report-script-embeds --check-html --only-4xx --url-swap "https...disjoint.ca:" --file-ignore ./public/resume/marvin-pinto-resume.html --url-ignore "/github.com\/marvinpinto\/disjoint.ca\/commit/,/\/projects\/ledger-reconciler/" ./public`; // eslint-disable-line no-useless-escape
+  const htmlproofer = `htmlproofer --allow-hash-href --report-script-embeds --check-html --only-4xx --url-swap "https...disjoint.ca:" --file-ignore ./public/resume/marvin-pinto-resume.html --url-ignore "/github.com\/marvinpinto\/disjoint.ca\/commit/,/\/projects\/ledger-reconciler/,/\/projects\/irc-hooky/" ./public`; // eslint-disable-line no-useless-escape
 
   return Promise.resolve().then(() => {
     return exec(htmlproofer);
