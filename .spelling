@@ -1,5 +1,6 @@
 0x52654e6eb0bb564b
 250ms
+301-redirect
 3am
 Cognito
 DynamoDB
@@ -75,6 +76,7 @@ hilighting
 href
 html
 html5validator
+http
 https
 hugo
 i.e.
@@ -122,6 +124,7 @@ readme
 readme.md
 rebase
 rebasing
+redirector
 repos
 resize
 rmachielse
@@ -160,6 +163,7 @@ users.js
 v4.0.1
 vnu.jar
 vsphere
+walkthrough
 webapp
 webhook
 webpack
