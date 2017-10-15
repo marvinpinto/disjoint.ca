@@ -2,3 +2,4 @@ User-agent: *
 Disallow:
 Sitemap: {{ "/sitemap.xml" | absURL }}
 Sitemap: https://disjoint.ca/projects/ledger-reconciler/sitemap.xml
+Sitemap: https://disjoint.ca/projects/irc-hooky/sitemap.xml

@@ -3,7 +3,7 @@ aliases:
   - '/posts/2016/02/28/using-a-serverless-architecture-to-deliver-irc-webhook-notifications/'
   - '/posts/2016/02/28/using-a-serverless-architecture-to-deliver-irc-webhook-notifications'
 date: 2016-02-28T00:00:00-05:00
-lastmod: 2016-05-28T17:30:00-04:00
+lastmod: 2017-10-15
 description: In this blog post I would like to explore the concept of a _Serverless Architecture_ and relate it back to a project that I have been working on -- IRC Hooky.
 tags:
   - aws
@@ -198,7 +198,6 @@ Pretty neat, huh!
 So! If IRC Hooky sounds cool to you, I invite you to contribute in any way you
 would like!
 
-- Play with the [demo][17], get a feel for how this works
 - Questions? [IRC and/or email][13] work best for me!
 - Bugs? [Send 'em over][14]
 - New backend? [Schweet!][15]
@@ -228,14 +227,13 @@ unsplash)</p>
 [1]: https://aws.amazon.com/lambda
 [2]: https://alestic.com/2015/05/aws-lambda-recurring-schedule
 [3]: https://aws.amazon.com/api-gateway
-[4]: https://irchooky.org
-[5]: https://irchooky.org/github.html
-[6]: https://irchooky.org/atlas.html
-[8]: https://irchooky.org/overview.html
+[4]: https://disjoint.ca/projects/irc-hooky
+[5]: https://disjoint.ca/projects/irc-hooky/github.html
+[6]: https://disjoint.ca/projects/irc-hooky/atlas.html
+[8]: https://disjoint.ca/projects/irc-hooky/overview.html
 [9]: https://aws.amazon.com/api-gateway/pricing
 [10]: https://aws.amazon.com/lambda/pricing
 [13]: {{< relref "page/about.md" >}}
 [14]: https://github.com/marvinpinto/irc-hooky/issues
 [15]: https://github.com/marvinpinto/irc-hooky/pulls
-[17]: https://irchooky.org/demo.html
 [19]: https://cloud.google.com/functions

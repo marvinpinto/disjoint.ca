@@ -24,7 +24,7 @@
       title: "IRC Hooky"
       category: "FOSS"
       role: "creator"
-      url: "https://irchooky.org"
+      url: "https://disjoint.ca/projects/irc-hooky"
       repo: "https://github.com/marvinpinto/irc-hooky"
       start: "2016-01"
       summary: "IRC Hooky makes it easy to send custom webhook-triggered notifications to IRC using an entirely serverless architecture. Read more about it in my blog post <a href='https://disjoint.ca/writing/2016/02/28/using-a-serverless-architecture-to-deliver-irc-webhook-notifications'>Using a Serverless Architecture to deliver IRC Webhook Notifications</a>."

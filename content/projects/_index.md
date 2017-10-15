@@ -1,6 +1,6 @@
 ---
 date: 2017-09-22
-lastmod: 2017-09-22
+lastmod: 2017-10-15
 title: Recent Projects
 ---
 
@@ -38,8 +38,9 @@ plugin system - [https://charlesbot.org][charlesbot] <br/><br/>
 
 [IRC Hooky][irchooky] makes it easy to send custom webhook-triggered
 notifications to IRC using a serverless architecture. Read more about it at
-[https://irchooky.org][irchooky] and the article I wrote: [Using a Serverless
-Architecture to deliver IRC Webhook Notifications][serverless-irc-blog-post].
+[https://disjoint.ca/projects/irc-hooky][irchooky] and the article I wrote:
+[Using a Serverless Architecture to deliver IRC Webhook
+Notifications][serverless-irc-blog-post].
 
 
 [ledger-cli]: http://ledger-cli.org/
@@ -49,4 +50,4 @@ Architecture to deliver IRC Webhook Notifications][serverless-irc-blog-post].
 [charlesbot]: https://charlesbot.org
 [serverless-irc-blog-post]: {{< relref "writing/2016-02-28-serverless-irc-notifications.md" >}}
 [switchboard]: https://goswitchboard.com
-[irchooky]: https://irchooky.org
+[irchooky]: https://disjoint.ca/projects/irc-hooky
