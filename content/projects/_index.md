@@ -31,7 +31,8 @@ is a single-page-app written in React -
 
 [Charlesbot][charlesbot] is a modular Slackbot written using Python 3's asyncio
 framework. It was designed to be self-deployed and easily extendible via the
-plugin system - [https://charlesbot.org][charlesbot] <br/><br/>
+plugin system - [https://disjoint.ca/projects/charlesbot][charlesbot]
+<br/><br/>
 
 
 #### IRC Hooky
@@ -47,7 +48,7 @@ Notifications][serverless-irc-blog-post].
 [puppeteer]: https://github.com/GoogleChrome/puppeteer
 [headless-chrome]: https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
 [ledger-reconciler]: https://disjoint.ca/projects/ledger-reconciler
-[charlesbot]: https://charlesbot.org
+[charlesbot]: https://disjoint.ca/projects/charlesbot
 [serverless-irc-blog-post]: {{< relref "writing/2016-02-28-serverless-irc-notifications.md" >}}
 [switchboard]: https://goswitchboard.com
 [irchooky]: https://disjoint.ca/projects/irc-hooky
