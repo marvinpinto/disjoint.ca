@@ -37,7 +37,7 @@
       title: "CharlesBOT"
       category: "FOSS"
       role: "creator"
-      url: "https://charlesbot.org"
+      url: "https://disjoint.ca/projects/charlesbot"
       repo: "https://github.com/marvinpinto/charlesbot"
       start: "2015-07"
       summary: "Charlesbot is a modular Slackbot written using Python 3’s asyncio framework. It was designed to be self-deployed and easily extendible (via the plugin system)."
