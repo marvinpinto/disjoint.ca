@@ -2,6 +2,7 @@
 250ms
 301-redirect
 3am
+Analytics
 Cognito
 DynamoDB
 Fairpixels
@@ -28,6 +29,7 @@ aws
 axios
 backend
 boba
+bookmarklet
 bootable
 cdns
 charlesbot
