@@ -2,6 +2,7 @@
 250ms
 301-redirect
 3am
+Analytics
 Cognito
 DynamoDB
 Fairpixels
@@ -28,6 +29,7 @@ aws
 axios
 backend
 boba
+bookmarklet
 bootable
 cdns
 charlesbot
@@ -93,6 +95,7 @@ js
 lego
 lifecycle
 linux
+lockfile
 logodust.com
 macbook
 mailcomposer
@@ -107,6 +110,7 @@ node.js
 nodemailer
 non-rebase
 npm
+nsp
 oauth
 onwards
 opensentinel

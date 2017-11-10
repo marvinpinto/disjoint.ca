@@ -29,6 +29,7 @@ require('../images/2017-10-09-recording-with-flicker.gif');
 require('../images/2017-10-09-recording-without-flicker.gif');
 require('../images/2017-10-10-babel-plugin-transform-react-jsx-source-before.jpg');
 require('../images/2017-10-10-babel-plugin-transform-react-jsx-source-after.jpg');
+require('../images/2017-11-10-yarn-outdated.png');
 
 // Google Analytics Autotrack
 require('autotrack/lib/plugins/clean-url-tracker');
