@@ -634,7 +634,10 @@ Select `2 - unblock PIN` and follow the instructions.
     websites like GitHub and Keybase as they don't appear to update
     automatically via public PGP key servers.
 
-1. Re-key any encrypted files with the new subkey.
+1. Re-key any encrypted files with the new subkey. Example:
+    ``` bash
+    $ for f in $(find . -name '*.gpg'); do gpg2 --batch --decrypt $f | gpg2 --encrypt -r MASTER_KEY_ID --armor --output tempfile.gpg && mv tempfile.gpg $f; done
+    ```
 
 1. Verify your work.
 
