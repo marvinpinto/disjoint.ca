@@ -4,7 +4,7 @@ meta_image: "marvin-pinto-profile.jpg"
 meta_image_width: 700
 meta_image_height: 700
 date: 2017-10-05T07:20:00-04:00
-lastmod: 2017-10-05T07:20:00-04:00
+lastmod: 2017-12-13
 title: 'A guide to setting up & managing GPG keys on a Yubikey 4'
 description: 'This is a small guide to keep future-Marvin from hating past-Marvin. Hey Marvin!'
 tags:
@@ -473,6 +473,235 @@ Q - quit
 Your selection?
 ```
 Select `2 - unblock PIN` and follow the instructions.
+
+
+
+### Subkey Rotation
+
+1. Load the master keys in from offline storage. Make a backup if necessary of
+   the `~/.gnupg` directory and clear its contents.
+
+    ``` bash
+    $ gpg2 --import MASTER_KEY_ID-secret.txt
+    ```
+
+    This can be verified by running `gpg2 --list-secret-keys`. For example:
+    ``` text
+    /root/.gnupg/pubring.kbx
+    ------------------------
+    sec   rsa4096/B0BB564B 2016-12-13 [C]
+    uid         [ unknown] Marvin Pinto (git) <git@pinto.im>
+    uid         [ unknown] Marvin Pinto <marvin@pinto.im>
+    ```
+
+1. Generate a new set of subkeys for Encryption, Authentication, and Signing
+   (instructions above).
+
+    Validate that the keys were correctly created by running `gpg2 --list-keys`:
+    ``` text
+    /root/.gnupg/pubring.kbx
+    ------------------------
+    pub   rsa4096/B0BB564B 2016-12-13 [C]
+    uid         [ unknown] Marvin Pinto (git) <git@pinto.im>
+    uid         [ unknown] Marvin Pinto <marvin@pinto.im>
+    sub   rsa2048/CAFA20AA 2017-12-13 [S] [expires: 2018-12-13]
+    sub   rsa2048/64AB6CC1 2017-12-13 [E] [expires: 2018-12-13]
+    sub   rsa2048/4980FCA4 2017-12-13 [A] [expires: 2018-12-13]
+    ```
+
+1. Export the new subkeys for backups.
+    ``` bash
+    $ gpg2 --export-secret-subkeys --armor MASTER_KEY_ID > MASTER_KEY_ID-subkeys-secret-$(date +"%Y-%m-%d").txt
+    ```
+
+1. On the primary machine, delete the contents of your `~/.gnupg` directory and import your new GPG subkeys.
+
+    ``` bash
+    $ killall gpg-agent
+    $ gpg2 --import /path/to/MASTER_KEY_ID-subkeys-secret-$(date +"%Y-%m-%d").txt
+    ```
+
+1. Verify that all the subkeys were imported correctly.
+
+    List all the currently imported keys using `gpg2 --list-secret-keys`. For example:
+    ``` text
+    /home/marvin/.gnupg/pubring.kbx
+    -------------------------------
+    sec#  rsa4096/B0BB564B 2016-12-13 [C]
+    uid         [ unknown] Marvin Pinto (git) <git@pinto.im>
+    uid         [ unknown] Marvin Pinto <marvin@pinto.im>
+    ssb   rsa2048/F6E95359 2017-12-13 [S] [expires: 2018-12-13]
+    ssb   rsa2048/2BE9DA48 2017-12-13 [E] [expires: 2018-12-13]
+    ssb   rsa2048/17C3883E 2017-12-13 [A] [expires: 2018-12-13]
+    ```
+
+    Also ensure that the old subkeys are also present as you'll likely need
+    this during the transition period.
+    ``` text
+    $ gpg2 --edit-key B0BB564B
+    gpg (GnuPG) 2.1.11; Copyright (C) 2016 Free Software Foundation, Inc.
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Secret key is available.
+
+    pub  rsa4096/B0BB564B
+         created: 2016-12-13  expires: never       usage: C   
+         trust: unknown       validity: unknown
+    ssb  rsa2048/DCE2D478
+         created: 2016-12-13  expired: 2017-12-13  usage: E   
+    ssb  rsa2048/F2D0033C
+         created: 2016-12-13  expired: 2017-12-13  usage: A   
+    ssb  rsa2048/14C837D5
+         created: 2016-12-13  expired: 2017-12-13  usage: S   
+    ssb  rsa2048/F6E95359
+         created: 2017-12-13  expires: 2018-12-13  usage: S   
+    ssb  rsa2048/2BE9DA48
+         created: 2017-12-13  expires: 2018-12-13  usage: E   
+    ssb  rsa2048/17C3883E
+         created: 2017-12-13  expires: 2018-12-13  usage: A   
+    [ unknown] (1). Marvin Pinto (git) <git@pinto.im>
+    [ unknown] (2)  Marvin Pinto <marvin@pinto.im>
+
+    gpg> quit
+    ```
+
+1. Replace the Authentication, Encryption, and Signing subkeys on the Yubikey
+   with their new versions.
+
+    ``` text
+    $ gpg2 --expert --edit-key MASTER_KEY_ID
+    ```
+
+    Use the `key N` and `keytocard` sub-commands and follow the prompts to
+    transfer your new subkeys onto the Yubikey 4. Details available
+    [here][yubikey-key-import].
+
+1. Set the primary key to be ultimately trusted:
+    ``` text
+    $ gpg2 --expert --edit-key MASTER_KEY_ID
+    gpg> trust
+    ...
+    Please decide how far you trust this user to correctly verify other users' keys
+    (by looking at passports, checking fingerprints from different sources, etc.)
+
+      1 = I don't know or won't say
+      2 = I do NOT trust
+      3 = I trust marginally
+      4 = I trust fully
+      5 = I trust ultimately
+      m = back to the main menu
+
+    Your decision? 5
+    Do you really want to set this key to ultimate trust? (y/N) y
+
+    gpg> quit
+    ```
+
+1. Publish the new GPG subkeys.
+
+    ``` bash
+    $ gpg2 --send-key MASTER_KEY_ID
+    ```
+
+    You can verify the published keys via:
+
+    ``` bash
+    $ gpg2 --recv-key 0xMASTER_KEY_ID
+    ```
+
+    You can also verify that your new subkeys were published by going to:
+    `http://keys.gnupg.net/pks/lookup?op=vindex&search=0xMASTER_KEY_ID` (might
+    take a little while to propagate & update).
+
+1. Update your public SSH key.
+    ``` bash
+    gpg2 --export-ssh-key MASTER_KEY_ID
+    ```
+
+    Note that you can verify your GPG SSH key signature using:
+    ``` bash
+    gpg2 --export-ssh-key MASTER_KEY_ID | ssh-keygen -l -E md5 -f -
+    ```
+1. Update your GPG public key, if needed.
+    ``` bash
+    gpg2 --export --armor MASTER_KEY_ID > pub.txt
+    ```
+    You can also verify the key fingerprint using `gpg2 --fingerprint
+    MASTER_KEY_ID`.
+
+    The public key containing all the subkeys will likely need to be updated on
+    websites like GitHub and Keybase as they don't appear to update
+    automatically via public PGP key servers.
+
+1. Re-key any encrypted files with the new subkey.
+
+1. Verify your work.
+
+    Verify that the secret keys no-longer exist on your local machine. You
+    should see `sec#` beside your primary key and `ssb>` beside your subkeys.
+    Note that the `>` here (beside `ssb`) corresponds to stubs.
+    ``` text
+    $ gpg2 --list-secret-keys
+    /home/marvin/.gnupg/pubring.kbx
+    -------------------------------
+    sec#  rsa4096/B0BB564B 2016-12-13 [C]
+    uid         [ultimate] Marvin Pinto (git) <git@pinto.im>
+    uid         [ultimate] Marvin Pinto <marvin@pinto.im>
+    ssb>  rsa2048/F6E95359 2017-12-13 [S] [expires: 2018-12-13]
+    ssb>  rsa2048/2BE9DA48 2017-12-13 [E] [expires: 2018-12-13]
+    ssb>  rsa2048/17C3883E 2017-12-13 [A] [expires: 2018-12-13]
+    ```
+
+    Also verify that the secret portion of your previous keys are still
+    available locally as you'll need this during the transition period.
+
+    ``` text
+    $ gpg2 --expert --edit-key MASTER_KEY_ID
+    gpg (GnuPG) 2.1.11; Copyright (C) 2016 Free Software Foundation, Inc.
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Secret key is available.
+
+    pub  rsa4096/B0BB564B
+         created: 2016-12-13  expires: never       usage: C   
+         trust: unknown       validity: unknown
+    ssb  rsa2048/DCE2D478
+         created: 2016-12-13  expired: 2017-12-13  usage: E   
+    ssb  rsa2048/F2D0033C
+         created: 2016-12-13  expired: 2017-12-13  usage: A   
+    ssb  rsa2048/14C837D5
+         created: 2016-12-13  expired: 2017-12-13  usage: S   
+    ssb  rsa2048/F6E95359
+         created: 2017-12-13  expires: 2018-12-13  usage: S   
+         card-no: XXXXX
+    ssb  rsa2048/2BE9DA48
+         created: 2017-12-13  expires: 2018-12-13  usage: E   
+         card-no: XXXXX
+    ssb  rsa2048/17C3883E
+         created: 2017-12-13  expires: 2018-12-13  usage: A   
+         card-no: XXXXX
+    [ unknown] (1). Marvin Pinto (git) <git@pinto.im>
+    [ unknown] (2)  Marvin Pinto <marvin@pinto.im>
+
+    gpg> quit
+    ```
+    In the above example, private keys for `F6E95359`, `2BE9DA48`, and
+    `17C3883E` are stored on the Yubikey while the private keys for `DCE2D478`,
+    `F2D0033C`, and `14C837D5` are in the local (computer) keychain (indicated
+    via `card-no: ...`).
+
+1. Delete the old subkeys from your keychain.
+
+    At some point key rotation will be complete and you will no longer need the
+    old subkeys around.
+    ``` text
+    To be updated..
+    ```
+    Note that you will need to re-publish your master key and also update the
+    public key for websites that don't use the PGP keyserver network, namely
+    GitHub and Keybase.
 
 
 [yubitouch-sh]: https://github.com/a-dma/yubitouch
